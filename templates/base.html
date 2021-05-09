@@ -12,6 +12,32 @@
     <title>Dungeons and Dragons Pocket Book</title>
 </head>
 <body>
+
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="fas fa-dragon"> D&D Pocket Book</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><strong><a href="#">Profile</a></strong></li>
+                    <li><strong><a href="#">Contact</a></strong></li>
+                    <li><strong><a href="#">FAQ</a></strong></li>
+                    <li><strong><a class="btn" href="#">Log Out</a></strong></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav right-aligned" id="mobile-demo">
+            <li><strong><a href="#">Profile</a></strong></li>
+            <li><strong><a href="#">Contact</a></strong></li>
+            <li><strong><a href="#">FAQ</a></strong></li>
+            <li><strong><a class="btn" href="#">Log Out</a></strong></li>
+        </ul>
+    </header>
+    <main>    
+
+    <!-- {% block content %}
+    {% endblock %} -->
+
     {% for item in items %}
         {{ item.item_name }}<br>
         {{ item.item_desc }}<br>

@@ -1,4 +1,86 @@
-body{
-    background-color: black;
-    color: red;
+/*-------------------------Colours */
+
+/* Templates */
+
+.color-1 {
+    color: #41281C;
+}
+
+.bg-color-1 {
+    background-color: #41281C;
+}
+
+.color-2 {
+    color: #FEBB6C;
+}
+
+.bg-color-2 {
+    background-color: #FEBB6C;
+}
+
+
+.color-3 {
+    color: #704326;
+}
+
+.bg-color-3 {
+    background-color: #704326;
+}
+
+.color-4 {
+    color: #C78048;
+}
+
+.bg-color-4 {
+    background-color: #C78048;
+}
+
+.color-5 {
+    color: #934B22;
+}
+
+.bg-color-5 {
+    background-color: #934B22;
+}
+
+/* Overwrites */
+
+a {
+    color: #C78048!important;
+}
+
+.btn {
+    background-color: #FEBB6C;
+}
+
+.btn:hover{
+    color: #FEBB6C!important;
+    background-color: #C78048;
+}
+
+.nav-wrapper {
+    background-color: #704326;
+}
+
+.sidenav {
+    background-color: #704326;
+}
+
+/*-------------------------Base Alterations */
+
+body {
+    overflow: hidden;
+}
+
+#background {
+    position: absolute;
+}
+
+main {
+    position: absolute;
+}
+
+.fa-dragon {
+    font-size: 3.5em;
+    padding: 5px;
 }
