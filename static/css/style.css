@@ -18,7 +18,6 @@
     background-color: #FEBB6C;
 }
 
-
 .color-3 {
     color: #704326;
 }
@@ -50,12 +49,12 @@ a, .btn, .btn-large {
 }
 
 .btn, .btn-large{
-    background-color: #FEBB6C;
+    background-color: #FEBB6C!important;
 }
 
 .btn:hover, .btn-large:hover {
     color: #FEBB6C!important;
-    background-color: #C78048;
+    background-color: #C78048!important;
 }
 
 .nav-wrapper {
@@ -114,6 +113,18 @@ strong {
     background-color: #8c5736b3;
     border: #41281C;
     border-width: 10px;
+}
+
+#login-panel{
+    visibility: hidden;
+}
+
+#reg-panel{
+    display: none;
+}
+
+#log-reg-btns{
+    margin-top: 25vh;
 }
 
 /* Form Colors */
