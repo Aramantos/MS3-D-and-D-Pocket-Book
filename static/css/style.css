@@ -72,15 +72,38 @@ body {
     overflow: hidden;
 }
 
-#background {
-    position: absolute;
-}
 
 main {
     position: absolute;
 }
 
+#nav-title {
+    font-size: 3em;
+    margin-top: 6px;
+    /* width: 65%; */
+}
+
 .fa-dragon {
     font-size: 3.5em;
     padding: 5px;
+}
+
+.btn {
+    font-weight: 800;
+}
+
+/* -------------------------Media Queries */
+
+@media screen and (max-width: 600px) {
+    #nav-title {
+        font-size: 2.5em;
+        width: unset;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #nav-title {
+        font-size: 1.9em;
+        margin-top: 9px;
+    }
 }
