@@ -45,15 +45,15 @@
 
 /* Overwrites */
 
-a {
+a, .btn, .btn-large {
     color: #C78048!important;
 }
 
-.btn {
+.btn, .btn-large{
     background-color: #FEBB6C;
 }
 
-.btn:hover{
+.btn:hover, .btn-large:hover {
     color: #FEBB6C!important;
     background-color: #C78048;
 }
@@ -66,7 +66,7 @@ a {
     background-color: #704326;
 }
 
-/*-------------------------Base Alterations */
+/*-------------------------Base Template */
 
 body {
     background-image: url('../images/background.jpg');
@@ -101,6 +101,69 @@ strong {
 /* .sidenav li{
     margin: 50px 0;
 } */
+
+/*-------------------------Login/Register */
+
+.btn-large{
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.card-panel{
+    margin-top: 20vh;
+    background-color: #8c5736b3;
+    border: #41281C;
+    border-width: 10px;
+}
+
+/* Form Colors */
+
+  /* label color */
+   .input-field label {
+     color: #FEBB6C!important;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #FEBB6C!important;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #41281C!important;
+     box-shadow: 0 1px 0 0 #41281C!important;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #FEBB6C!important;
+     box-shadow: 0 1px 0 0 #FEBB6C!important;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #945227!important;
+     box-shadow: 0 1px 0 0 #f50303e6!important;
+   }
+      /* label focus color */
+   .input-field input[type=password]:focus + label {
+     color: #FEBB6C!important;
+   }
+   /* label underline focus color */
+   .input-field input[type=password]:focus {
+     border-bottom: 1px solid #41281C!important;
+     box-shadow: 0 1px 0 0 #41281C!important;
+   }
+   /* valid color */
+   .input-field input[type=password].valid {
+     border-bottom: 1px solid #FEBB6C!important;
+     box-shadow: 0 1px 0 0 #FEBB6C!important;
+   }
+   /* invalid color */
+   .input-field input[type=password].invalid {
+     border-bottom: 1px solid #945227!important;
+     box-shadow: 0 1px 0 0 #f50303e6!important;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active{
+    color: #FEBB6C!important;
+   }
 
 /* -------------------------Media Queries */
 

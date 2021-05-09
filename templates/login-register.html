@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="">
+            <div id="login-panel" class="card-panel">
+                <!--Username-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fab fa-d-and-d color-1 prefix"></i>
+                        <input autocomplete="off" id="log-username" name="log-username" type="text" minlength="5" 
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="log-username">Username</label>
+                    </div>
+                </div>
+                <!--Password-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fab fa-d-and-d color-1 prefix"></i>
+                            <input autocomplete="off" id="log-password" name="log-password" type="password" minlength="5" 
+                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <label for="log-password">Password</label>
+                        </div>
+                    </div>
+                <!--Submit-->
+                <div class="row">
+                    <button id="log-submit" type="submit" class="col s6 btn-large">
+                        Submit<i class="fas fa-sign-in-alt"></i>
+                    </button>
+                    <button id="log-cancel" class="col s6 btn-large">
+                        Cancel<i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
