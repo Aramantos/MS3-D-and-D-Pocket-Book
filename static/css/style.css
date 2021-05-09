@@ -109,10 +109,14 @@ strong {
 }
 
 .card-panel{
-    margin-top: 20vh;
+    margin-top: 15vh;
     background-color: #8c5736b3;
     border: #41281C;
     border-width: 10px;
+}
+
+#log-title, #reg-title{
+    color: #41281C;
 }
 
 #login-panel{
@@ -124,7 +128,7 @@ strong {
 }
 
 #log-reg-btns{
-    margin-top: 25vh;
+    margin-top: 15vh;
 }
 
 .no-bottom{
