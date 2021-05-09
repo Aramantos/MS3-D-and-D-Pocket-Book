@@ -127,6 +127,10 @@ strong {
     margin-top: 25vh;
 }
 
+.no-bottom{
+    margin-bottom: 0;
+}
+
 /* Form Colors */
 
   /* label color */
