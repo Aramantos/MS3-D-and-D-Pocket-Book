@@ -69,12 +69,9 @@ a {
 /*-------------------------Base Alterations */
 
 body {
+    background-image: url('../images/background.jpg');
+    /* CREDIT: Image: http://s1.picswalls.com/wallpapers/2014/01/29/dragon-picture_063725311_21.jpg */
     overflow: hidden;
-}
-
-
-main {
-    position: absolute;
 }
 
 #nav-title {
