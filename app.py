@@ -19,12 +19,30 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/logAndReg", methods=["GET", "POST"])
-def logAndReg():
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        # check if username already exists in DB
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("reg-username").lower()})
+        if existing_user:
+            flash(" - Username already exists - ")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("reg-username").lower(),
+            "password": generate_password_hash(request.form.get("reg-password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put new user into 'session cookie'
+        session["user"] = request.form.get("reg-username").lower()
+        flash(" - Registration successful - ")
+        return render_template("login-register.html")
     return render_template("login-register.html")
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True) 
+            debug=True)
