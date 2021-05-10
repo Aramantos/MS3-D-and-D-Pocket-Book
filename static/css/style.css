@@ -227,12 +227,22 @@ strong {
     width: 48%;
 }
 
+#games-panel{
+    margin-top: 5vh;
+    height: 50vh;
+}
+
 #characters{
     width: 48%;
 }
 
-.profile-add-btns{
+#char-panel{
     margin-top: 5vh;
+    height: 50vh;
+}
+
+.profile-add-btns{
+    margin-top: 10vh;
 }
 
 /* -------------------------Media Queries */

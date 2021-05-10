@@ -13,18 +13,28 @@
 
     <div id="profile-content">
         <div id="games" class="row s6">
-            <div class="card-panel">
+            <div id="games-panel" class="card-panel">
                 <h4>Games</h4>
-                <ul class="collapsible">
-                    <li>
-                        <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Game Name</div>
-                        <div class="collapsible-body"><span>Game Info</span></div>
-                    </li>
-                </ul>
+                {% for game in games %}
+                    <ul class="collapsible">
+                        {% if session.user|lower == game.created_by|lower %}
+                            <li>
+                                <div class="collapsible-header">
+                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ game.game_name }}
+                                </div>                              
+                                <div class="collapsible-body">
+                                        <span>Session Number</span>
+                                        <br>
+                                        <span>Session Description</span>
+                                </div>
+                            </li>
+                        {% endif %}
+                    </ul>
+                {% endfor %}
             </div>
         </div>
         <div id="characters" class="row s6">
-            <div class="card-panel">
+            <div id="char-panel" class="card-panel">
                 <h4>Characters</h4>
                 <ul class="collapsible">
                     <li>
