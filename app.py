@@ -84,11 +84,15 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookie
-    flash(" - You have been logged out - ")
-    # session.clear()
-    session.pop("user")
-    return render_template("login-register.html")
+    if "user" not in session:
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+    if session['user']:
+        # remove user from session cookie
+        flash(" - You have been logged out - ")
+        # session.clear()
+        session.pop("user")
+        return render_template("login-register.html")
 
 
 if __name__ == "__main__":
