@@ -77,9 +77,11 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     games = list(mongo.db.games.find())
+    characters = list(mongo.db.characters.find())
 
     if session["user"]:
-        return render_template("profile.html", username=username, games=games)
+        return render_template("profile.html", username=username, games=games, 
+        characters=characters)
 
     return redirect(url_for("login"))
 

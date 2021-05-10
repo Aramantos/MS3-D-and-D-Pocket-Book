@@ -36,23 +36,46 @@
         <div id="characters" class="row s6">
             <div id="char-panel" class="card-panel">
                 <h4>Characters</h4>
-                <ul class="collapsible">
-                    <li>
-                        <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Class</div>
-                        <div class="collapsible-body">
-                            <ul class="collapsible">
+                {% for character in characters %}
+                    <ul class="collapsible">
+                        {% if session.user|lower == character.created_by|lower %}
+                            {% if character.class == "Paladin" %}
                                 <li>
-                                    <div class="collapsible-header">
-                                        <i class="fab fa-d-and-d color-1 prefix"></i>Character
-                                    </div>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Paladin</div>
                                     <div class="collapsible-body">
-                                        <span>Characeter Info</span>
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+                            {% endif %}
+                            {% if character.class == "Warlock" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Warlock</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    </ul>
+                {% endfor %}
             </div>
         </div>
     </div>
