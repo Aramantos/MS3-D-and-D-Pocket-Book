@@ -65,6 +65,22 @@ a, .btn, .btn-large {
     background-color: #704326;
 }
 
+.collapsible{
+    border-top: none;
+    border-color: #41281C;
+}
+
+.collapsible-header{
+    background-color: #FEBB6C;
+    color: #41281C;
+    border-color: #41281C;
+}
+
+.collapsible-body{
+    border-color: #41281C;
+    background-color: #C78048;
+}
+
 /*-------------------------Base Template */
 
 body {
