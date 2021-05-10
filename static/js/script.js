@@ -2,6 +2,7 @@
 
     // Materialize Scripts
     $('.sidenav').sidenav({edge: "right"});
+    $('.collapsible').collapsible();
 
     // Original Scripts
     $('#login-btn').click(function() {

@@ -192,6 +192,29 @@ strong {
     color: #FEBB6C!important;
    }
 
+/* -------------------------Profile */
+
+#profile-panel{
+    padding: 5px;
+    margin-top: 5vh;
+}
+
+#profile-name{
+    margin: 0;
+}
+
+#profile-content{
+    display: flex;
+}
+
+#games{
+    width: 48%;
+}
+
+#characters{
+    width: 48%;
+}
+
 /* -------------------------Media Queries */
 
 @media screen and (max-width: 600px) {
