@@ -27,12 +27,14 @@
     //profile.html
     $('#game-add-btn').click(function() {
         $('#game-add-panel').css('display', 'block');
+        $('#char-add-panel').css('display', 'none');
     })
     $('#game-add-cancel').click(function() {
         $('#game-add-panel').css('display', 'none');
     })
     $('#char-add-btn').click(function() {
         $('#char-add-panel').css('display', 'block');
+        $('#game-add-panel').css('display', 'none');
     })
     $('#char-add-cancel').click(function() {
         $('#char-add-panel').css('display', 'none');
