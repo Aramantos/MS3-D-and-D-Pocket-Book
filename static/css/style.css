@@ -223,22 +223,14 @@ strong {
     display: flex;
 }
 
-#games{
+#games, #characters{
     width: 48%;
 }
 
-#games-panel{
+#games-panel, #char-panel{
     margin-top: 5vh;
     height: 50vh;
-}
-
-#characters{
-    width: 48%;
-}
-
-#char-panel{
-    margin-top: 5vh;
-    height: 50vh;
+    overflow: auto;
 }
 
 .profile-add-btns{
