@@ -10,7 +10,7 @@
                         <form class="col s12" method="POST" action="{{ url_for('game_add') }}">
                             <div class="row">
                                 <div class="input-field col s12">
-                                <input placeholder="Please enter your game name" id="game_name" name="game_name" type="text" class="validate">
+                                <input placeholder="Please enter your game name" id="game_name" name="game_name" type="text" class="validate" required>
                                 <label for="game_name">Game Name</label>
                                 </div>
                             </div>
@@ -38,13 +38,13 @@
                         <form class="col s12" method="POST" action="{{ url_for('char_add') }}">
                             <div class="row">
                                 <div class="input-field col s12">
-                                <input placeholder="Please enter your character name" id="character_name" name="character_name" type="text" class="validate">
+                                <input placeholder="Please enter your character name" id="character_name" name="character_name" type="text" class="validate" required>
                                 <label for="character_name">Character Name</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                <input placeholder="Please enter your characters class" id="class" name="class" type="text" class="validate">
+                                <input placeholder="Please enter your characters class" id="class" name="class" type="text" class="validate" required>
                                 <label for="class">Class</label>
                                 </div>
                             </div>
