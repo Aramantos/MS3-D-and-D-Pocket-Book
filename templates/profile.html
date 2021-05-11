@@ -1,6 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <div class="row no-bottom">
+        <div id="game-add-panel" class="card-panel col s12 m6">
+            <div class="card">
+                <div id="game-add-card-content" class="card-content">
+                    <span class="card-title">Add a Game</span>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input placeholder="Please enter your game name" id="game_name" type="text" class="validate">
+                                <label for="game_name">Game Name</label>
+                                </div>
+                            </div>
+                        </form>
+                        <div>
+                            <button id="game-submit" type="submit" class="col s6 btn-large">
+                                Submit
+                            </button>
+                            <button id="game-cancel" class="col s6 btn-large">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div id="profile-panel" class="card-panel">
@@ -82,10 +110,10 @@
 
     <div id="profile-add-btns" class="row">
         <div class="col s6">
-            <button href="" id="game-add" class="btn-large">Add Game +</button>
+            <button id="game-add-btn" class="btn-large">Add Game +</button>
         </div>
         <div class="col s6">
-            <button href="" id="char-add" class="btn-large">Add Character +</button>
+            <button id="char-add-btn" class="btn-large">Add Character +</button>
         </div>
     </div>
 

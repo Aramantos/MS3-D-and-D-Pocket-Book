@@ -245,6 +245,22 @@ strong {
     margin-top: 10vh;
 }
 
+/* Input Panels */
+
+#game-add-panel{
+    position: absolute;
+    display: none;
+    width: 70%;
+    margin-top: 25vh;
+
+    color: #704326;
+    background-color: #C78048;
+}
+
+#game-add-card-content{
+    background-color: antiquewhite;
+}
+
 /* -------------------------Media Queries */
 
 @media screen and (max-width: 600px) {
