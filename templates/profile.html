@@ -101,6 +101,125 @@
                 {% for character in characters %}
                     <ul class="collapsible">
                         {% if session.user|lower == character.created_by|lower %}
+                            {% if character.class == "Artficer" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Artficer</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
+                            {% if character.class == "Barbarian" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Barbarian</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
+                            {% if character.class == "Bard" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Bard</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
+                            {% if character.class == "Cleric" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Cleric</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
+                            {% if character.class == "Druid" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Druid</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
+                            {% if character.class == "Fighter" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Fighter</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
+                            {% if character.class == "Monk" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Monk</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
                             {% if character.class == "Paladin" %}
                                 <li>
                                     <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Paladin</div>
@@ -118,9 +237,77 @@
                                     </div>
                                 </li>
                             {% endif %}
+                            {% if character.class == "Ranger" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Ranger</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
+                            {% if character.class == "Rogue" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Rogue</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
+                            {% if character.class == "Sorcerer" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Sorcerer</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
                             {% if character.class == "Warlock" %}
                                 <li>
                                     <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Warlock</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header">
+                                                    <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
+                                                </div>
+                                                <div class="collapsible-body">
+                                                    <span>{{ character.profile_backstory }}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endif %}
+                            {% if character.class == "Wizard" %}
+                                <li>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Wizard</div>
                                     <div class="collapsible-body">
                                         <ul class="collapsible">
                                             <li>
