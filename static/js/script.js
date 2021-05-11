@@ -31,6 +31,12 @@
     $('#game-add-cancel').click(function() {
         $('#game-add-panel').css('display', 'none');
     })
+    $('#char-add-btn').click(function() {
+        $('#char-add-panel').css('display', 'block');
+    })
+    $('#char-add-cancel').click(function() {
+        $('#char-add-panel').css('display', 'none');
+    })
 
     //login-register.html
 

@@ -247,7 +247,7 @@ strong {
 
 /* Input Panels */
 
-#game-add-panel{
+#game-add-panel, #char-add-panel{
     position: absolute;
     display: none;
     width: 70%;
@@ -257,7 +257,7 @@ strong {
     background-color: #C78048;
 }
 
-#game-add-card-content{
+#game-add-card-content, #char-add-card-content{
     background-color: antiquewhite;
 }
 
