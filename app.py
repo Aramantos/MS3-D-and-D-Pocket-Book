@@ -113,6 +113,21 @@ def game_add():
     return render_template("profile.html")
 
 
+@app.route("/char_add", methods=["GET", "POST"])
+def char_add():
+    if request.method == "POST":
+        char = {
+            "character_name": request.form.get("character_name"),
+            "class": request.form.get("class"),
+            "created_by": session["user"]
+        }
+        mongo.db.characters.insert_one(char)
+        flash(" - Character Successfully Added - ")
+        return redirect(url_for("profile", username=session["user"]))
+
+    return render_template("profile.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

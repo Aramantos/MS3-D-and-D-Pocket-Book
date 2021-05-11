@@ -35,11 +35,17 @@
                 <div id="char-add-card-content" class="card-content">
                     <span class="card-title">Add a Character</span>
                     <div class="row">
-                        <form class="col s12" method="POST" action="">
+                        <form class="col s12" method="POST" action="{{ url_for('char_add') }}">
                             <div class="row">
                                 <div class="input-field col s12">
                                 <input placeholder="Please enter your character name" id="character_name" name="character_name" type="text" class="validate">
                                 <label for="character_name">Character Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input placeholder="Please enter your characters class" id="class" name="class" type="text" class="validate">
+                                <label for="class">Class</label>
                                 </div>
                             </div>
                             <div>
