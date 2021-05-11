@@ -7,22 +7,22 @@
                 <div id="game-add-card-content" class="card-content">
                     <span class="card-title">Add a Game</span>
                     <div class="row">
-                        <form class="col s12">
+                        <form class="col s12" method="POST" action="{{ url_for('game_add') }}">
                             <div class="row">
                                 <div class="input-field col s12">
-                                <input placeholder="Please enter your game name" id="game_name" type="text" class="validate">
+                                <input placeholder="Please enter your game name" id="game_name" name="game_name" type="text" class="validate">
                                 <label for="game_name">Game Name</label>
                                 </div>
                             </div>
+                            <div>
+                                <button id="game-add-submit" type="submit" class="col s6 btn-large">
+                                    <a>Submit</a>
+                                </button>
+                                <button id="game-add-cancel" class="col s6 btn-large">
+                                    Cancel
+                                </button>
+                            </div>
                         </form>
-                        <div>
-                            <button id="game-add-submit" type="submit" class="col s6 btn-large">
-                                Submit
-                            </button>
-                            <button id="game-add-cancel" class="col s6 btn-large">
-                                Cancel
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>

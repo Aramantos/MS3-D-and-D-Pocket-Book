@@ -99,6 +99,20 @@ def logout():
         return render_template("login-register.html")
 
 
+@app.route("/game_add", methods=["GET", "POST"])
+def game_add():
+    if request.method == "POST":
+        game = {
+            "game_name": request.form.get("game_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.games.insert_one(game)
+        flash(" - Game Successfully Added - ")
+        return redirect(url_for("profile", username=session["user"]))
+
+    return render_template("profile.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
