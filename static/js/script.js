@@ -3,6 +3,7 @@
     // Materialize Scripts
     $('.sidenav').sidenav({edge: "right"});
     $('.collapsible').collapsible();
+    $('select').formSelect();
 
     // Original Scripts
 

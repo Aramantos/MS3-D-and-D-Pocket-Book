@@ -42,11 +42,24 @@
                                 <label for="character_name">Character Name</label>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                <input placeholder="Please enter your characters class" id="class" name="class" type="text" class="validate" required>
-                                <label for="class">Class</label>
-                                </div>
+                            <div class="input-field col s12">
+                                <select id="class" name="class" type="text" class="validate" required>
+                                    <option value="" disabled selected>Choose your Class</option>
+                                    <option value="Artificer">Artificer</option>
+                                    <option value="Barbarian">Barbarian</option>
+                                    <option value="Bard">Bard</option>
+                                    <option value="Cleric">Cleric</option>
+                                    <option value="Druid">Druid</option>
+                                    <option value="Fighter">Fighter</option>
+                                    <option value="Monk">Monk</option>
+                                    <option value="Paladin">Paladin</option>
+                                    <option value="Ranger">Ranger</option>
+                                    <option value="Rogue">Rogue</option>
+                                    <option value="Sorcerer">Sorcerer</option>
+                                    <option value="Warlock">Warlock</option>
+                                    <option value="Wizard">Wizard</option>
+                                </select>
+                                <label>Materialize Select</label>
                             </div>
                             <div>
                                 <button id="char-add-submit" type="submit" class="col s6 btn-large">
