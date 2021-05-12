@@ -269,6 +269,23 @@ strong {
     color: #41281C;
 }
 
+#enter-delete-row{
+    margin: 20px 0 0;
+}
+
+#delete-btn, #enter-btn{
+    /* position: absolute;
+    margin-left: 22vw;
+    margin-top: -.5vh; */
+    color: #C78048!important;
+    background-color: #FEBB6C!important;
+}
+
+#delete-btn:hover, #enter-btn:hover{
+    color: #41281C!important;
+    background-color: antiquewhite!important;
+}
+
 /* -------------------------Media Queries */
 
 @media screen and (max-width: 600px) {
