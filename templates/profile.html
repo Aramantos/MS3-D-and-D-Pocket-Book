@@ -101,9 +101,9 @@
                 {% for character in characters %}
                     <ul class="collapsible">
                         {% if session.user|lower == character.created_by|lower %}
-                            {% if character.class == "Artficer" %}
+                            {% if character.class == "Artificer" %}
                                 <li>
-                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Artficer</div>
+                                    <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Artificer</div>
                                     <div class="collapsible-body">
                                         <ul class="collapsible">
                                             <li>
