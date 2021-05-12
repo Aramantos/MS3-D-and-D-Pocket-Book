@@ -44,11 +44,13 @@
 
 /* Overwrites */
 
-a, .btn, .btn-large {
-    color: #C78048!important;
+a {
+    color: #FEBB6C!important;
+    background-color: #704326!important;
 }
 
 .btn, .btn-large{
+    color: #C78048!important;
     background-color: #FEBB6C!important;
 }
 
