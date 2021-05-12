@@ -167,6 +167,13 @@ strong {
 
 /* Form Colors */
 
+   /* botton border color */
+   input[type=text]:not(.browser-default){
+    border-bottom: 1px solid #FEBB6C;
+   }
+   input[type=password]:not(.browser-default){
+    border-bottom: 1px solid #FEBB6C;
+   }
   /* label color */
    .input-field label {
      color: #FEBB6C!important;
@@ -193,7 +200,7 @@ strong {
      border-bottom: 1px solid #945227!important;
      box-shadow: 0 1px 0 0 #f50303e6!important;
    }
-      /* label focus color */
+   /* label focus color */
    .input-field input[type=password]:focus + label {
      color: #FEBB6C!important;
    }
