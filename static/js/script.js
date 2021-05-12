@@ -12,17 +12,25 @@
         $('#login-panel').css('visibility', 'visible');
         $('#login-panel').css('display', 'block');
         $('#reg-panel').css('display', 'none');
+        $("#reg-username").val("");
+        $("#reg-password").val("");
     })
     $('#reg-btn').click(function() {
         $('#reg-panel').css('visibility', 'visible');
         $('#reg-panel').css('display', 'block');
         $('#login-panel').css('display', 'none');
+        $("#log-username").val("");
+        $("#log-password").val("");
     })
     $('#log-cancel').click(function() {
         $('#login-panel').css('visibility', 'hidden');
+        $("#log-username").val("");
+        $("#log-password").val("");
     })
     $('#reg-cancel').click(function() {
         $('#reg-panel').css('visibility', 'hidden');
+        $("#reg-username").val("");
+        $("#reg-password").val("");
     })
 
     //profile.html
