@@ -128,6 +128,13 @@ def char_add():
     return render_template("profile.html")
 
 
+@app.route("/delete_game/<game_id>")
+def delete_game(game_id):
+    mongo.db.games.remove({"_id": ObjectId(game_id)})
+    flash(" - Game Successfully Deleted - ")
+    return redirect(url_for("profile", username=session["user"]))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

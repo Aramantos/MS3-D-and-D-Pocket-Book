@@ -98,13 +98,13 @@
                                     <i class="fab fa-d-and-d color-1 prefix"></i>{{ game.game_name }}
                                 </div>                              
                                 <div class="collapsible-body">
-                                        <span>Session Number</span>
-                                        <br>
-                                        <span>Session Description</span>
-                                        <div id="enter-delete-row" class="row">
-                                            <a href="" id="enter-btn" class="btn">ENTER</a>
-                                            <a href="" id="delete-btn" class="btn">DELETE</a>
-                                        </div>
+                                    <span>Session Number</span>
+                                    <br>
+                                    <span>Session Description</span>
+                                    <div id="enter-delete-row" class="row">
+                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                        <a href="{{ url_for('delete_game', game_id=game._id) }}" id="delete-btn" class="btn">DELETE</a>
+                                    </div>
                                 </div>
                             </li>
                         {% endif %}
