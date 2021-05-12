@@ -89,7 +89,7 @@
     <div id="profile-content">
         <div id="games" class="row s6">
             <div id="games-panel" class="card-panel">
-                <h4>Games</h4>
+                <h4 id="games-header">Games</h4>
                 {% for game in games %}
                     <ul class="collapsible">
                         {% if session.user|lower == game.created_by|lower %}
@@ -110,7 +110,7 @@
         </div>
         <div id="characters" class="row s6">
             <div id="char-panel" class="card-panel">
-                <h4>Characters</h4>
+                <h4 id="chars-header">Characters</h4>
                 {% for character in characters %}
                     <ul class="collapsible">
                         {% if session.user|lower == character.created_by|lower %}

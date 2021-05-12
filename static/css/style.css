@@ -140,7 +140,7 @@ strong {
 }
 
 #log-title, #reg-title{
-    color: #41281C;
+    color: antiquewhite;
 }
 
 #login-panel{
@@ -159,6 +159,10 @@ strong {
     margin-bottom: 0;
 }
 
+#log-username, #reg-username, #log-password, #reg-password{
+    color: antiquewhite;
+}
+
 /* Form Colors */
 
   /* label color */
@@ -171,16 +175,19 @@ strong {
    }
    /* label underline focus color */
    .input-field input[type=text]:focus {
+     color: #41281C;
      border-bottom: 1px solid #41281C!important;
      box-shadow: 0 1px 0 0 #41281C!important;
    }
    /* valid color */
    .input-field input[type=text].valid {
+     color: #41281C;  
      border-bottom: 1px solid #FEBB6C!important;
      box-shadow: 0 1px 0 0 #FEBB6C!important;
    }
    /* invalid color */
    .input-field input[type=text].invalid {
+     color: #41281C;
      border-bottom: 1px solid #945227!important;
      box-shadow: 0 1px 0 0 #f50303e6!important;
    }
@@ -216,11 +223,16 @@ strong {
 }
 
 #profile-name{
+    color: antiquewhite;
     margin: 0;
 }
 
 #profile-content{
     display: flex;
+}
+
+#games-header, #chars-header{
+    color: antiquewhite;
 }
 
 #games, #characters{
@@ -251,6 +263,10 @@ strong {
 
 #game-add-card-content, #char-add-card-content{
     background-color: antiquewhite;
+}
+
+.input, .dropdown-content li>a, .dropdown-content li>span {
+    color: #41281C;
 }
 
 /* -------------------------Media Queries */
