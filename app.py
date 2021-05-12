@@ -135,6 +135,13 @@ def delete_game(game_id):
     return redirect(url_for("profile", username=session["user"]))
 
 
+@app.route("/delete_character/<character_id>")
+def delete_character(character_id):
+    mongo.db.characters.remove({"_id": ObjectId(character_id)})
+    flash(" - Character Successfully Deleted - ")
+    return redirect(url_for("profile", username=session["user"]))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
