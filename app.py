@@ -142,6 +142,11 @@ def delete_character(character_id):
     return redirect(url_for("profile", username=session["user"]))
 
 
+@app.route("/edit_game/<game_id>")
+def edit_game(game_id):
+    return render_template("game.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
