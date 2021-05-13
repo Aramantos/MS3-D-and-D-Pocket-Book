@@ -142,9 +142,13 @@ def delete_character(character_id):
     return redirect(url_for("profile", username=session["user"]))
 
 
-@app.route("/edit_game/<game_id>")
+@app.route("/edit_game/<game_id>", methods=["GET", "POST"])
 def edit_game(game_id):
-    return render_template("game.html")
+    game = mongo.db.games.find_one(
+        {"_id": ObjectId(game_id)})
+    current_name = game["game_name"]
+    
+    return render_template("game.html", current_name=current_name)
 
 
 if __name__ == "__main__":

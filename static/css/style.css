@@ -46,7 +46,7 @@
 
 a {
     color: #FEBB6C!important;
-    background-color: #704326!important;
+    background-color: #704326;
 }
 
 .btn, .btn-large{
@@ -293,6 +293,56 @@ strong {
 #delete-btn:hover, #enter-btn:hover{
     color: #41281C!important;
     background-color: antiquewhite!important;
+}
+
+/* -------------------------Game Page */
+
+#session_num{
+    font-size: xx-large;
+    margin: 0;
+    color: antiquewhite;
+    margin-top: 2vh;
+}
+
+#session_desc{
+    margin-top: 2vh;
+    padding: 0px 18px;
+}
+
+#session_desc-title{
+    /* text-align: left; */
+    font-size: x-large;
+    color: antiquewhite;
+    margin: 0;
+}
+
+#textarea2{
+    height: 30vh;
+    max-height: 30vh;
+    color: antiquewhite;
+}
+
+textarea.materialize-textarea {
+    background-color: transparent;
+    border: 2px solid antiquewhite;
+    border-radius: 0;
+} 
+
+textarea.materialize-textarea:focus:not([readonly]) {
+    border: 2px solid #C78048!important;
+    box-shadow: none;
+}
+
+#item_desc{
+    margin-top: 2vh;
+    padding: 0px 18px;
+}
+
+#item_desc-title{
+    /* text-align: left; */
+    font-size: x-large;
+    color: antiquewhite;
+    margin: 0;
 }
 
 /* -------------------------Media Queries */
