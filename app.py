@@ -147,8 +147,10 @@ def edit_game(game_id):
     game = mongo.db.games.find_one(
         {"_id": ObjectId(game_id)})
     current_name = game["game_name"]
-    
-    return render_template("game.html", current_name=current_name)
+
+    items = list(mongo.db.items.find())
+
+    return render_template("game.html", current_name=current_name, items=items)
 
 
 if __name__ == "__main__":

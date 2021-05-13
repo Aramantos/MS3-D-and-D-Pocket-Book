@@ -17,15 +17,20 @@
             <div id="item-panel" class="card-panel">
                 <h3 id="item-desc-title">Item List</h3>
                 <div id="item-list-panel" class="card-panel">
+                    {% for item in items %}
                         <ul id="item-list" class="collapsible">
-                            <li>
-                                <div class="collapsible-header">
-                                    <i class="fab fa-d-and-d color-1 prefix"></i>Item
-                                </div>                              
-                                <div class="collapsible-body">
-                            </div>
-                        </li>
-                    </ul>
+                            {% if session.user|lower == item.created_by|lower %}
+                                {% if item.game_name == current_name %}
+                                    <li>
+                                        <div class="collapsible-header">
+                                            <i class="fab fa-d-and-d color-1 prefix"></i>{{ item.item_name }}
+                                        </div>                              
+                                        <div class="collapsible-body"></div>
+                                    </li>
+                                {% endif %}
+                            {% endif %}
+                        </ul>
+                    {% endfor %}
                 </div>
                 <div id="item-btns" class="col s6">
                     <button id="list-add-btn" class="btn-large">Add</button>
