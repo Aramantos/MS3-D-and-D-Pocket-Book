@@ -307,6 +307,7 @@ strong {
 #session_desc{
     margin-top: 2vh;
     padding: 0px 18px;
+    margin-bottom: 0;
 }
 
 #session_desc-title{
@@ -336,6 +337,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 #item_desc{
     margin-top: 2vh;
     padding: 0px 18px;
+    margin-bottom: 0;
 }
 
 #item_desc-title{
