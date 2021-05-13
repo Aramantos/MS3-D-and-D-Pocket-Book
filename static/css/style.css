@@ -297,20 +297,20 @@ strong {
 
 /* -------------------------Game Page */
 
-#session_num{
+#session-num{
     font-size: xx-large;
     margin: 0;
     color: antiquewhite;
     margin-top: 2vh;
 }
 
-#session_desc{
+#session-desc{
     margin-top: 2vh;
     padding: 0px 18px;
     margin-bottom: 0;
 }
 
-#session_desc-title{
+#session-desc-title{
     /* text-align: left; */
     font-size: x-large;
     color: antiquewhite;
@@ -321,6 +321,7 @@ strong {
     height: 30vh;
     max-height: 30vh;
     color: antiquewhite;
+    overflow: auto;
 }
 
 textarea.materialize-textarea {
@@ -334,17 +335,40 @@ textarea.materialize-textarea:focus:not([readonly]) {
     box-shadow: none;
 }
 
-#item_desc{
+#item-panel{
+    margin-top: 2vh;
+    padding: 0px 18px;
+    margin-bottom: 0;
+    height: 34.4vh;
+}
+
+#item-desc{
     margin-top: 2vh;
     padding: 0px 18px;
     margin-bottom: 0;
 }
 
-#item_desc-title{
+#item-desc-title{
     /* text-align: left; */
     font-size: x-large;
     color: antiquewhite;
     margin: 0;
+}
+
+#item-list-panel{
+    margin-top: 0;
+    overflow: auto;
+    height: 23vh;
+    background-color: #faebd794;
+}
+
+#item-list{
+    max-height: 20vh;
+    margin: 0;
+}
+
+#game-btns{
+    margin-top: 0;
 }
 
 /* -------------------------Media Queries */
