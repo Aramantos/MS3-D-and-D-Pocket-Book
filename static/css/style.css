@@ -118,6 +118,9 @@ strong {
 #flash-message{
     width: fit-content;
     margin: auto;
+    position: absolute;
+    left: 0; 
+    right: 0;    
     border-radius: 25px;
     padding: 4px;
     margin-top: 3vh;
@@ -135,7 +138,7 @@ strong {
 }
 
 .card-panel{
-    margin-top: 15vh;
+    margin-top: 20vh;
     background-color: #8c5736b3;
     border: #41281C;
     border-width: 10px;
@@ -356,6 +359,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 #item-list-panel{
+    padding: 0;
     margin-top: 0;
     overflow: auto;
     height: 23vh;
