@@ -121,6 +121,7 @@ strong {
     position: absolute;
     left: 0; 
     right: 0;    
+    top: 6vh;
     border-radius: 25px;
     padding: 4px;
     margin-top: 3vh;
@@ -408,10 +409,37 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 /* -------------------------Media Queries */
 
+@media screen and (max-width: 1200px) {
+    #log-title, #reg-title{
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #log-title, #reg-title{
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #flash-message{
+        font-size: x-large;
+    }
+}
+
 @media screen and (max-width: 600px) {
     #nav-title {
         font-size: 2.5em;
         width: unset;
+    }
+    #log-title, #reg-title{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #flash-message {
+        font-size: large;
     }
 }
 
@@ -419,5 +447,63 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #nav-title {
         font-size: 1.9em;
         margin-top: 9px;
+    }
+    #log-reg-btns{
+        margin: 0;
+        margin-right: 48px;
+    }
+}
+
+@media screen and (max-height: 950px) {
+    #log-reg-btns{
+        margin-top: 10vh;
+    }
+}
+
+@media screen and (max-height: 900px) {
+    .card-panel{
+        margin-top: 15vh;
+    }
+}
+
+@media screen and (max-height: 850px) {
+    .card-panel{
+        margin-top: 10vh;
+    }
+    #flash-message{
+        top: 6vh;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    #flash-message{
+        top: 7vh;
+    }
+}
+
+@media screen and (max-height: 750px) {
+    .card-panel{
+        margin-top: 5vh;
+    }
+    #log-reg-btns{
+        margin-top: 7vh;
+    }
+    #flash-message{
+        top: 8vh;
+    }
+}
+
+@media screen and (max-height: 650px) {
+    .card-panel{
+        margin-top: 3vh;
+    }
+    #log-reg-btns{
+        margin-top: 5vh;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    #log-reg-btns{
+        margin-top: 0;
     }
 }
