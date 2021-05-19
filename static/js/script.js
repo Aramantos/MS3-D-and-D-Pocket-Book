@@ -49,6 +49,14 @@
         $('#char-add-panel').css('display', 'none');
     })
 
+    //game.html
+    $('#item-add-btn').click(function() {
+        $('#item-add-panel').css('display', 'block');
+    })
+    $('#item-add-cancel').click(function() {
+        $('#item-add-panel').css('display', 'none');
+    })
+
     //login-register.html
 
     //login-register.html

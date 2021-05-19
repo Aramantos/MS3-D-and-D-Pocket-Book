@@ -1,6 +1,41 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <div class="row no-bottom">
+        <div id="item-add-panel" class="card-panel col s12 m6">
+            <div class="card">
+                <div id="item-add-card-content" class="card-content">
+                    <span class="card-title">Add an Item</span>
+                    <div class="row">
+                        <form class="col s12" method="POST" action="{{ url_for('item_add') }}">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                <input autocomplete="off" placeholder="Please enter your item name" 
+                                    id="item_name" name="item_name" type="text" class="validate" required>
+                                <label for="item_name">Item Name</label>
+                                </div>
+                                <div class="input-field col s12">
+                                <input autocomplete="off" placeholder="Please enter your game name" 
+                                   value="{{ current_name }}" id="game_name" name="game_name" type="text" class="validate" required>
+                                <label for="game_name">Game Name</label>
+                                </div>
+                            </div>
+                            <div>
+                                <input value="{{ game_id }}" id="game_id" name="game_id" type="hidden">
+                                <button id="item-add-submit" type="submit" class="col s6 btn-large">
+                                    Submit 
+                                </button>
+                                <a id="item-add-cancel" class="col s6 btn-large">
+                                    Cancel
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <h2 id="session-num">{{ current_name }} - Session Number : {{ session_num }}</h2>
     <div class="row">
         <div class="col s12">
@@ -33,10 +68,10 @@
                     {% endfor %}
                 </div>
                 <div id="item-btns" class="col s6">
-                    <button id="list-add-btn" class="btn-large">Add</button>
+                    <button id="item-add-btn" class="btn-large">Add</button>
                 </div>
                 <div class="col s6">
-                    <button id="list-delete-btn" class="btn-large">Delete</button>
+                    <button id="item-delete-btn" class="btn-large">Delete</button>
                 </div>
             </div>
         </div>
