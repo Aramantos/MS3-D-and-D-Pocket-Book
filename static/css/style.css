@@ -124,6 +124,23 @@ strong {
     border-radius: 25px;
     padding: 4px;
     margin-top: 3vh;
+    opacity: 0;
+
+    animation-name: flash;
+    animation-duration: 7s;
+    animation-iteration-count: 1;
+}
+
+@keyframes flash {
+  0% {
+    opacity:0;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
 }
 
 /* .sidenav li{
