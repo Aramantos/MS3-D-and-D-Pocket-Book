@@ -248,7 +248,7 @@ strong {
 
 #profile-panel{
     padding: 5px;
-    margin-top: 5vh;
+    margin-top: 9vh;
 }
 
 #profile-name{
@@ -269,13 +269,13 @@ strong {
 }
 
 #games-panel, #char-panel{
-    margin-top: 5vh;
+    margin-top: 3vh;
     height: 50vh;
     overflow: auto;
 }
 
-.profile-add-btns{
-    margin-top: 10vh;
+#profile-add-btns{
+    margin-top: 5vh;
 }
 
 /* Input Panels */
