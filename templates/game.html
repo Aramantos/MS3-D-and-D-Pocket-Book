@@ -7,7 +7,7 @@
                 <div id="item-add-card-content" class="card-content">
                     <span class="card-title">Add an Item</span>
                     <div class="row">
-                        <form class="col s12" method="POST" action="{{ url_for('item_add') }}">
+                        <form class="col s12" method="POST" action="{{ url_for('item_add', game_id=game_id) }}">
                             <div class="row">
                                 <div class="input-field col s12">
                                 <input autocomplete="off" placeholder="Please enter your item name" 
@@ -16,12 +16,13 @@
                                 </div>
                                 <div class="input-field col s12">
                                 <input autocomplete="off" placeholder="Please enter your game name" 
-                                   value="{{ current_name }}" id="game_name" name="game_name" type="text" class="validate" required>
+                                   value="{{ current_name }}" id="game_name" name="game_name"
+                                   type="text" class="validate" disabled required>
                                 <label for="game_name">Game Name</label>
                                 </div>
                             </div>
                             <div>
-                                <input value="{{ game_id }}" id="game_id" name="game_id" type="hidden">
+                                <!-- <input value="{{ game_id }}" id="game_id_items_add" name="game_id_items_add" type="hidden"> -->
                                 <button id="item-add-submit" type="submit" class="col s6 btn-large">
                                     Submit 
                                 </button>
@@ -60,7 +61,12 @@
                                         <div class="collapsible-header">
                                             <i class="fab fa-d-and-d color-1 prefix"></i>{{ item.item_name }}
                                         </div>                              
-                                        <div class="collapsible-body"></div>
+                                        <div class="collapsible-body">
+                                            <div id="enter-delete-row" class="row">
+                                                <a disabled href="" id="enter-btn" class="btn">ENTER</a>
+                                                <a href="{{ url_for('delete_item', item_id=item._id, game_id=game_id) }}"id="delete-btn" class="btn">DELETE</a>
+                                            </div>
+                                        </div>
                                     </li>
                                 {% endif %}
                             {% endif %}
@@ -71,7 +77,7 @@
                     <button id="item-add-btn" class="btn-large">Add</button>
                 </div>
                 <div class="col s6">
-                    <button id="item-delete-btn" class="btn-large">Delete</button>
+                    <button disabled id="item-delete-btn" class="btn-large">Delete</button>
                 </div>
             </div>
         </div>
