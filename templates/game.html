@@ -22,7 +22,6 @@
                                 </div>
                             </div>
                             <div>
-                                <!-- <input value="{{ game_id }}" id="game_id_items_add" name="game_id_items_add" type="hidden"> -->
                                 <button id="item-add-submit" type="submit" class="col s6 btn-large">
                                     Submit 
                                 </button>
@@ -92,10 +91,10 @@
 
     <div id="game-btns" class="row">
         <div class="col s6">
-            <button id="game-back-btn" class="btn-large">Back</button>
+            <a href="{{ url_for('profile', username=session['user']) }}" id="game-back-btn" class="btn-large">Back</a>
         </div>
         <div class="col s6">
-            <button id="char-update-btn" class="btn-large">Update</button>
+            <a href="" id="char-update-btn" class="btn-large">Update</a>
         </div>
     </div>
 

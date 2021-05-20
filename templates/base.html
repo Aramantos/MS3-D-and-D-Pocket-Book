@@ -22,7 +22,9 @@
                 <a href="#" id="nav-title" class="fas fa-dragon"> D&D Pocket Book</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><strong><a href="#">Profile</a></strong></li>
+                    {% if session.user %}
+                        <li><strong><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></strong></li>
+                    {% endif %}
                     <li><strong><a href="#">Contact</a></strong></li>
                     <li><strong><a href="#">FAQ</a></strong></li>
                     <li><strong><a class="btn" href="{{ url_for('logout') }}">Log Out</a></strong></li>
@@ -30,7 +32,9 @@
             </div>
         </nav>
         <ul class="sidenav right-aligned" id="mobile-demo">
-            <li><strong><a class="" href="#">Profile</a></strong></li>
+            {% if session.user %}
+                <li><strong><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></strong></li>
+            {% endif %}
             <li><strong><a href="#">Contact</a></strong></li>
             <li><strong><a href="#">FAQ</a></strong></li>
             <li><strong><a class="btn" href="{{ url_for('logout') }}">Log Out</a></strong></li>
