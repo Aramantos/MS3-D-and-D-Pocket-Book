@@ -121,10 +121,9 @@ strong {
     position: absolute;
     left: 0; 
     right: 0;    
-    top: 6vh;
+    top: 10vh;
     border-radius: 25px;
     padding: 4px;
-    margin-top: 3vh;
     opacity: 0;
 
     animation-name: flash;
@@ -470,14 +469,11 @@ textarea.materialize-textarea:focus:not([readonly]) {
     .card-panel{
         margin-top: 10vh;
     }
-    #flash-message{
-        top: 6vh;
-    }
 }
 
 @media screen and (max-height: 800px) {
     #flash-message{
-        top: 7vh;
+        top: 9vh;
     }
 }
 

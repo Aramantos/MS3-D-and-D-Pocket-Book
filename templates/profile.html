@@ -118,7 +118,8 @@
                 {% for character in characters %}
                     <ul class="collapsible">
                         {% if session.user|lower == character.created_by|lower %}
-                            {% if character.class == "Artificer" %}
+                            {% if character.class == "Artificer" %} 
+                                <!-- if length is > 0 -->
                                 <li>
                                     <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>Artificer</div>
                                     <div class="collapsible-body">
@@ -130,7 +131,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -151,7 +152,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -172,7 +173,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -193,7 +194,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -214,7 +215,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -235,7 +236,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -256,7 +257,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -277,7 +278,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -298,7 +299,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -319,7 +320,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -340,7 +341,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -361,7 +362,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
@@ -382,7 +383,7 @@
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
                                                     <div id="enter-delete-row" class="row">
-                                                        <a href="" id="enter-btn" class="btn">ENTER</a>
+                                                        <a href="{{ url_for('edit_character', character_id=character._id) }}" id="enter-btn" class="btn">ENTER</a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}" id="delete-btn" class="btn">DELETE</a>
                                                     </div>
                                                 </div>
