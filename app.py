@@ -186,12 +186,11 @@ def delete_item(item_id, game_id):
 def edit_character(character_id):
     character = mongo.db.characters.find_one_or_404(
         {"_id": ObjectId(character_id)})
-    current_character = character["character_name"]
+    character_name = character["character_name"]
+    character_class = character["class"]
 
-    characters = list(mongo.db.characters.find())
-
-    return render_template("character.html", characters=characters,
-    current_character=current_character, character_id=character_id)
+    return render_template("character.html",
+    character_name=character_name, character_class=character_class)
 
 
 if __name__ == "__main__":
