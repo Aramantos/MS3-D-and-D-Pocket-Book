@@ -345,7 +345,7 @@ input[type=password]:not(.browser-default) {
 
 /* -------------------------Game Page */
 
-#session-num {
+#session-title-num {
     font-size: xx-large;
     margin: 0;
     color: antiquewhite;
@@ -359,13 +359,12 @@ input[type=password]:not(.browser-default) {
 }
 
 #session-desc-title {
-    /* text-align: left; */
     font-size: x-large;
     color: antiquewhite;
     margin: 0;
 }
 
-#textarea2 {
+#session-desc-text {
     height: 30vh;
     max-height: 30vh;
     color: antiquewhite;
@@ -414,6 +413,28 @@ textarea.materialize-textarea:focus:not([readonly]) {
 #item-list {
     max-height: 20vh;
     margin: 0;
+}
+
+
+
+#item-desc{
+    margin-top: 2vh;
+    padding: 0px 18px;
+    margin-bottom: 0;
+}
+
+#item-desc-title {
+    font-size: xx-large;
+    margin: 0;
+    color: antiquewhite;
+    margin-top: 2vh;
+}
+
+#item-desc-text {
+    height: 30vh;
+    max-height: 30vh;
+    color: antiquewhite;
+    overflow: auto;
 }
 
 #game-btns {
