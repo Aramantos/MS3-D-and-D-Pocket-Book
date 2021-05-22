@@ -3,47 +3,59 @@
 
     <h2 id="character-name">{{ character_name }} - {{ character_class }}</h2>
 
-    <div class="row">
-        <div class="col s12 m6">
-            <div id="char-box-1" class="card-panel">
-                <h3 id="char-box-1-title">Character Profile/Backstory</h3>
-                <textarea id="char-box-1-text" class="materialize-textarea" data-length="120"></textarea>
-                <label for="char-box-1-text"id="char-box-1-text-label"></label>
+    <form method="POST" action="{{ url_for('update_character', character_id=character._id) }}">
+        <div class="row">
+            <div class="col s12 m6">
+                <div id="char-box-1" class="card-panel">
+                    <h3 id="char-box-1-title">Character Profile/Backstory</h3>
+                    <textarea id="char-box-1-text" name="char-box-1-text" class="materialize-textarea" data-length="120">
+                        {{ character.profile_backstory }}
+                    </textarea>
+                    <label for="char-box-1-text"id="char-box-1-text-label"></label>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div id="char-box-2" class="card-panel">
+                    <h3 id="char-box-2-title">Player Notes</h3>
+                    <textarea id="char-box-2-text" name="char-box-2-text" class="materialize-textarea" data-length="120">
+                        {{ character.player_notes }}
+                    </textarea>
+                    <label for="char-box-2-text"id="char-box-2-text-label"></label>
+                </div>
             </div>
         </div>
-        <div class="col s12 m6">
-            <div id="char-box-2" class="card-panel">
-                <h3 id="char-box-2-title">Player Notes</h3>
-                <textarea id="char-box-2-text" class="materialize-textarea" data-length="120"></textarea>
-                <label for="char-box-2-text"id="char-box-2-text-label"></label>
-            </div>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col s12 m6">
-            <div id="char-box-3" class="card-panel">
-                <h3 id="session-desc-title">Combat Style/Spell Preferences</h3>
-                <textarea id="char-box-3-text" class="materialize-textarea" data-length="120"></textarea>
-                <label for="char-box-3-text"id="char-box-3-text-label"></label>
+        <div class="row">
+            <div class="col s12 m6">
+                <div id="char-box-3" class="card-panel">
+                    <h3 id="session-desc-title">Combat Style/Spell Preferences</h3>
+                    <textarea id="char-box-3-text" name="char-box-3-text" class="materialize-textarea" data-length="120">
+                        {{ character.combat_spells }}
+                    </textarea>
+                    <label for="char-box-3-text"id="char-box-3-text-label"></label>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div id="char-box-4" class="card-panel">
+                    <h3 id="char-box-4-title">Character Development</h3>
+                    <textarea id="char-box-4-text" name="char-box-4-text" class="materialize-textarea" data-length="120">
+                        {{ character.character_development }}
+                    </textarea>
+                    <label for="char-box-4-text"id="char-box-4-text-label"></label>
+                </div>
             </div>
         </div>
-        <div class="col s12 m6">
-            <div id="char-box-4" class="card-panel">
-                <h3 id="char-box-4-title">Character Development</h3>
-                <textarea id="char-box-4-text" class="materialize-textarea" data-length="120"></textarea>
-                <label for="char-box-4-text"id="char-box-4-text-label"></label>
-            </div>
-        </div>
-    </div>
 
-    <div id="game-btns" class="row">
-        <div class="col s6">
-            <a href="{{ url_for('profile', username=session['user']) }}" id="game-back-btn" class="btn-large">Back</a>
+        <div id="game-btns" class="row">
+            <div class="col s6">
+                <a href="{{ url_for('profile', username=session['user']) }}" id="game-back-btn" class="btn-large">Back</a>
+            </div>
+            <div class="col s6">
+                <button type="submit" id="char-update-btn" class="btn-large">Update</a>
+            </div>
         </div>
-        <div class="col s6">
-            <a href="" id="char-update-btn" class="btn-large">Update</a>
-        </div>
-    </div>
+
+        
+    </form>
 
 {% endblock %}

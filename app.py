@@ -127,6 +127,10 @@ def char_add():
         char = {
             "character_name": request.form.get("character_name"),
             "class": request.form.get("class"),
+            "profile_backstory": "",
+            "player_notes": "",
+            "combat_spells": "",
+            "character_development": "",
             "created_by": session["user"]
         }
         mongo.db.characters.insert_one(char)
@@ -195,7 +199,32 @@ def edit_character(character_id):
     character_name = character["character_name"]
     character_class = character["class"]
 
-    return render_template("character.html",
+    return render_template("character.html", character=character,
+    character_name=character_name, character_class=character_class)
+
+
+@app.route("/update_character/<character_id>", methods=["GET", "POST"])
+def update_character(character_id):
+    character = mongo.db.characters.find_one_or_404(
+        {"_id": ObjectId(character_id)})
+    character_name = character["character_name"]
+    character_class = character["class"]
+
+    if request.method == "POST":
+        submit = {
+            "character_name": character_name,
+            "class": character_class,
+            "profile_backstory": request.form.get("char-box-1-text"),
+            "player_notes": request.form.get("char-box-2-text"),
+            "combat_spells": request.form.get("char-box-3-text"),
+            "character_development": request.form.get("char-box-4-text"),
+            "created_by": session["user"]
+        }
+        mongo.db.characters.update({"_id": ObjectId(character_id)}, submit)
+        flash("Character Successfully Updated")
+
+    character = mongo.db.characters.find_one({"_id": ObjectId(character_id)})
+    return render_template("character.html", character=character,
     character_name=character_name, character_class=character_class)
 
 
