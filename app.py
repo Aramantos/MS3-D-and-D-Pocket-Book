@@ -80,11 +80,17 @@ def profile(username):
     games = list(mongo.db.games.find())
     characters = list(mongo.db.characters.find())
 
-    # artificers = list(mongo.db.characters.find("class", "Artificer"))
+    classes = {}
+    for character in characters:
+        if session["user"].lower() == character["created_by"].lower():
+            if not character["class"] in classes:
+                classes[character["class"]] = []
+            classes[character["class"]].append(character)
 
     if session["user"]:
-        return render_template("profile.html", username=username, games=games, 
-        characters=characters)
+        return render_template(
+            "profile.html", username=username, games=games, classes=classes
+        )
 
     return redirect(url_for("login"))
 
