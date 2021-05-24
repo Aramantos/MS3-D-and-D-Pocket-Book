@@ -166,6 +166,8 @@ def edit_game(game_id):
     if not is_object_id_valid(game_id):
         abort(404)
 
+    sessions = list(mongo.db.sessions.find())
+
     game = mongo.db.games.find_one_or_404(
         {"_id": ObjectId(game_id)})
     current_name = game["game_name"]
@@ -174,7 +176,7 @@ def edit_game(game_id):
 
     return render_template(
         "game.html", current_name=current_name,
-        items=items, game_id=game_id)
+        items=items, game_id=game_id, sessions=sessions)
 
 
 # @app.route(

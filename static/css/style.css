@@ -348,6 +348,10 @@ input[type=password]:not(.browser-default) {
     margin-top: 2vh;
 }
 
+#session-btn{
+    margin-top: 2vh;
+}
+
 #session-desc {
     margin-top: 2vh;
     padding: 0px 18px;
@@ -535,13 +539,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     }
     100% {
         transform : scale(1);
-
     }
-}
-    @keyframes displaceContent {
-    from { transform : translateY(0em) }
-    to   { transform : translateY(3em) } /* slide down to make room for advertisements */
-}
 }
 
 /* -------------------------Media Queries */

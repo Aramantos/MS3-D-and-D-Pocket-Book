@@ -6,6 +6,7 @@
      });
      $('.collapsible').collapsible();
      $('select').formSelect();
+     $('.dropdown-trigger').dropdown();
 
      // Original Scripts
 
