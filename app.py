@@ -8,7 +8,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -167,6 +166,40 @@ def edit_game(game_id):
         items=items, game_id=game_id)
 
 
+# @app.route(
+#     "/update_session/<session_id>/<game_id>", methods=["GET", "POST"])
+# def update_session(session_id, game_id):
+#     session = mongo.db.sessions.find_one_or_404(
+#         {"_id": ObjectId(session_id)})
+#     session_num = session["session_num"]
+#     session_desc = session["session_desc"]
+#     session_game_name = session["game_name"]
+#     created_by = session["created_by"]
+
+#     game = mongo.db.games.find_one_or_404(
+#         {"_id": ObjectId(game_id)})
+#     game_name = game["game_name"]
+
+#     items = list(mongo.db.items.find())
+
+#     if request.method == "POST":
+#         submit = {
+#             "session_num": session_num,
+#             "session_desc": request.form.get("session-desc-text"),
+#             "session_game_name": session_game_name,
+#             "created_by": created_by
+#         }
+#         mongo.db.sessions.update({"_id": ObjectId(session_id)}, submit)
+#         flash("Game Session Successfully Updated")
+
+#         return render_template(
+#             "game.html", session=session, session_num=session_num,
+#             session_desc=session_desc, session_game_name=session_game_name,
+#             created_by=created_by, current_name=current_name,
+#             game_name=game_name, items=items, game_id=game_id
+#         )
+
+
 @app.route("/item_add/<game_id>", methods=["GET", "POST"])
 def item_add(game_id):
     game_name = mongo.db.games.find_one_or_404(
@@ -199,8 +232,9 @@ def edit_character(character_id):
     character_name = character["character_name"]
     character_class = character["class"]
 
-    return render_template("character.html", character=character,
-    character_name=character_name, character_class=character_class)
+    return render_template(
+        "character.html", character=character,
+        character_name=character_name, character_class=character_class)
 
 
 @app.route("/update_character/<character_id>", methods=["GET", "POST"])
@@ -224,8 +258,9 @@ def update_character(character_id):
         flash("Character Successfully Updated")
 
     character = mongo.db.characters.find_one({"_id": ObjectId(character_id)})
-    return render_template("character.html", character=character,
-    character_name=character_name, character_class=character_class)
+    return render_template(
+        "character.html", character=character,
+        character_name=character_name, character_class=character_class)
 
 
 if __name__ == "__main__":

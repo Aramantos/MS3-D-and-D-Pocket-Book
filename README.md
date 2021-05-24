@@ -1,4 +1,4 @@
-Live Link - [https://aramantos.github.io/MS2-The-Einstein-Riddle/](https://aramantos.github.io/MS2-The-Einstein-Riddle/)
+Live Link - [https://d-and-d-pocket-book.herokuapp.com/](https://d-and-d-pocket-book.herokuapp.com/)
 
 ---
 
@@ -32,9 +32,9 @@ Live Link - [https://aramantos.github.io/MS2-The-Einstein-Riddle/](https://arama
 
 ---
 
-This riddle is said to have been designed by Albert Einstein when he was a young man. Theorised that only two per cent of the population will be able to solve it despite its simplistic nature.
+The Dungeons and Dragons Pocket book is an application designed for note taking in a more streamlined, structured user firendly way.
 
-I designed this webpage to supply the riddle in an easily digestible and interactive environment. Rather than hand-writing rows and columns, a pre-built and responsive site to be easily shared with friends and family.
+The UX is focused on being able to create and edit a list of characters and games and storing detailed notations.
 
 ---
 
@@ -46,34 +46,40 @@ I designed this webpage to supply the riddle in an easily digestible and interac
 
 #### **User Stories**
 
-“This riddle sounds interesting but I don't know how or where to start”
+"So much happened during our last session I couldnt write it all down quickly enough”
 
-“I was halfway through the riddle when I realised I made a mistake, so I gave up”
+“My notes have no sense of order or logic to them, I need a better system”
 
-“I wonder if my friends would be able to do this quicker than I did?”
+“I cant remember where we met that character in the story, or what he/she said”
 
 #### **Developer Stories**
 
-"As a developer in training, I wanted to get as much hands-on experience with JavaScript as I could with this project, its a vital component of web development and the core foundation of this application"
+"I learned to play D&D recently so learning coding at the same time has intwined them both in my current learning. 
+I felt it appropriate to combine these two passions into one project"
 
-"This is a riddle I have fond memories of sharing with my friends and family. I wanted to create an easily digestible, user-friendly space to work through. I hope that any who use it will find it an enjoyable and entertaining experience."
+"D&D is very complex, as is coding. This being my first project working with databases, I felt that using the game 
+as a basis for building my project would be both challenging and engaging."
 
-"The riddles purpose is to test a users deduction, reasoning and problem-solving skills. It provides a table which guides them towards a methodical process of elimination."
+"Whilst playing the game I often hear my fellow players struggling to remember things and also sifting through
+through their notes looking for something specific. I feel this app fill a real need for D&D enthusiasts"
 
 ### **Strategy**
 
 #### **Project Goals:**
 
-One of my main aims was to create this web application without using any front-end frameworks, to test and push the limits of my css knowledge.
+I believe this project fits a real need in the tabletop community and has potential to expand its functionality and scope.
+My main focus of this project is to achieve proof of concept and see how the project performs among my peers.
 
-I designed this application to be responsive primarily on desktop (large) screens and landscape medium size screens. It is still relatively responsive on medium-size portrait screens with a small margin of error. I believe any smaller would lead to a difficult interface and information overload.
-
-- Create an interactive user-friendly web application
-- Provide a visually pleasing workspace to complete the riddle
-- Progressing through the riddle to be a responsive and entertaining experience
+- The application to be responsive on all devices to wether the user is playing in person or online they will have easy access
+- Ther user to be able to create a list of all their games and characters, and input data to be easily recalled when needed.
+- 
+- Create a database that will allow unique users to control and manipulate as they see fit
 
 #### **User Goals:**
 
+- C
+- C
+- C
 - Create an enjoyable, interactive and responsive experience
 - Provide a template to progress through the riddle
 - Expand their thought processes through the required logical elimination required for completion
@@ -87,6 +93,34 @@ I designed this application to be responsive primarily on desktop (large) screen
 ### **Scope**
 
 #### **Planned Functionality:**
+
+Login-Register Page:
+
+- 
+- 
+- 
+-  
+
+Profile Page:
+
+- 
+- 
+- 
+- 
+
+Game Page:
+
+- 
+- 
+- 
+- 
+
+Character Page:
+
+- 
+- 
+- 
+- 
 
 Galaxy Page:
 
@@ -133,6 +167,34 @@ Riddle Page:
 
 #### **Interaction Design:**
 
+Login-Register Page:
+
+- 
+- 
+- 
+-  
+
+Profile Page:
+
+- 
+- 
+- 
+- 
+
+Game Page:
+
+- 
+- 
+- 
+- 
+
+Character Page:
+
+- 
+- 
+- 
+- 
+
 Galaxy Page:
 
 - When the user presses the "Good Luck!" button, the header and footer return off the screen and as we see the introduction panel return into the galaxy, the background image increases in size creating the illusion that the user is also entering the centre of the galaxy. After the animation finishes the user is forwarded to the riddle page.
@@ -158,6 +220,34 @@ Riddle Page:
   - Feed the Cat - Removes the fish gif and plays the cat audio, purely for satire purposes
 
 #### **Information Design:**
+
+Login-Register Page:
+
+- 
+- 
+- 
+-  
+
+Profile Page:
+
+- 
+- 
+- 
+- 
+
+Game Page:
+
+- 
+- 
+- 
+- 
+
+Character Page:
+
+- 
+- 
+- 
+- 
 
 Galaxy Page:
 
@@ -540,11 +630,9 @@ https://tinloof.com/blog/how-to-build-a-stopwatch-with-html-css-js-react-part-2/
 ### I would like to thank
 
 - **Guido Cecilio** - My mentor, for his time and guidance.
-- **Jim Lynx** - For his support and assistance.
 - **Sean Murphy** - For his knowledge and reliable feedback.
 - **Anthony O’Brien** - For his expertise in the industry.
 - **CI staff** and **Slack Community** for round the clock reliability and helpfulness.
-- **#In-It-Together** and **#Study-Group** channels have been an amazing resource and all-round support group.
 
 ---
 
