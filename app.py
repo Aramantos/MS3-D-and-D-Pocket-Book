@@ -112,6 +112,10 @@ def logout():
 
 @app.route("/game_add", methods=["GET", "POST"])
 def game_add():
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
     if request.method == "POST":
         game = {
             "game_name": request.form.get("game_name"),
@@ -126,6 +130,10 @@ def game_add():
 
 @app.route("/char_add", methods=["GET", "POST"])
 def char_add():
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
     if request.method == "POST":
         char = {
             "character_name": request.form.get("character_name"),
@@ -145,15 +153,31 @@ def char_add():
 
 @app.route("/delete_game/<game_id>")
 def delete_game(game_id):
-    mongo.db.games.remove({"_id": ObjectId(game_id)})
-    flash(" - Game Successfully Deleted - ")
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(game_id):
+        abort(404)
+
+    result = mongo.db.games.remove({"_id": ObjectId(game_id)})
+    if result['n'] > 0:
+        flash(" - Game Successfully Deleted - ")
     return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete_character/<character_id>")
 def delete_character(character_id):
-    mongo.db.characters.remove({"_id": ObjectId(character_id)})
-    flash(" - Character Successfully Deleted - ")
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(character_id):
+        abort(404)
+
+    result = mongo.db.characters.remove({"_id": ObjectId(character_id)})
+    if result['n'] > 0:
+        flash(" - Character Successfully Deleted - ")
     return redirect(url_for("profile", username=session["user"]))
 
 
@@ -215,6 +239,13 @@ def edit_game(game_id):
 
 @app.route("/item_add/<game_id>", methods=["GET", "POST"])
 def item_add(game_id):
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(game_id):
+        abort(404)
+
     game_name = mongo.db.games.find_one_or_404(
         {"_id": ObjectId(game_id)})["game_name"]
     if request.method == "POST":
@@ -233,8 +264,9 @@ def item_add(game_id):
 
 @app.route("/delete_item/<item_id>/<game_id>")
 def delete_item(item_id, game_id):
-    mongo.db.items.remove({"_id": ObjectId(item_id)})
-    flash(" - Item Successfully Deleted - ")
+    result = mongo.db.items.remove({"_id": ObjectId(item_id)})
+    if result['n'] > 0:
+        flash(" - Item Successfully Deleted - ")
     return redirect(url_for("edit_game", game_id=game_id))
 
 
