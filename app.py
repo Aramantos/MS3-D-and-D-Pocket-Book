@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 def register():
     if request.method == "POST":
         # check if username already exists in DB
-        existing_user = mongo.db.users.find_one(
+        existing_user = mongo.db.users.find_one_or_404(
             {"username": request.form.get("reg-username").lower()})
         if existing_user:
             flash(" - Username already exists - ")
@@ -45,7 +45,7 @@ def register():
 def login():
     if request.method == "POST":
         # checks if username exists in DB
-        existing_user = mongo.db.users.find_one(
+        existing_user = mongo.db.users.find_one_or_404(
             {"username": request.form.get("log-username").lower()})
 
         if existing_user:
@@ -77,7 +77,7 @@ def profile(username):
         return render_template("login-register.html")
 
     # grab the session user's username from the DB
-    username = mongo.db.users.find_one(
+    username = mongo.db.users.find_one_or_404(
         {"username": session["user"]})["username"]
 
     games = list(mongo.db.games.find())
@@ -275,7 +275,7 @@ def update_character(character_id):
         mongo.db.characters.update({"_id": ObjectId(character_id)}, submit)
         flash("Character Successfully Updated")
 
-    character = mongo.db.characters.find_one({"_id": ObjectId(character_id)})
+    character = mongo.db.characters.find_one_or_404({"_id": ObjectId(character_id)})
     return render_template(
         "character.html", character=character,
         character_name=character_name, character_class=character_class)
