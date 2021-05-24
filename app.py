@@ -72,6 +72,10 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
     # grab the session user's username from the DB
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -155,6 +159,13 @@ def delete_character(character_id):
 
 @app.route("/edit_game/<game_id>", methods=["GET", "POST"])
 def edit_game(game_id):
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(game_id):
+        abort(404)
+
     game = mongo.db.games.find_one_or_404(
         {"_id": ObjectId(game_id)})
     current_name = game["game_name"]
@@ -227,6 +238,13 @@ def delete_item(item_id, game_id):
 
 @app.route("/edit_character/<character_id>", methods=["GET", "POST"])
 def edit_character(character_id):
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(character_id):
+        abort(404)
+
     character = mongo.db.characters.find_one_or_404(
         {"_id": ObjectId(character_id)})
     character_name = character["character_name"]
@@ -261,6 +279,31 @@ def update_character(character_id):
     return render_template(
         "character.html", character=character,
         character_name=character_name, character_class=character_class)
+
+
+def is_object_id_valid(id_value):
+    """ Validate is the id_value is a valid ObjectId
+    """
+    return id_value != "" and ObjectId.is_valid(id_value)
+
+
+def is_authenticated():
+    """ Ensure that user is authenticated
+    """
+    return 'user' in session
+
+
+# Custom Error Handling
+# 404 Error Page not found
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
+
+
+# 500 Error Server Error
+@app.errorhandler(500)
+def internal_server(error):
+    return render_template('500.html'), 500
 
 
 if __name__ == "__main__":
