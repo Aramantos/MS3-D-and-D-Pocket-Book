@@ -191,50 +191,27 @@ def edit_game(game_id):
         abort(404)
 
     sessions = list(mongo.db.sessions.find())
+    session_id = request.args.get('session_id')
+    game_session = None
+    if is_object_id_valid(session_id):
+        game_session = mongo.db.sessions.find_one_or_404(
+            {"_id": ObjectId(session_id)}
+        )
 
     game = mongo.db.games.find_one_or_404(
         {"_id": ObjectId(game_id)})
     current_name = game["game_name"]
 
     items = list(mongo.db.items.find())
+    item_id = request.args.get('item_id')
+    item = None
+    if is_object_id_valid(item_id):
+        item = mongo.db.items.find_one_or_404({"_id": ObjectId(item_id)})
 
     return render_template(
         "game.html", current_name=current_name,
-        items=items, game_id=game_id, sessions=sessions)
-
-
-# @app.route(
-#     "/update_session/<session_id>/<game_id>", methods=["GET", "POST"])
-# def update_session(session_id, game_id):
-#     session = mongo.db.sessions.find_one_or_404(
-#         {"_id": ObjectId(session_id)})
-#     session_num = session["session_num"]
-#     session_desc = session["session_desc"]
-#     session_game_name = session["game_name"]
-#     created_by = session["created_by"]
-
-#     game = mongo.db.games.find_one_or_404(
-#         {"_id": ObjectId(game_id)})
-#     game_name = game["game_name"]
-
-#     items = list(mongo.db.items.find())
-
-#     if request.method == "POST":
-#         submit = {
-#             "session_num": session_num,
-#             "session_desc": request.form.get("session-desc-text"),
-#             "session_game_name": session_game_name,
-#             "created_by": created_by
-#         }
-#         mongo.db.sessions.update({"_id": ObjectId(session_id)}, submit)
-#         flash("Game Session Successfully Updated")
-
-#         return render_template(
-#             "game.html", session=session, session_num=session_num,
-#             session_desc=session_desc, session_game_name=session_game_name,
-#             created_by=created_by, current_name=current_name,
-#             game_name=game_name, items=items, game_id=game_id
-#         )
+        items=items, game_id=game_id, sessions=sessions,
+        item=item, game_session=game_session)
 
 
 @app.route("/item_add/<game_id>", methods=["GET", "POST"])
@@ -309,7 +286,9 @@ def update_character(character_id):
         mongo.db.characters.update({"_id": ObjectId(character_id)}, submit)
         flash("Character Successfully Updated")
 
-    character = mongo.db.characters.find_one_or_404({"_id": ObjectId(character_id)})
+    character = mongo.db.characters.find_one_or_404(
+        {"_id": ObjectId(character_id)}
+    )
     return render_template(
         "character.html", character=character,
         character_name=character_name, character_class=character_class)

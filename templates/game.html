@@ -43,10 +43,10 @@
             <div class="col s6">
                 <a id="session-btn" class='dropdown-trigger btn' href='#' data-target='dropdown1'>Session Number</a>
                 <ul id='dropdown1' class='dropdown-content'>
-                    {% for session_game in sessions %}
-                        {% if session.user|lower == session_game.created_by|lower %}
-                            {% if session_game.game_name == current_name %}
-                                <li><a href="">{{ session_game.session_num }}</a></li>
+                    {% for sess in sessions %}
+                        {% if session.user|lower == sess.created_by|lower %}
+                            {% if sess.game_name == current_name %}
+                                <li><a href="{{ url_for('edit_game', game_id=game_id) }}?session_id={{ sess._id }}">{{ sess.session_num }}</a></li>
                             {% endif %}
                         {% endif %}
                     {% endfor %}
@@ -58,7 +58,7 @@
                 <div id="session-desc" class="card-panel">
                     <h3 id="session-desc-title">Session Overview</h3>
                     <textarea id="session-desc-text" class="materialize-textarea"
-                        data-length="120">{{ session_desc }}</textarea>
+                        data-length="120">{% if game_session is not none %}{{ game_session.session_desc }}{% endif %}</textarea>
                     <label for="session-desc-text" id="session-desc-label"></label>
                 </div>
             </div>
@@ -101,7 +101,7 @@
             <div class="col s7 right">
                 <div id="item-desc" class="card-panel">
                     <h3 id="item-desc-title">Item Overview</h3>
-                    <textarea id="item-desc-text" class="materialize-textarea" data-length="120"></textarea>
+                    <textarea id="item-desc-text" class="materialize-textarea" data-length="120">{{ item.item_desc }}</textarea>
                     <label for="item-desc-text" id="item-desc-label"></label>
                 </div>
             </div>
