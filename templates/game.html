@@ -36,6 +36,30 @@
         </div>
     </div>
 
+    <div id="modal-add-session" class="modal card">
+        <div class="modal-content">
+            <span class="card-title">Add a Session</span>
+            <form method="POST" action="{{ url_for('add_session', game_id=game_id) }}">
+                <!-- calculate the total number of session for this user -->
+                {% set session_count = namespace(sessions=0) %}
+                {% for sess in sessions %}
+                    {% if session.user|lower == sess.created_by|lower %}
+                        {% if sess.game_name == current_name %}
+                            {% set session_count.sessions = session_count.sessions + 1 %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                <input type="hidden" name="session_num" value="{{ session_count.sessions + 1 }}">
+                <input type="hidden" name="game_name" value="{{ current_name }}">
+                <textarea id="new-session-desc" name="new-session-desc" class="materialize-textarea" data-length="120"
+                    required></textarea>
+                <label for="new-session-desc" id="new-session-desc-label"></label>
+                <a class="modal-close btn">Cancel</a>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
     <form action="{{ url_for('update_session', game_id=game_id) }}" method="POST">
         <div class="row">
             <div class="col s12">
@@ -57,7 +81,7 @@
                 </ul>
             </div>
             <div class="col s4">
-                <button id="add-session-btn" class='btn'>Add Session +</button>
+                <a id="add-session-btn" class="btn modal-trigger" href="#modal-add-session">Add Session +</a>
             </div>
             <div class="col s4">
                 {% if request.args.get('session_id') %}

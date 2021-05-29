@@ -7,6 +7,7 @@
      $('.collapsible').collapsible();
      $('select').formSelect();
      $('.dropdown-trigger').dropdown();
+     $('.modal').modal();
 
      // Original Scripts
 

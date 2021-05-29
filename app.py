@@ -214,6 +214,22 @@ def edit_game(game_id):
         item=item, game_session=game_session)
 
 
+@app.route("/session_add/<game_id>", methods=["GET", "POST"])
+def session_add(game_id):
+    if request.method == "POST":
+        submit = {
+            "session_num": request.form.get("session_num"),
+            "session_desc": request.form.get("new-session-desc"),
+            "game_name": request.form.get("game_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.sessions.insert_one(submit)
+        flash(" - Session Successfully Added - ")
+
+        return redirect(url_for("edit_game", game_id=game_id))
+    return redirect(request.url)
+
+
 @app.route("/update_session/<game_id>", methods=["GET", "POST"])
 def update_session(game_id):
     if request.method == "POST":
