@@ -271,18 +271,9 @@ input[type=password]:not(.browser-default) {
     margin: 0;
 }
 
-#profile-content {
-    display: flex;
-}
-
 #games-header,
 #chars-header {
     color: antiquewhite;
-}
-
-#games,
-#characters {
-    width: 48%;
 }
 
 #games-panel,
@@ -292,7 +283,7 @@ input[type=password]:not(.browser-default) {
     overflow: auto;
 }
 
-#profile-add-btns {
+.profile-add-btns {
     margin-top: 5vh;
 }
 
