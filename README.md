@@ -1,3 +1,5 @@
+# **Dunegeons and Dragons Pocket Book**
+
 Live Link - [https://d-and-d-pocket-book.herokuapp.com/](https://d-and-d-pocket-book.herokuapp.com/)
 
 ---
@@ -32,9 +34,9 @@ Live Link - [https://d-and-d-pocket-book.herokuapp.com/](https://d-and-d-pocket-
 
 ---
 
-The Dungeons and Dragons Pocket book is an application designed for note taking in a more streamlined, structured user firendly way.
+The Dungeons and Dragons Pocket book is an application designed for note taking in a more streamlined, structured and user friendly way.
 
-The UX is focused on being able to create and edit a list of characters and games and storing detailed notations.
+The UX is focused on being able to create and edit a list of characters and games while storing detailed notations on each.
 
 ---
 
@@ -46,11 +48,11 @@ The UX is focused on being able to create and edit a list of characters and game
 
 #### **User Stories**
 
-"So much happened during our last session I couldnt write it all down quickly enough”
-
 “My notes have no sense of order or logic to them, I need a better system”
 
-“I cant remember where we met that character in the story, or what he/she said”
+""
+
+"When I need to find a reference to something that happened in another session, its like finding a need in a haystack"
 
 #### **Developer Stories**
 
@@ -94,6 +96,13 @@ My main focus of this project is to achieve proof of concept and see how the pro
 
 #### **Planned Functionality:**
 
+Navbar:
+
+- 
+- 
+- 
+- 
+
 Login-Register Page:
 
 - 
@@ -121,41 +130,6 @@ Character Page:
 - 
 - 
 - 
-
-Galaxy Page:
-
-- Paragraph emerges from the galaxy centre with an introduction to the riddle
-- Header with the riddle title drops down onto the screen from above
-- Footer with contact and social links rises from below
-- Social links that will open a new tab to the relevant page
-- When the "Good Luck!" button is pressed, the header and footer return off-screen and the introduction paragraph returns to the centre of the galaxy. The background zooms in to create the illusion of the user being sucked to the centre along with the paragraph.
-
-Riddle Page:
-
-- Explanation box that details the riddle as well as user instructions
-- Start button that removes the explanation box and begins the timer
-- Back button returns the user to the galaxy page
-- Riddle expands out from the centre of the screen
-- Table of input elements for answers
-- Information section with interactive multiple panel viewing
-- Clues list are bullet-pointed and cross out when the corresponding answers are entered
-- Hint section for the user if they are struggling
-  - Text changes depending on how far along the user is in the riddle
-- Before a user can view the hint there is a box to attempt to convince the user to try a bit harder before asking for a clue
-- Notepad panel so the user can type any notations they feel necessary for progression
-- Timer to record how long completion takes
-- When the user enters an answer, the information section automatically switches to the clues section
-- Picture of Einstein that rotates between several images
-- The picture changes in reaction to a users action
-- Winks when a correct answer is entered
-- Angry face when an incorrect answer is entered
-- Demonised face when the user attempts to break the game
-- When a user completes the riddle, the Einstein clapping gif replaces the Einstein picture
-- If a user attempts the same answer multiple times, inputs are disabled, Einstein image changes to a demonised caricature, a reset button emerges and a warning message appears scolding the user
-- On completion of the riddle the clue-controls panel is replaced but the congratulations panel, which consists of "Welcome to the 2%" spinning text, social links, background image of a confetti gif and three buttons
-  - Reset - Reloads the page
-  - Back to Galaxy - Returns the user to the galaxy page
-  - Feed the Cat - Which removes the fish gif and plays the cat audio for comic effect 
 
 ---
 
@@ -278,11 +252,11 @@ Riddle Page:
 ### **Skeleton**
 
 - [Wireframes](#wireframes)
-- Introduction page with simple header and footer with social links
-- Riddle page with 3 sections
-- Responsive Einstein Image that reacts to users interactions
-- Interactive panel that switches depending on users actions and buttons pressed
-- Riddle answer table, 5 rows, 6 columns, 5 row titles, 25 inputs
+- Persistant navbar on all pages that allows for navigation of the app and logging out
+- Login-Register page that has 2 buttons to switch between the login or register panels
+- Profile page shows the user logged in and the list of games and characters they have created, along with buttons to create new ones
+- Game page with 2 sections, sessions and items. Text areas for user input and buttons to create instances and update the content assocatied with them.
+- Character page with 4 text boxes and 2 buttons.
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -292,15 +266,15 @@ Riddle Page:
 
 #### **Images**
 
-Galaxy: The initial page (index.html) begins with a spiral galaxy, and the introduction emerging from its centre.
+Base Background: 
 
-Einstein: The caricature rotates between different versions of the same image as the user progresses through the riddle. The picture responds when there is a correct or incorrect input entered and if the user attempts to keep inputting answers sequentially.
+Error GIF: 
 
 #### **Colours**
 
-The galaxy page uses the colour scheme of the gif itself to compliment each other
+I used the background image as a basline for the color scheme of the overall site.
 
-The Einstein page is kept a simple yellow to try and focus the users' attention on the pictures and animations of the pictures and input elements
+I then used [Coolers](https://coolors.co/) to choose colors to compliment the baseline
 
 #### **Typography**
 
@@ -399,11 +373,13 @@ I have tested the website on various physical devices (iPad, iPad Air, Macbook P
 
 ### **Validator**
 
-HTML - [W3C](https://validator.w3.org/) - Markup Validation
+- HTML - [W3C](https://validator.w3.org/) - Markup Validation
 
-CSS - [W3C](https://jigsaw.w3.org/css-validator/) - CSS Validation
+- CSS - [W3C](https://jigsaw.w3.org/css-validator/) - Jigsaw CSS Validation
 
-JS - [JSHint](https://jshint.com/) - JS Validator
+- JavaScript - [JSHINT](https://jshint.com/) - JavaScript code warning & error check
+
+- Python - [Pyton Tester](https://extendsclass.com/python-tester.html) Python code syntax checker
 
 ### **Defensive Design**
 
@@ -415,58 +391,25 @@ JS - [JSHint](https://jshint.com/) - JS Validator
 ### Manual Testing 
 ---
 
-#### **Galaxy**
+#### **Login-Register**
 
 - "Good Luck!" button initiates the animation and correctly opens up riddle.html after the designated time delay has passed.
 - All social links open a new tab to my profile on the designated media site
 
-#### **Riddle**
+#### **Profile**
 
-- Start button removes the explanation panel and begins the timer
-- Back button initiates the animation and returns the user to the galaxy page
-- Each input element responds as expected when the correct answer is entered
-  - Nationality changes to the corresponding flag
-  - Input element background, border and text colour change to highlight the corresponding colour
-    - House icons also change to the corresponding colour and initiates animation
-  - Pet sounds of the corresponding animal sound on input
-  - Smoking gif displays in the background
-  - Specific beverage image replaces the input
-- Einstein image winks when a correct answer is entered
-- When the user enters an incorrect...
-  - The error tone plays
-  - The input element clears
-  - The angry face image is injected into the Einstein picture rotation
-- When all correct answers are entered...
-  - The Einstein image is replaced by a clapping gif
-  - Celebration by Kool and the Gang plays
-  - Celebration panel is displayed
-  - Background image for each panel is changed to confetti gif
-- When the hint button is pressed...
-  - All other potential panels are removed
-  - Displays the hint panel
-  - Displays the hint checker
-    - Hint checker buttons...
-      - Yes, I am hopelessly lost - reveals the hint based on the user's current answers
-      - No, I will try harder - changes panel to "no-hint"
-  - Hint button is disabled
-- When the clues button is pressed...
-  - All other potential panels are removed
-  - Displays the hint panel
-  - Clues button is disabled
-- When the notepad button is pressed...
-  - All other potential panels are removed
-  - Displays the textarea
-  - Notepad button is disabled
-- When the user enters an answer...
-  - the information section automatically switches to the clues section
-    - When the user is on notepad it switches back to clues
-    - When the user is on hints, hint checker or no hint it switches back to clues
-- When a user enters the same answer 3 times...
-  - All input elements are disabled
-  - The breaking-game-warning appears with its animation
-  - The clues-control panel is removed and replaced with the reset button image
-    - Pressing the reset button picture reloads the page
-  - The Einstein picture is replaced by the cheat pic
+- "Good Luck!" button initiates the animation and correctly opens up riddle.html after the designated time delay has passed.
+- All social links open a new tab to my profile on the designated media site
+
+#### **Game**
+
+- "Good Luck!" button initiates the animation and correctly opens up riddle.html after the designated time delay has passed.
+- All social links open a new tab to my profile on the designated media site
+
+#### **Character**
+
+- "Good Luck!" button initiates the animation and correctly opens up riddle.html after the designated time delay has passed.
+- All social links open a new tab to my profile on the designated media site
 
 ---
 
@@ -508,12 +451,17 @@ JS - [JSHint](https://jshint.com/) - JS Validator
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ### **2. Integrations**
 
+- [Materialize](https://materializecss.com/) by linking via [Materialize CDN](https://materializecss.com/getting-started.html) to HTML Doc
 - [jQuery](https://jquery.com) by linking via jQueryCDN to HTML Doc.
 - [FontAwesome](https://fontawesome.com/) Icons for links in Footer.
 - [Google Fonts](https://fonts.google.com/) - Overall Typography import.
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) Micro web framework written in Python
+- [MongoDB](https://www.mongodb.com/) NoSQL database program, using JSON-like documents
+
 
 ### **3. Workspace, version control and Repository storage**
 
@@ -533,6 +481,7 @@ JS - [JSHint](https://jshint.com/) - JS Validator
 
 - [Code Institute Course Content](https://courses.codeinstitute.net/)
 - Code Institute **SLACK Community**
+- [Coolers](https://coolors.co/) - Color picker
 - [Stack Overflow](https://stackoverflow.com/) - General resource.
 - [Youtube](https://www.youtube.com/) - General resource.
 - [CSS-Tricks](https://css-tricks.com/) - General resource.
@@ -551,11 +500,11 @@ JS - [JSHint](https://jshint.com/) - JS Validator
 
 ---
 
-- JavaScript has been a challenging language to learn, there are so many different approaches that will lead you to the same result. (eg. initially, I was writing out long functions with multiple if statements, but as time went on I started learning how to refactor my code into a loop) The biggest lesson I have learned is to always try to achieve the result in as few lines as possible.
-- I decided to build the project without Bootstrap to test my css skills, although I have learned a lot from this route, I will be using a framework going forward to cover the heavy lifting.
-- Responsiveness was always going to be a challenge from the nature of what I wanted to achieve, especially without a frontend framework, it slowed down my progress but did allow me to increase my knowledge and gain a greater appreciation for frameworks.
-- I used someone else's code for the timer (timer.js) and taking that and using it to suit my purposes was challenging. The original author's code has specific HTML requirements which caused issues when trying to adapt to my own.
-- The hintSwitcher function was tricky, as there are multiple routes to get to the final answer. Designing a function to cover all these routes was a challenge.
+- 
+- 
+- 
+- 
+- 
 
 ---
 
@@ -569,19 +518,133 @@ JS - [JSHint](https://jshint.com/) - JS Validator
 
 GitPod was used to write all code in this repository and pushed via Git to GitHub.
 
-### **GitHub**
+### Local Installation
 
-- When viewable HTML files have been pushed to GitHub, select 'Settings' the last item in the repository navbar.
-- Under 'Github Pages' and 'Source' there should be a drop-down menu with 'None' selected by default.
-- After you press the drop-down menu and select 'master', then press save.
-- Once saved, this will shortly publish the project to GitHub Pages and the site URL will be available in the 'GitHub Pages' in 'Settings'.
+#### 1. Cloning the project
 
-### **Local Download/Clone**
+- The code can be run locally through clone or download from the repository on [GitHub](https://github.com/Aramantos/MS3-D-and-D-Pocket-Book).
+- You can do this by opening the repository, clicking on the Code' button and selecting either 'clone or download'.
 
-- You can do this by opening the repository, clicking on the 'Code' button with the download icon and selecting either 'clone or download'.
-- The Clone option provides a URL, which you can use on your desktop IDE.
-- The Download ZIP option provides a link to download a ZIP file that can be unzipped on your local machine.
-- User needs to open the unzipped folder and open index.html for the homepage to populate.
+    ![Image](static/images/cloning.png)
+- The Clone option provides a URL, which you can use on your CLI with `git clone <paste url>`.
+- The Download ZIP option provides a link to download a ZIP file which can be unzipped on your local machine. The files can then be uploaded to your IDE.
+
+#### 2. Create Environmental Variables
+
+- Create an env.py file, in this file enter the Environmental Variables (**replace values with your own**) as follows:
+
+```python
+        import os
+
+        os.environ.setdefault("IP", "IP_ADDRESS")
+        os.environ.setdefault("PORT", "PORT")
+        os.environ.setdefault("SECRET_KEY", "SECRET_KEY")
+        os.environ.setdefault("MONGO_URI", "MONGO_URI")
+        os.environ.setdefault("MONGO_DBNAME", "MONGO_DBNAME")
+```
+
+#### 3. Create a .gitignore file
+
+- Create a file called **.gitignore** in the root directory and ensure it contains the following git exclusions:
+
+```text
+        core.Microsoft*
+        core.mongo*
+        core.python*
+        env.py
+        __pycache__/
+        *.py[cod]
+        node_modules/
+```
+
+#### 4. Install project dependencies
+
+- Install project requirements by typing `pip install -r requirements.txt`
+
+#### 5. Create a database on MongoDB
+
+Register for a free account with [MongoDB](https://account.mongodb.com/account/register)
+
+- Create a new Project and call it 'DandD-PocketBook'
+- Creater a Cluster, choose the free tier option and select your region, the name I choose was 'PocketBook'
+- Create a new database and call it 'd-and-d-pocket-book'
+- Create five Collections named 'characters', games', 'items', 'sessions' and 'users' an enter key/values as follows:  
+
+- **characters** collection
+
+```json
+            _id: <ObjectId>
+            character_name: "<string>"
+            class: "<string>"
+            profile_backstory: "<string>"
+            player_notes: "<string>"
+            combat_spells: "<string>"
+            character_development: "<string>"
+            created_by: "<string>"
+```
+
+- **games** collection
+
+```json
+            _id: <ObjectId>
+            game_name: "<string>"
+            created_by: "<string>"
+```
+
+- **items** collection
+
+```json
+            _id: <ObjectId>
+            item_name: "<string>"
+            item_desc: "<string>"
+            session_number: "<int32>"
+            game_name: "<string>"
+            created_by: "<string>"
+```
+
+- **sessions** collection
+
+```json
+            _id: <ObjectId>
+            session_num: "<int32>"
+            session_desc: "<string>"
+            game_name: "<string>"
+            created_by: "<string>"
+```
+
+- **users** collection
+
+```json
+            _id: <ObjectId>
+            username: "<string>"
+            password: "<string>"
+```
+
+#### 6. Deploy locally
+
+- To run the project locally, in the terminal type `python app.py`
+- This will open a localhost address, which is provided in the CLI.
+
+#### 7. Remote Deployment on Heroku
+
+[Heroku](https://www.heroku.com) is a Cloud Application Platform that enables developers to build, run, and operate applications in the cloud.
+
+Deployment process is as follows:
+
+Create a **requirements.txt** file to store depenecies of installed packages for the project. In the CLI type `pip freeze --local > requirements.txt`.
+
+Create a file named **Procfile** to declare what commands are run by the application's dynos on the Heroku platform. For this project, run by the app.py file, the Procfile should contain: `web: python app.py`
+
+- Register for a free account on the Heroku [Signup](https://signup.heroku.com/login) page.
+- On the Dashboard, click the 'New' button and select 'Create new app'.
+- Choose a name and region.
+- Under the 'Settings' tab, click on 'Config Vars' to add Configuration Variables from the env.py file (As shown in step **3. Create Environmental Variables** above). Remember to use your own credentials.
+- In your CLI terminal install Heroku by typing `npm install -g heroku`
+- Select the 'Deploy' option from the menu.
+- Under 'Deployment method' select the GitHub option to connect to your GitHub repository. Ensure GitHub Username is selected and use the search function to find the relevant repository. It is recommended using a 'main' branch as default, due to GitHub depreciating the 'master' branch name.
+- Select Automatic deploys from the main branch and click 'Deploy Branch'.
+- Click on the 'Open App' button on the top-right to open the deployed app.
+- There is no difference between the deployed version and the development version.
 
 ---
 
@@ -597,25 +660,12 @@ GitPod was used to write all code in this repository and pushed via Git to GitHu
 
 Pictures
 
-- Site background image from [giphy](https://giphy.com/gifs/universe-spiral-galaxy-star-cluster-vortex-konczakowski-3og0IFrHkIglEOg8Ba)
-- Einstein Images
-  - [Main drawing](https://in.pinterest.com/pin/253257179017742853/) <br>
-    (All variations of this image were edited privately)
-  - [Clapping GIF](https://wifflegif.com/gifs/662977-albert-einstein-insanity-gif)
-- [Confetti gif](https://gifer.com/en/6k2)
-- [Wrong Answer picture](https://lipmag.com/wp-content/uploads/2016/05/A_frightened_and_an_angry_face_left_and_right_respectively._Wellcome_V0009326.jpg)
-- [Reset Button](https://i.pinimg.com/originals/40/94/fc/4094fc29f32df934851e7aad83b33a81.jpg)
-
-Sound Files
-
-- [Animal Sounds](https://www.freesoundeffects.com/free-sounds/animals-10013/)
-- [Celebration - Kool & The Gang](https://vimeo.com/335541134)
-- [Wrong Answer Audio](https://www.youtube.com/watch?v=36_bISAhExo)
+- Site background [image](http://s1.picswalls.com/wallpapers/2014/01/29/dragon-picture_063725311_21.jpg)
+- Error Message [gif](http://clipart-library.com/images/qiBojrGoT.gif)
 
 ### **Code Snippets**
 
-The timer function (timer.js) was taken from... <br>
-https://tinloof.com/blog/how-to-build-a-stopwatch-with-html-css-js-react-part-2/
+CI Task Manager Project - Building Block *Expand*!!!!!!!
 
 ---
 
@@ -632,6 +682,7 @@ https://tinloof.com/blog/how-to-build-a-stopwatch-with-html-css-js-react-part-2/
 - **Guido Cecilio** - My mentor, for his time and guidance.
 - **Sean Murphy** - For his knowledge and reliable feedback.
 - **Anthony O’Brien** - For his expertise in the industry.
+- **Jim Lynx** - For his support and assistance.
 - **CI staff** and **Slack Community** for round the clock reliability and helpfulness.
 
 ---
@@ -643,5 +694,9 @@ https://tinloof.com/blog/how-to-build-a-stopwatch-with-html-css-js-react-part-2/
 If you require any help or assistance you may contact me on
 
 john.doyle.mail@icloud.com
+
+---
+
+[Return to Table of Contents](#table-of-contents)
 
 ---
