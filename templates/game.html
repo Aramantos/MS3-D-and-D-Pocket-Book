@@ -36,33 +36,47 @@
         </div>
     </div>
 
+    <form action="{{ url_for('update_session', game_id=game_id) }}" method="POST">
         <div class="row">
-            <div class="col s6">
+            <div class="col s12">
                 <h2 id="session-title-num">{{ current_name }}</h2>
             </div>
-            <div class="col s6">
-                <a id="session-btn" class='dropdown-trigger btn' href='#' data-target='dropdown1'>Session Number</a>
+        </div>
+        <div id="session-btns" class="row">
+            <div class="col s4">
+                <a id="session-btn" class='dropdown-trigger btn' data-target='dropdown1'>Session Number</a>
                 <ul id='dropdown1' class='dropdown-content'>
                     {% for sess in sessions %}
                         {% if session.user|lower == sess.created_by|lower %}
                             {% if sess.game_name == current_name %}
-                                <li><a href="{{ url_for('edit_game', game_id=game_id) }}?session_id={{ sess._id }}">{{ sess.session_num }}</a></li>
+                                <li><a id="session_num" 
+                                    href="{{ url_for('edit_game', game_id=game_id) }}?session_id={{ sess._id }}">{{ sess.session_num }}</a></li>
                             {% endif %}
                         {% endif %}
                     {% endfor %}
                 </ul>
+            </div>
+            <div class="col s4">
+                <button id="add-session-btn" class='btn'>Add Session +</button>
+            </div>
+            <div class="col s4">
+                {% if request.args.get('session_id') %}
+                    <input type="hidden" id="session-id-hidden" value="{{request.args.get('session_id')}}" name="session-id-hidden">
+                    <button type="submit" id="update-session" class='btn'>Update Overview</button>
+                {% endif %}
             </div>
         </div>
         <div class="row">
             <div class="col s12">
                 <div id="session-desc" class="card-panel">
                     <h3 id="session-desc-title">Session Overview</h3>
-                    <textarea id="session-desc-text" class="materialize-textarea"
-                        data-length="120">{% if game_session is not none %}{{ game_session.session_desc }}{% endif %}</textarea>
+                    <textarea id="session-desc-text" name="session-desc-text" class="materialize-textarea"
+                        data-length="120" required>{% if game_session is not none %}{{ game_session.session_desc }}{% endif %}</textarea>
                     <label for="session-desc-text" id="session-desc-label"></label>
                 </div>
             </div>
         </div>
+    </form>
 
         <div class="row">
             <div class="col s5 left">

@@ -348,12 +348,16 @@ input[type=password]:not(.browser-default) {
     margin-top: 2vh;
 }
 
-#session-btn{
-    margin-top: 2vh;
+#session-btns{
+    margin: 0;
+}
+
+#session-btn, #add-session-btn, #update-session{
+    margin-top: 0vh;
 }
 
 #session-desc {
-    margin-top: 2vh;
+    margin-top: 0vh;
     padding: 0px 18px;
     margin-bottom: 0;
 }

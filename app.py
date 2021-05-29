@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 def register():
     if request.method == "POST":
         # check if username already exists in DB
-        existing_user = mongo.db.users.find_one_or_404(
+        existing_user = mongo.db.users.find_one(
             {"username": request.form.get("reg-username").lower()})
         if existing_user:
             flash(" - Username already exists - ")
@@ -190,6 +190,10 @@ def edit_game(game_id):
     if not is_object_id_valid(game_id):
         abort(404)
 
+    game = mongo.db.games.find_one_or_404(
+        {"_id": ObjectId(game_id)})
+    current_name = game["game_name"]
+
     sessions = list(mongo.db.sessions.find())
     session_id = request.args.get('session_id')
     game_session = None
@@ -197,10 +201,6 @@ def edit_game(game_id):
         game_session = mongo.db.sessions.find_one_or_404(
             {"_id": ObjectId(session_id)}
         )
-
-    game = mongo.db.games.find_one_or_404(
-        {"_id": ObjectId(game_id)})
-    current_name = game["game_name"]
 
     items = list(mongo.db.items.find())
     item_id = request.args.get('item_id')
@@ -212,6 +212,24 @@ def edit_game(game_id):
         "game.html", current_name=current_name,
         items=items, game_id=game_id, sessions=sessions,
         item=item, game_session=game_session)
+
+
+@app.route("/update_session/<game_id>", methods=["GET", "POST"])
+def update_session(game_id):
+    if request.method == "POST":
+        session_id = request.form.get("session-id-hidden")
+        sess = mongo.db.sessions.find_one({"_id": ObjectId(session_id)})
+        submit = {
+            "session_num": sess["session_num"],
+            "session_desc": request.form.get("session-desc-text"),
+            "game_name": sess["game_name"],
+            "created_by": session["user"]
+        }
+        mongo.db.sessions.update({"_id": ObjectId(session_id)}, submit)
+        flash(" - Session Successfully Updated - ")
+
+        return redirect(url_for("edit_game", game_id=game_id))
+    return redirect(request.url)
 
 
 @app.route("/item_add/<game_id>", methods=["GET", "POST"])
@@ -284,11 +302,8 @@ def update_character(character_id):
             "created_by": session["user"]
         }
         mongo.db.characters.update({"_id": ObjectId(character_id)}, submit)
-        flash("Character Successfully Updated")
+        flash(" - Character Successfully Updated - ")
 
-    character = mongo.db.characters.find_one_or_404(
-        {"_id": ObjectId(character_id)}
-    )
     return render_template(
         "character.html", character=character,
         character_name=character_name, character_class=character_class)
