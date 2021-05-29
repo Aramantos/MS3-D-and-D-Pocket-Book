@@ -52,7 +52,7 @@
                 <input type="hidden" name="session_num" value="{{ session_count.sessions + 1 }}">
                 <input type="hidden" name="game_name" value="{{ current_name }}">
                 <textarea id="new-session-name" name="new-session-name" class="materialize-textarea" data-length="120"
-                    placeholder="Please enter session name or date" required></textarea>
+                    placeholder="Please enter session name" required></textarea>
                 <label for="new-session-name" id="new-session-desc-label"></label>
                 <a class="modal-close btn">Cancel</a>
                 <button type="submit" class="btn">Submit</button>
@@ -117,7 +117,7 @@
                                             </div>
                                             <div class="collapsible-body">
                                                 <div id="enter-delete-row" class="row">
-                                                    <a disabled href="" id="enter-btn" class="btn">ENTER</a>
+                                                    <a href="{{ url_for('edit_game', game_id=game_id) }}?item_id={{ item._id }}" id="enter-btn" class="btn">ENTER</a>
                                                     <a href="{{ url_for('delete_item', item_id=item._id, game_id=game_id) }}"
                                                         id="delete-btn" class="btn">DELETE</a>
                                                 </div>
@@ -128,20 +128,24 @@
                             </ul>
                         {% endfor %}
                     </div>
-                    <div id="item-btns" class="col s6">
-                        <button id="item-add-btn" class="btn-large">Add</button>
-                    </div>
-                    <div class="col s6">
-                        <button disabled id="item-delete-btn" class="btn-large">Delete</button>
+                    <div id="item-btns" class="col s12">
+                        <button id="item-add-btn" class="btn-large">Add Item +</button>
                     </div>
                 </div>
             </div>
             <div class="col s7 right">
-                <div id="item-desc" class="card-panel">
-                    <h3 id="item-desc-title">Item Overview</h3>
-                    <textarea id="item-desc-text" class="materialize-textarea" data-length="120">{{ item.item_desc }}</textarea>
-                    <label for="item-desc-text" id="item-desc-label"></label>
-                </div>
+                <form method="POST" action="{{ url_for('update_item', game_id=game_id) }}?item_id={{ item._id }}">
+                    <div id="item-desc" class="card-panel">
+                        <h3 id="item-desc-title">Item Overview</h3>
+                        <textarea id="item-desc-text" class="materialize-textarea" name="item-desc-text" 
+                            data-length="120" required>{% if item is not none %}{{ item.item_desc }}{% endif %}</textarea>
+                        <label for="item-desc-text" id="item-desc-label"></label>
+                        {% if request.args.get('item_id') %}
+                            <input type="hidden" id="item-id-hidden" value="{{request.args.get('item_id')}}" name="item-id-hidden">
+                            <button type="submit" id="item-update-btn" class="btn-large">Update Item Overview</button>
+                        {% endif %}
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -151,7 +155,7 @@
                     class="btn-large">Back</a>
             </div>
             <div class="col s6">
-                <button type="submit" id="char-update-btn" class="btn-large">Update</a>
+                <a id="reload-btn" class="btn-large">Reload</a>
             </div>
         </div>
 

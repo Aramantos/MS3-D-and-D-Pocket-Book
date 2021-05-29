@@ -31,7 +31,8 @@ def register():
 
         register = {
             "username": request.form.get("reg-username").lower(),
-            "password": generate_password_hash(request.form.get("reg-password"))
+            "password": generate_password_hash(
+                request.form.get("reg-password"))
         }
         mongo.db.users.insert_one(register)
 
@@ -56,7 +57,7 @@ def login():
                         "log-password")):
                 session["user"] = request.form.get("log-username").lower()
                 flash(" - Welcome, {} - ".format(
-                            request.form.get("log-username")))
+                    request.form.get("log-username")))
                 return redirect(url_for(
                     "profile", username=session["user"]))
             else:
@@ -266,9 +267,11 @@ def item_add(game_id):
 
     game_name = mongo.db.games.find_one_or_404(
         {"_id": ObjectId(game_id)})["game_name"]
+
     if request.method == "POST":
         item = {
             "item_name": request.form.get("item_name"),
+            "item_desc": "",
             "game_name": game_name,
             "created_by": session["user"]
         }
@@ -278,6 +281,25 @@ def item_add(game_id):
         return redirect(url_for("edit_game", game_id=game_id))
 
     return render_template("profile.html")
+
+
+@app.route("/update_item/<game_id>", methods=["GET", "POST"])
+def update_item(game_id):
+    print("test")
+    if request.method == "POST":
+        item_id = request.form.get("item-id-hidden")
+        item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
+        submit = {
+            "item_name": item["item_name"],
+            "item_desc": request.form.get("item-desc-text"),
+            "game_name": item["game_name"],
+            "created_by": session["user"]
+        }
+        mongo.db.items.update({"_id": ObjectId(item_id)}, submit)
+        flash(" - Item Successfully Updated - ")
+
+        return redirect(url_for("edit_game", game_id=game_id))
+    return redirect(request.url)
 
 
 @app.route("/delete_item/<item_id>/<game_id>")
