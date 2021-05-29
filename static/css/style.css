@@ -356,6 +356,13 @@ input[type=password]:not(.browser-default) {
     margin-top: 0vh;
 }
 
+#dropdown1{
+    width: auto!important;
+    height: auto!important;
+    max-height: 30vh!important;
+    overflow: auto;
+}
+
 #session-desc {
     margin-top: 0vh;
     padding: 0px 18px;
@@ -411,6 +418,10 @@ textarea.materialize-textarea:focus:not([readonly]) {
     overflow: auto;
     height: 23vh;
     background-color: #faebd794;
+}
+
+#enter-delete-row{
+    margin: 0;
 }
 
 #item-list {

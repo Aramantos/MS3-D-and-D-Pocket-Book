@@ -51,9 +51,9 @@
                 {% endfor %}
                 <input type="hidden" name="session_num" value="{{ session_count.sessions + 1 }}">
                 <input type="hidden" name="game_name" value="{{ current_name }}">
-                <textarea id="new-session-desc" name="new-session-desc" class="materialize-textarea" data-length="120"
-                    required></textarea>
-                <label for="new-session-desc" id="new-session-desc-label"></label>
+                <textarea id="new-session-name" name="new-session-name" class="materialize-textarea" data-length="120"
+                    placeholder="Please enter session name or date" required></textarea>
+                <label for="new-session-name" id="new-session-desc-label"></label>
                 <a class="modal-close btn">Cancel</a>
                 <button type="submit" class="btn">Submit</button>
             </form>
@@ -74,7 +74,7 @@
                         {% if session.user|lower == sess.created_by|lower %}
                             {% if sess.game_name == current_name %}
                                 <li><a id="session_num" 
-                                    href="{{ url_for('edit_game', game_id=game_id) }}?session_id={{ sess._id }}">{{ sess.session_num }}</a></li>
+                                    href="{{ url_for('edit_game', game_id=game_id) }}?session_id={{ sess._id }}">{{ sess.session_num }} - {{ sess.session_name }} - {{ sess.session_date }}</a></li>
                             {% endif %}
                         {% endif %}
                     {% endfor %}
@@ -108,24 +108,24 @@
                     <h3 id="item-desc-title">Item List</h3>
                     <div id="item-list-panel" class="card-panel">
                         {% for item in items %}
-                        <ul id="item-list" class="collapsible">
-                            {% if session.user|lower == item.created_by|lower %}
-                                {% if item.game_name == current_name %}
-                                    <li>
-                                        <div class="collapsible-header">
-                                            <i class="fab fa-d-and-d color-1 prefix"></i>{{ item.item_name }}
-                                        </div>
-                                        <div class="collapsible-body">
-                                            <div id="enter-delete-row" class="row">
-                                                <a disabled href="" id="enter-btn" class="btn">ENTER</a>
-                                                <a href="{{ url_for('delete_item', item_id=item._id, game_id=game_id) }}"
-                                                    id="delete-btn" class="btn">DELETE</a>
+                            <ul id="item-list" class="collapsible">
+                                {% if session.user|lower == item.created_by|lower %}
+                                    {% if item.game_name == current_name %}
+                                        <li>
+                                            <div class="collapsible-header">
+                                                <i class="fab fa-d-and-d color-1 prefix"></i>{{ item.item_name }}
                                             </div>
-                                        </div>
-                                    </li>
+                                            <div class="collapsible-body">
+                                                <div id="enter-delete-row" class="row">
+                                                    <a disabled href="" id="enter-btn" class="btn">ENTER</a>
+                                                    <a href="{{ url_for('delete_item', item_id=item._id, game_id=game_id) }}"
+                                                        id="delete-btn" class="btn">DELETE</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    {% endif %}
                                 {% endif %}
-                            {% endif %}
-                        </ul>
+                            </ul>
                         {% endfor %}
                     </div>
                     <div id="item-btns" class="col s6">

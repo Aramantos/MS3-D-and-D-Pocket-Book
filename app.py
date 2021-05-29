@@ -2,6 +2,7 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for, abort)
+from datetime import date
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -214,12 +215,16 @@ def edit_game(game_id):
         item=item, game_session=game_session)
 
 
-@app.route("/session_add/<game_id>", methods=["GET", "POST"])
-def session_add(game_id):
+@app.route("/add_session/<game_id>", methods=["GET", "POST"])
+def add_session(game_id):
+    today = date.today()
+    sess_date = today.strftime("%d/%m/%Y")
     if request.method == "POST":
         submit = {
             "session_num": request.form.get("session_num"),
-            "session_desc": request.form.get("new-session-desc"),
+            "session_name": request.form.get("new-session-name"),
+            "session_date": sess_date,
+            "session_desc": "",
             "game_name": request.form.get("game_name"),
             "created_by": session["user"]
         }
@@ -237,6 +242,8 @@ def update_session(game_id):
         sess = mongo.db.sessions.find_one({"_id": ObjectId(session_id)})
         submit = {
             "session_num": sess["session_num"],
+            "session_name": sess["session_name"],
+            "session_date": sess["session_date"],
             "session_desc": request.form.get("session-desc-text"),
             "game_name": sess["game_name"],
             "created_by": session["user"]
