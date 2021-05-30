@@ -526,7 +526,16 @@ textarea.materialize-textarea:focus:not([readonly]) {
     background-color: #C78048;
 }
 
+#error-back-btn{
+    margin-top: 40vh;
+}
+
 #dragon {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+
     animation-name            : dragon;
     animation-duration        : 10s;
     animation-iteration-count : infinite;
@@ -585,6 +594,9 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #char-box-4-title {
         font-size: large;
     }
+    #error-message{
+        font-size: xx-large;
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -635,6 +647,12 @@ textarea.materialize-textarea:focus:not([readonly]) {
     }
     #item-add-panel {
         margin-top: 47vh;
+    }
+    #error-message{
+        font-size: x-large;
+    }
+    #dragon{
+        width: -webkit-fill-available;
     }
 }
 
