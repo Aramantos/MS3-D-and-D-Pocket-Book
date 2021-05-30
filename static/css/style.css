@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Titillium+Web&display=swap");
+
 /*-------------------------Colours */
 
 /* Templates */
@@ -95,6 +97,8 @@ body {
     -o-background-size: cover;
     background-size: cover;
     background-color: #704326;
+
+    font-family: Titillium, sans-serif;
 }
 
 main{
