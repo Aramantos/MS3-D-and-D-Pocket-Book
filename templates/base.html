@@ -19,7 +19,7 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="#" id="nav-title" class="fas fa-dragon"> D&D Pocket Book</a>
+                <a href="{{ url_for('homepage') }}" id="nav-title" class="fas fa-dragon"> D&D Pocket Book</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}

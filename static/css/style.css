@@ -519,6 +519,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 #error-message{
     color: #febc6b;
+    padding: 35px;
     border: 10px solid;
     border-radius: 15vh;
     border-color: #704326;
@@ -677,7 +678,12 @@ textarea.materialize-textarea:focus:not([readonly]) {
     .row .col{
         padding: 0;
     }
+    #nav-title{
+        font-size: 1.5em;
+        margin-top: 13px;
+    }
 }
+
 
 @media screen and (max-height: 1000px) {
     #session-desc-text{

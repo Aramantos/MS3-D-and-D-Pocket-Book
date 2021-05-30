@@ -19,6 +19,31 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/homepage", methods=["GET", "POST"])
+def homepage():
+    if is_authenticated():
+
+        # grab the session user's username from the DB
+        username = mongo.db.users.find_one_or_404(
+            {"username": session["user"]})["username"]
+
+        games = list(mongo.db.games.find())
+        characters = list(mongo.db.characters.find())
+
+        classes = {}
+        for character in characters:
+            if session["user"].lower() == character["created_by"].lower():
+                if not character["class"] in classes:
+                    classes[character["class"]] = []
+                classes[character["class"]].append(character)
+
+        return render_template(
+            "profile.html", username=username, games=games, classes=classes
+        )
+
+    return render_template("login-register.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
