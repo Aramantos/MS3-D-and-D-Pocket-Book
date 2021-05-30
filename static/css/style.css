@@ -482,7 +482,9 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 #character-name {
     font-size: xx-large;
-    margin: 0;
+    margin: auto;
+    width: fit-content;
+    padding: 10px;
     color: #C78048;
     margin-top: 2vh;
     background-color: #febc6b;
@@ -701,7 +703,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
         padding: 0;
     }
     #nav-title{
-        font-size: 1.5em;
+        font-size: 1.2em;
         margin-top: 13px;
     }
 }
@@ -776,6 +778,9 @@ textarea.materialize-textarea:focus:not([readonly]) {
     }
     #item-desc, #item-panel{
         height: 38.4vh;
+    }
+    .collapsible-body{
+        padding: 1rem;
     }
 }
 
