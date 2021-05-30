@@ -238,7 +238,7 @@ def edit_game(game_id):
     return render_template(
         "game.html", current_name=current_name,
         items=items, game_id=game_id, sessions=sessions,
-        item=item, game_session=game_session)
+        item=item, game_session=game_session, game=game)
 
 
 @app.route("/add_session/<game_id>", methods=["GET", "POST"])
