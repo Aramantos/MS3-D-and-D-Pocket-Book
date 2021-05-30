@@ -271,7 +271,7 @@ input[type=password]:not(.browser-default) {
 
 #profile-panel {
     padding: 5px;
-    margin-top: 9vh;
+    margin-top: 7vh;
 }
 
 #profile-name {
@@ -281,6 +281,7 @@ input[type=password]:not(.browser-default) {
 
 #games-header,
 #chars-header {
+    margin-top: 0;
     color: antiquewhite;
 }
 
@@ -289,6 +290,7 @@ input[type=password]:not(.browser-default) {
     margin-top: 3vh;
     height: 50vh;
     overflow: auto;
+    margin-bottom: 4vh;
 }
 
 .profile-add-btns {
@@ -319,7 +321,7 @@ input[type=password]:not(.browser-default) {
     color: #41281C;
 }
 
-#enter-delete-row {
+#enter-delete-row-prof {
     margin: 20px 0 0;
 }
 
@@ -353,6 +355,7 @@ input[type=password]:not(.browser-default) {
 
 #session-btn, #add-session-btn, #update-session{
     margin-top: 0vh;
+    overflow: hidden;
 }
 
 #dropdown1{
@@ -420,7 +423,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     background-color: #faebd794;
 }
 
-#enter-delete-row{
+#enter-delete-row-item{
     margin: 0;
 }
 
@@ -436,7 +439,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 #item-desc-title {
-    font-size: xx-large;
+    font-size: x-large;
     margin: 0;
     color: antiquewhite;
     margin-top: 2vh;
@@ -447,6 +450,10 @@ textarea.materialize-textarea:focus:not([readonly]) {
     max-height: 30vh;
     color: antiquewhite;
     overflow: auto;
+}
+
+#item-update-btn{
+    overflow: hidden;
 }
 
 #game-btns {
@@ -472,8 +479,12 @@ textarea.materialize-textarea:focus:not([readonly]) {
 #character-name {
     font-size: xx-large;
     margin: 0;
-    color: antiquewhite;
+    color: #C78048;
     margin-top: 2vh;
+    background-color: #febc6b;
+    border: 10px solid;
+    border-radius: 15vh;
+    border-color: #704326;
 }
 
 #char-box-1,
@@ -560,10 +571,35 @@ textarea.materialize-textarea:focus:not([readonly]) {
 /* -------------------------Media Queries */
 
 @media screen and (max-width: 1200px) {
-
     #log-title,
     #reg-title {
         font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #char-box-1-title,
+    #char-box-2-title,
+    #char-box-3-title,
+    #char-box-4-title {
+        font-size: large;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #game-add-panel,
+    #char-add-panel,
+    #item-add-panel {
+        width: 85%;
+    }
+    #char-add-panel {
+        margin-top: 80vh;
+    }
+    #char-box-1-title,
+    #char-box-2-title,
+    #char-box-3-title,
+    #char-box-4-title {
+        font-size: x-large;
     }
 }
 
@@ -591,10 +627,24 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #reg-title {
         font-size: 2rem;
     }
+    #game-add-panel,
+    #char-add-panel,
+    #item-add-panel {
+        width: 90%;
+    }
+    #item-add-panel {
+        margin-top: 47vh;
+    }
 }
 
 @media screen and (max-width: 450px) {
     #flash-message {
+        font-size: large;
+    }
+    #char-box-1-title,
+    #char-box-2-title,
+    #char-box-3-title,
+    #char-box-4-title {
         font-size: large;
     }
 }
@@ -609,6 +659,36 @@ textarea.materialize-textarea:focus:not([readonly]) {
         margin: 0;
         margin-right: 48px;
     }
+    #profile-name{
+        font-size: xx-large;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #char-box-1-title,
+    #char-box-2-title,
+    #char-box-3-title,
+    #char-box-4-title {
+        font-size: medium;
+    }
+    .btn{
+        padding: 0 10px;
+    }
+    .row .col{
+        padding: 0;
+    }
+}
+
+@media screen and (max-height: 1000px) {
+    #session-desc-text{
+        height: 25vh;
+    }
+    #item-desc, #item-panel{
+        height: 36.4vh;
+    }
+    #item-desc-title{
+        margin: 1vh 0;
+    }
 }
 
 @media screen and (max-height: 950px) {
@@ -620,6 +700,12 @@ textarea.materialize-textarea:focus:not([readonly]) {
 @media screen and (max-height: 900px) {
     .card-panel {
         margin-top: 15vh;
+    }
+    #item-desc, #item-panel{
+        height: 34.4vh;
+    }
+    #item-desc-text, #item-list-panel{
+        height: 20vh;
     }
 }
 
@@ -633,19 +719,23 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #flash-message {
         top: 9vh;
     }
+    #session-desc-text{
+        height: 20vh;
+    }
 }
 
 @media screen and (max-height: 750px) {
     .card-panel {
         margin-top: 5vh;
     }
-
     #log-reg-btns {
         margin-top: 7vh;
     }
-
     #flash-message {
         top: 8vh;
+    }
+    #item-desc, #item-panel{
+        height: 36.4vh;
     }
 }
 
@@ -653,14 +743,32 @@ textarea.materialize-textarea:focus:not([readonly]) {
     .card-panel {
         margin-top: 3vh;
     }
-
     #log-reg-btns {
         margin-top: 5vh;
+    }
+    #item-desc, #item-panel{
+        height: 38.4vh;
     }
 }
 
 @media screen and (max-height: 600px) {
     #log-reg-btns {
         margin-top: 0;
+    }
+    #item-desc, #item-panel{
+        height: 39.4vh;
+    }
+}
+
+
+@media screen and (max-height: 500px) {
+    #item-desc, #item-panel{
+        height: 44.4vh;
+    }
+}
+
+@media screen and (max-height: 400px) {
+    #item-desc, #item-panel{
+        height: 48.4vh;
     }
 }

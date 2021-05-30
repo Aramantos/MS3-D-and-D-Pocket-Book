@@ -5,7 +5,7 @@
 
     <form method="POST" action="{{ url_for('update_character', character_id=character._id) }}">
         <div class="row">
-            <div class="col s12 m6">
+            <div class="col s12 m12 l6">
                 <div id="char-box-1" class="card-panel">
                     <h3 id="char-box-1-title">Character Profile/Backstory</h3>
                     <textarea id="char-box-1-text" name="char-box-1-text"
@@ -13,7 +13,7 @@
                     <label for="char-box-1-text" id="char-box-1-text-label"></label>
                 </div>
             </div>
-            <div class="col s12 m6">
+            <div class="col s12 m12 l6">
                 <div id="char-box-2" class="card-panel">
                     <h3 id="char-box-2-title">Player Notes</h3>
                     <textarea id="char-box-2-text" name="char-box-2-text"
@@ -24,15 +24,15 @@
         </div>
 
         <div class="row">
-            <div class="col s12 m6">
+            <div class="col s12 m12 l6">
                 <div id="char-box-3" class="card-panel">
-                    <h3 id="session-desc-title">Combat Style/Spell Preferences</h3>
+                    <h3 id="char-box-3-title">Combat Style/Spell Preferences</h3>
                     <textarea id="char-box-3-text" name="char-box-3-text"
                         class="materialize-textarea">{{ character.combat_spells }}</textarea>
                     <label for="char-box-3-text" id="char-box-3-text-label"></label>
                 </div>
             </div>
-            <div class="col s12 m6">
+            <div class="col s12 m12 l6">
                 <div id="char-box-4" class="card-panel">
                     <h3 id="char-box-4-title">Character Development</h3>
                     <textarea id="char-box-4-text" name="char-box-4-text"

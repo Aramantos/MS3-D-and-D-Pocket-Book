@@ -101,11 +101,11 @@
                                 <i class="fab fa-d-and-d color-1 prefix"></i>{{ game.game_name }}
                             </div>
                             <div class="collapsible-body">
-                                <span>Session Number</span>
+                                <span>Number of Sessions: </span>
                                 <br>
-                                <span>Session Description</span>
-                                <div id="enter-delete-row" class="row">
-                                    <a href="{{ url_for('edit_game', game_id=game._id, session_id=session._id ) }}"
+                                <span>Number of Items: </span>
+                                <div id="enter-delete-row-prof" class="row">
+                                    <a href="{{ url_for('edit_game', game_id=game._id) }}"
                                         id="enter-btn" class="btn">ENTER</a>
                                     <a href="{{ url_for('delete_game', game_id=game._id) }}" id="delete-btn"
                                         class="btn">DELETE</a>
@@ -136,7 +136,7 @@
                                                 </div>
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
-                                                    <div id="enter-delete-row" class="row">
+                                                    <div id="enter-delete-row-prof" class="row">
                                                         <a href="{{ url_for('edit_character', character_id=character._id) }}"
                                                             id="enter-btn" class="btn">ENTER
                                                         </a>

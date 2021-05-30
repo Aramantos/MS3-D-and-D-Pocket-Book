@@ -54,8 +54,8 @@
                 <textarea id="new-session-name" name="new-session-name" class="materialize-textarea" data-length="120"
                     placeholder="Please enter session name" required></textarea>
                 <label for="new-session-name" id="new-session-desc-label"></label>
-                <a class="modal-close btn">Cancel</a>
                 <button type="submit" class="btn">Submit</button>
+                <a class="modal-close btn">Cancel</a>
             </form>
         </div>
     </div>
@@ -103,7 +103,7 @@
     </form>
 
         <div class="row">
-            <div class="col s5 left">
+            <div class="col s12 m6 l5 left">
                 <div id="item-panel" class="card-panel">
                     <h3 id="item-desc-title">Item List</h3>
                     <div id="item-list-panel" class="card-panel">
@@ -116,7 +116,7 @@
                                                 <i class="fab fa-d-and-d color-1 prefix"></i>{{ item.item_name }}
                                             </div>
                                             <div class="collapsible-body">
-                                                <div id="enter-delete-row" class="row">
+                                                <div id="enter-delete-row-item" class="row">
                                                     <a href="{{ url_for('edit_game', game_id=game_id) }}?item_id={{ item._id }}" id="enter-btn" class="btn">ENTER</a>
                                                     <a href="{{ url_for('delete_item', item_id=item._id, game_id=game_id) }}"
                                                         id="delete-btn" class="btn">DELETE</a>
@@ -133,7 +133,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col s7 right">
+            <div class="col s12 m6 l7 right">
                 <form method="POST" action="{{ url_for('update_item', game_id=game_id) }}?item_id={{ item._id }}">
                     <div id="item-desc" class="card-panel">
                         <h3 id="item-desc-title">Item Overview</h3>
@@ -151,11 +151,10 @@
 
         <div id="game-btns" class="row">
             <div class="col s6">
-                <a href="{{ url_for('profile', username=session['user']) }}" id="game-back-btn"
-                    class="btn-large">Back</a>
+                <a href="{{ url_for('profile', username=session['user']) }}" id="game-back-btn"class="btn-large">Back</a>
             </div>
             <div class="col s6">
-                <a id="reload-btn" class="btn-large">Reload</a>
+                <a href="" id="reload-btn" class="btn-large">Reload</a>
             </div>
         </div>
 
