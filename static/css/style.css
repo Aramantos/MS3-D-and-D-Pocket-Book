@@ -88,9 +88,17 @@ a {
 /*-------------------------Base Template */
 
 body {
-    background-image: url('../images/background.jpg');
+    background: url('../images/background.jpg')no-repeat center center fixed;
     /* CREDIT: Image: http://s1.picswalls.com/wallpapers/2014/01/29/dragon-picture_063725311_21.jpg */
-    overflow: hidden;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #704326;
+}
+
+main{
+    overflow: auto;
 }
 
 #nav-title {
@@ -284,7 +292,7 @@ input[type=password]:not(.browser-default) {
 }
 
 .profile-add-btns {
-    margin-top: 5vh;
+    margin-top: 4vh;
 }
 
 /* Input Panels */
