@@ -48,11 +48,14 @@ The UX is focused on being able to create and edit a list of characters and game
 
 #### **User Stories**
 
-“My notes have no sense of order or logic to them, I need a better system”
+As a user I would like to...
 
-""
-
-"When I need to find a reference to something that happened in another session, its like finding a need in a haystack"
+- Be able to register/login and manage the content in my own account
+- Have a space to input and store text in an organised and user friendly way
+- Create a list of games and characters that are easily accessible on all devices
+- Be able to create sessions and detailed notations about what transpired during them
+- A seperate list and notations sections for items such as people or places encounteredduring the game
+- Have sections for character notes with specifc faccets of everything I need to know/remember about my character
 
 #### **Developer Stories**
 
@@ -72,19 +75,17 @@ through their notes looking for something specific. I feel this app fill a real 
 I believe this project fits a real need in the tabletop community and has potential to expand its functionality and scope.
 My main focus of this project is to achieve proof of concept and see how the project performs among my peers.
 
-- The application to be responsive on all devices to wether the user is playing in person or online they will have easy access
+- Create a database that will allow unique users to control and manipulate as they see fit.
 - Ther user to be able to create a list of all their games and characters, and input data to be easily recalled when needed.
-- 
-- Create a database that will allow unique users to control and manipulate as they see fit
+- To optimize the UX so that during a game the user would have as much CRUD functionality as possible on a single page.
+- The application to be responsive on all devices to wether the user is playing in person or online they will have easy access.
 
 #### **User Goals:**
 
-- C
-- C
-- C
-- Create an enjoyable, interactive and responsive experience
-- Provide a template to progress through the riddle
-- Expand their thought processes through the required logical elimination required for completion
+- To eliminate the need for handwritten notes and speed up the recall of events.
+- 
+- 
+- 
 
 ---
 
@@ -141,6 +142,13 @@ Character Page:
 
 #### **Interaction Design:**
 
+Navbar:
+
+- 
+- 
+- 
+- 
+
 Login-Register Page:
 
 - 
@@ -194,6 +202,13 @@ Riddle Page:
   - Feed the Cat - Removes the fish gif and plays the cat audio, purely for satire purposes
 
 #### **Information Design:**
+
+Navbar:
+
+- 
+- 
+- 
+- 
 
 Login-Register Page:
 
@@ -266,20 +281,19 @@ Riddle Page:
 
 #### **Images**
 
-Base Background: 
+Base Background: Is the constant background on all pages and is basis for the overall color scheme of the site.
 
-Error GIF: 
+Error GIF: A gif to simulate an encounter in Dungeons & Dragons. The gif moves around the page and depending on its position on the page will block users from pressing the back button.
 
 #### **Colours**
 
 I used the background image as a basline for the color scheme of the overall site.
 
-I then used [Coolers](https://coolors.co/) to choose colors to compliment the baseline
+[Coolers](https://coolors.co/) was then used to choose colors to compliment the baseline
 
 #### **Typography**
 
-- "Titillium" font (san serif as backup) for index.html.
-- "cursive" font (san serif as backup) for riddle.html.
+- "Titillium" font (san serif as backup)
 
 ---
 
@@ -290,12 +304,26 @@ I then used [Coolers](https://coolors.co/) to choose colors to compliment the ba
 ## **Wireframes**
 
 ---
-
-![alt_text](assets/images/wireframes/wireframe-1.png "image_tooltip")
-
-![alt_text](assets/images/wireframes/wireframe-2.png "image_tooltip")
-
-![alt_text](assets/images/wireframes/wireframe-3.png "image_tooltip")
+Hompage
+![alt_text](static/images/wireframes/wireframe-1.png "image_tooltip")
+Homepage with login panel
+![alt_text](static/images/wireframes/wireframe-2.png "image_tooltip")
+Homepage on medium/small devices
+![alt_text](static/images/wireframes/wireframe-3.png "image_tooltip")
+Homepage on medium/small devices with login panel
+![alt_text](static/images/wireframes/wireframe-4.png "image_tooltip")
+Profile page
+![alt_text](static/images/wireframes/wireframe-5.png "image_tooltip")
+Profile page on medium/small devices
+![alt_text](static/images/wireframes/wireframe-6.png "image_tooltip")
+Game page
+![alt_text](static/images/wireframes/wireframe-7.png "image_tooltip")
+Game page on medium/small devices
+![alt_text](static/images/wireframes/wireframe-8.png "image_tooltip")
+Character page
+![alt_text](static/images/wireframes/wireframe-9.png "image_tooltip")
+Character page on medium/small devices
+![alt_text](static/images/wireframes/wireframe-10.png "image_tooltip")
 
 ---
 
@@ -309,19 +337,20 @@ I then used [Coolers](https://coolors.co/) to choose colors to compliment the ba
 
 ### **Existing Features**
 
-- Designed with HTML5, CSS3 and JavaScript.
-- 2 separate HTML pages.
-- Timer
-- Table of input elements
+- Designed with HTML5, CSS3, JavaScript and Python.
+- 7 separate HTML pages.
+- Navbar with logo/title, anchors, logout button and sidenav with anchors.
+- Collapsible headers/bodies on games, classes, characters and items.
+- Dropdown triggers/content to allow the users to switch between sessions.
+- Selector for picking the relevant class on character creation.
+- Modal pop up when adding a new session to a user created game.
 
 ### **Features Left to Implement when skills develop**
 
-- This web application is only responsive on desktop and mid-size device screens. Since I have not used a frontend framework for this project making it responsive was a challenging but an enlightening experience. At a later date when my css skills have progressed further, I will return and make the application responsive on all devices.
-- Currently, the game has its flaws the users can take advantage of, the user can just enter every possible answer into a single input until they discover the correct one. Due to time constraints and limited knowledge, I have struggled to come up with a solution that does not involve being overly harsh on the user.
-- At a later date I wish to implement different versions of this riddle, for example, a Lord of the Rings themed version where it is Gandalf instead of Einstein and the error tone would be replaced by a line from the film "Fool of a Took!"
-- Varying degrees of difficulty
-  - Hard mode would not give the user any confirmation of a right or wrong answer until the end
-  - Easy mode would give the user prompts and more obvious clues.
+- Sharing games,characters,sessions and items between different users.
+- Opportunity for users to upload chatacter art to their profiles.
+- A Board/Chatroom space for users to discuss games and possibly network to create new games/groups. 
+- A password reset option for users
 
 ---
 
@@ -339,8 +368,18 @@ Checked compatibility in Safari, Chrome, Firefox
 
 #### Google Chrome Developer Tools - Device frames tests
 
+- Moto G4
+- Galaxy S5
+- Pixel 2
+- Pixel 2 XL
+- iPhone 5/SE
+- iPhone 6/7/8
+- iPhone 6/7/8 Plus
+- iPhone X
 - iPad
 - iPad Pro
+- Surface Duo
+- Galaxy Fold
 
 #### [Media Genisis Responsiveness Checker](https://responsivedesignchecker.com/)
 
@@ -369,6 +408,19 @@ Checked compatibility in Safari, Chrome, Firefox
 - Nexus 9 - 1024x768
 - Galaxy Tab 10 - 800x1280
 
+#### Tablet Screen Sizes
+
+- Apple iPhone 3/4/4s - 320x480
+- Apple iPhone 5/5s - 320x586
+- Apple iPhone 6/6s/7 - 375x667
+- Apple iPhone 6 Plus/7 Plus - 414x736
+- Samsung Galaxy S5/S6/S7 - 360x640
+- Sony Xperia Z2/Z3 - 360x640
+- Google Pixel - 411x731
+- Nexus 4 - 384x640
+- Nexus 5 - 411x731
+- Nexus 6 - 411x731
+
 I have tested the website on various physical devices (iPad, iPad Air, Macbook Pro)
 
 ### **Validator**
@@ -390,6 +442,11 @@ I have tested the website on various physical devices (iPad, iPad Air, Macbook P
 ---
 ### Manual Testing 
 ---
+
+#### **Navbar**
+
+- "Good Luck!" button initiates the animation and correctly opens up riddle.html after the designated time delay has passed.
+- All social links open a new tab to my profile on the designated media site
 
 #### **Login-Register**
 
@@ -468,6 +525,7 @@ I have tested the website on various physical devices (iPad, iPad Air, Macbook P
 - [GitPod](https://github.com/mkuti/corklagos-venture/blob/master/gitpod.io) - Main workspace IDE(Integrated Development Environment)
 - [Git](https://git-scm.com/) - Distributed Version Control tool to store versions of files and track changes.
 - [GitHub](https://github.com/) - A cloud-based hosting service to manage my **Git** repositories.
+- [Heroku](https://heroku.com) - Container-based cloud platform for deployment and running of apps
 
 ---
 
@@ -597,7 +655,6 @@ Register for a free account with [MongoDB](https://account.mongodb.com/account/r
             _id: <ObjectId>
             item_name: "<string>"
             item_desc: "<string>"
-            session_number: "<int32>"
             game_name: "<string>"
             created_by: "<string>"
 ```
