@@ -135,11 +135,11 @@
             </div>
             <div class="col s12 m6 l7 right">
                 <form method="POST" action="{{ url_for('update_item', game_id=game_id) }}?item_id={{ item._id }}">
-                    <div id="item-desc" class="card-panel">
-                        <h3 id="item-desc-title">Item Overview</h3>
-                        <textarea id="item-desc-text" class="materialize-textarea" name="item-desc-text" 
+                    <div id="item-overview" class="card-panel">
+                        <h3 id="item-overview-title">Item Overview</h3>
+                        <textarea id="item-overview-text" class="materialize-textarea" name="item-overview-text" 
                             data-length="120" required>{% if item is not none %}{{ item.item_desc }}{% endif %}</textarea>
-                        <label for="item-desc-text" id="item-desc-label"></label>
+                        <label for="item-overview-text" id="item-overview-label"></label>
                         {% if request.args.get('item_id') %}
                             <input type="hidden" id="item-id-hidden" value="{{request.args.get('item_id')}}" name="item-id-hidden">
                             <button type="submit" id="item-update-btn" class="btn-large">Update Item Overview</button>
@@ -151,7 +151,7 @@
 
         <div id="game-btns" class="row">
             <div class="col s6">
-                <a href="{{ url_for('profile', username=session['user']) }}" id="game-back-btn"class="btn-large">Back</a>
+                <a href="{{ url_for('profile', username=session['user']) }}" id="game-back-btn" class="btn-large">Back</a>
             </div>
             <div class="col s6">
                 <a href="{{ url_for('edit_game', game_id=game._id) }}" id="reload-btn" class="btn-large">Reload</a>

@@ -104,11 +104,11 @@
                                 <span>Number of Sessions: </span>
                                 <br>
                                 <span>Number of Items: </span>
-                                <div id="enter-delete-row-prof" class="row">
+                                <div id="enter-delete-row-game" class="row">
                                     <a href="{{ url_for('edit_game', game_id=game._id) }}"
-                                        id="enter-btn" class="btn">ENTER</a>
-                                    <a href="{{ url_for('delete_game', game_id=game._id) }}" id="delete-btn"
-                                        class="btn">DELETE</a>
+                                        id="game-enter-btn" class="btn">ENTER</a>
+                                    <a href="{{ url_for('delete_game', game_id=game._id) }}" 
+                                        id="game-delete-btn" class="btn">DELETE</a>
                                 </div>
                             </div>
                         </li>
@@ -116,7 +116,7 @@
                     </ul>
                     {% endfor %}
                 </div>
-                <div class="profile-add-btns" class="col s12">
+                <div class="profile-add-btns col s12">
                     <button id="game-add-btn" class="btn-large">Add Game +</button>
                 </div>
             </div>
@@ -136,12 +136,12 @@
                                                 </div>
                                                 <div class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span>
-                                                    <div id="enter-delete-row-prof" class="row">
+                                                    <div id="enter-delete-row-char" class="row">
                                                         <a href="{{ url_for('edit_character', character_id=character._id) }}"
-                                                            id="enter-btn" class="btn">ENTER
+                                                            id="char-enter-btn" class="btn">ENTER
                                                         </a>
                                                         <a href="{{ url_for('delete_character', character_id=character._id) }}"
-                                                            id="delete-btn" class="btn">DELETE
+                                                            id="char-delete-btn" class="btn">DELETE
                                                         </a>
                                                     </div>
                                                 </div>
@@ -153,7 +153,7 @@
                         </ul>
                     {% endfor %}
                 </div>
-                <div class="profile-add-btns" class="col s12">
+                <div class="profile-add-btns col s12">
                     <button id="char-add-btn" class="btn-large">Add Character +</button>
                 </div>
             </div>

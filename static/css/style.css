@@ -325,21 +325,23 @@ input[type=password]:not(.browser-default) {
     color: #41281C;
 }
 
-#enter-delete-row-prof {
+#enter-delete-row-game,
+#enter-delete-row-char {
     margin: 20px 0 0;
 }
 
-#delete-btn,
-#enter-btn {
-    /* position: absolute;
-    margin-left: 22vw;
-    margin-top: -.5vh; */
+#game-delete-btn,
+#char-delete-btn 
+#game-enter-btn,
+#char-enter-btn {
     color: #C78048 !important;
     background-color: #FEBB6C !important;
 }
 
-#delete-btn:hover,
-#enter-btn:hover {
+#game-delete-btn:hover,
+#char-delete-btn:hover,
+#game-enter-btn:hover,
+#char-enter-btn:hover {
     color: #41281C !important;
     background-color: antiquewhite !important;
 }

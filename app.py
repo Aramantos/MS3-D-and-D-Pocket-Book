@@ -316,7 +316,7 @@ def update_item(game_id):
         item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
         submit = {
             "item_name": item["item_name"],
-            "item_desc": request.form.get("item-desc-text"),
+            "item_desc": request.form.get("item-overview-text"),
             "game_name": item["game_name"],
             "created_by": session["user"]
         }
