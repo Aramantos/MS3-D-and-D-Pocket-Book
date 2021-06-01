@@ -401,24 +401,19 @@ textarea.materialize-textarea:focus:not([readonly]) {
     box-shadow: none;
 }
 
-#item-panel {
+#item-panel,
+#item-overview {
     margin-top: 2vh;
     padding: 0px 18px;
     margin-bottom: 0;
-    height: 34.4vh;
+    height: 35.4vh;
 }
 
-#item-desc {
-    height: 34.4vh;
-    margin-top: 2vh;
-    padding: 0px 18px;
-    margin-bottom: 0;
-}
-
-#item-desc-title {
+#item-list-title {
     font-size: x-large;
     color: antiquewhite;
-    margin: 0;
+    margin: 1vh 0;
+    padding-top: 1vh;
 }
 
 #item-list-panel {
@@ -438,20 +433,14 @@ textarea.materialize-textarea:focus:not([readonly]) {
     margin: 0;
 }
 
-#item-desc {
-    margin-top: 2vh;
-    padding: 0px 18px;
-    margin-bottom: 0;
-}
-
-#item-desc-title {
+#item-overview-title {
     font-size: x-large;
-    margin: 0;
     color: antiquewhite;
-    margin-top: 2vh;
+    margin: 1vh 0;
+    padding-top: 1vh;
 }
 
-#item-desc-text {
+#item-overview-text {
     height: 23vh;
     max-height: 30vh;
     color: antiquewhite;
@@ -715,11 +704,8 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #session-desc-text{
         height: 25vh;
     }
-    #item-desc, #item-panel{
+    #item-overview, #item-panel{
         height: 36.4vh;
-    }
-    #item-desc-title{
-        margin: 1vh 0;
     }
 }
 
@@ -733,10 +719,10 @@ textarea.materialize-textarea:focus:not([readonly]) {
     .card-panel {
         margin-top: 15vh;
     }
-    #item-desc, #item-panel{
-        height: 34.4vh;
+    #item-overview, #item-panel{
+        height: 36.4vh;
     }
-    #item-desc-text, #item-list-panel{
+    #item-overview-text, #item-list-panel{
         height: 20vh;
     }
 }
@@ -766,8 +752,8 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #flash-message {
         top: 8vh;
     }
-    #item-desc, #item-panel{
-        height: 36.4vh;
+    #item-overview, #item-panel{
+        height: 38.4vh;
     }
 }
 
@@ -779,7 +765,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
         margin-top: 5vh;
     }
     #item-desc, #item-panel{
-        height: 38.4vh;
+        height: 40.4vh;
     }
     .collapsible-body{
         padding: 1rem;
@@ -790,20 +776,20 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #log-reg-btns {
         margin-top: 0;
     }
-    #item-desc, #item-panel{
-        height: 39.4vh;
+    #item-overview, #item-panel{
+        height: 41.4vh;
     }
 }
 
 
 @media screen and (max-height: 500px) {
-    #item-desc, #item-panel{
-        height: 44.4vh;
+    #item-overview, #item-panel{
+        height: 46.4vh;
     }
 }
 
 @media screen and (max-height: 400px) {
-    #item-desc, #item-panel{
-        height: 48.4vh;
+    #item-overview, #item-panel{
+        height: 52.4vh;
     }
 }
