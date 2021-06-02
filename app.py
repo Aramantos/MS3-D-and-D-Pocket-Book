@@ -373,11 +373,10 @@ def update_character(character_id):
         }
         mongo.db.characters.update({"_id": ObjectId(character_id)}, submit)
         flash(" - Character Successfully Updated - ")
-
-    return render_template(
-        "character.html", character=character,
-        character_name=character_name, character_class=character_class)
-
+        return render_template(
+            "character.html", character=character,
+            character_name=character_name, character_class=character_class)
+    
 
 @app.route("/get_items")
 def get_items():
