@@ -376,7 +376,7 @@ def update_character(character_id):
         return render_template(
             "character.html", character=character,
             character_name=character_name, character_class=character_class)
-    
+
 
 @app.route("/get_items")
 def get_items():

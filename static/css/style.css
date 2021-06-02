@@ -624,6 +624,19 @@ textarea #item-desc-edit {
     color: antiquewhite;
 }
 
+#no-results{
+    font-size: xx-large;
+    width: fit-content;
+    padding: 10px;
+    color: #C78048;
+    margin-top: 2vh;
+    background-color: #febc6b;
+    border: 10px solid;
+    border-radius: 15vh;
+    border-color: #704326;
+    margin: 3vh auto;
+}
+
 /* -------------------------Contact */
 
 #modal-contact {
