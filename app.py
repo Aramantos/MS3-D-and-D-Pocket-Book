@@ -144,8 +144,15 @@ def game_add():
         return render_template("login-register.html")
 
     if request.method == "POST":
+        # import pdb;pdb.set_trace()
+        game_name = request.form.get("game_name")
+        existing_game = mongo.db.games.find_one(
+            {"game_name": game_name})
+        if existing_game:
+            flash(" - This game already exists - ")
+            return redirect(url_for("profile"))
         game = {
-            "game_name": request.form.get("game_name"),
+            "game_name": game_name,
             "created_by": session["user"]
         }
         mongo.db.games.insert_one(game)
@@ -162,6 +169,11 @@ def char_add():
         return render_template("login-register.html")
 
     if request.method == "POST":
+        existing_char = mongo.db.characters.find_one(
+            {"character_name": request.form.get("character_name")})
+        if existing_char:
+            flash(" - This character already exists - ")
+            return redirect(url_for("profile"))
         char = {
             "character_name": request.form.get("character_name"),
             "class": request.form.get("class"),
@@ -253,6 +265,11 @@ def add_session(game_id):
     today = date.today()
     sess_date = today.strftime("%d/%m/%Y")
     if request.method == "POST":
+        existing_session = mongo.db.sessions.find_one(
+            {"session_name": request.form.get("new-session-name")})
+        if existing_session:
+            flash(" - This session already exists - ")
+            return redirect(url_for("edit_game", game_id=game_id))
         submit = {
             "session_num": request.form.get("session_num"),
             "session_name": request.form.get("new-session-name"),
@@ -308,6 +325,11 @@ def item_add(game_id):
         {"_id": ObjectId(game_id)})["game_name"]
 
     if request.method == "POST":
+        existing_item = mongo.db.items.find_one(
+            {"item_name": request.form.get("item_name")})
+        if existing_item:
+            flash(" - This item already exists - ")
+            return redirect(url_for("edit_game", game_id=game_id))
         item = {
             "item_name": request.form.get("item_name"),
             "item_desc": "",
