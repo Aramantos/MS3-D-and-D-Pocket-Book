@@ -396,6 +396,31 @@ def search_items():
     return render_template("items.html", items=items)
 
 
+@app.route("/edit_item/<item_id>", methods=["GET", "POST"])
+def edit_item(item_id):
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(item_id):
+        abort(404)
+
+    if request.method == "POST":
+        submit = {
+            "item_name": request.form.get("item_name_edit"),
+            "item_desc": request.form.get("item_overview_edit"),
+            "game_name": request.form.get("game_name_edit"),
+            "created_by": session["user"]
+        }
+        mongo.db.items.update({"_id": ObjectId(item_id)}, submit)
+        flash(" - Item Successfully Updated - ")
+        items = list(mongo.db.items.find())
+        return render_template("items.html", items=items)
+
+    item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
+    return render_template("edit-item.html", item=item)
+
+
 def is_object_id_valid(id_value):
     """ Validate is the id_value is a valid ObjectId
     """

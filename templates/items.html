@@ -33,7 +33,7 @@
                             </div>
                             <div id="item-name-contents" class="col s9">
                                 <strong>{{ item.item_name }} - {{ item.game_name }}</strong>
-                                <a href="" class="btn-small right">Edit</a>
+                                <a href="{{ url_for('edit_item', item_id=item._id) }}" class="btn-small right">Edit</a>
                             </div>
                         </div>
                         <div class="collapsible-body">
