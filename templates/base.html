@@ -28,39 +28,39 @@
                 </div>
                 <div id="social">
                     <ul id="social-links">
-                        <li class="social-link">
+                        <li id="facebook-logo" class="social-link">
                             <a class="no-bg" target="_blank" rel="noreferrer" href="https://www.facebook.com/JDography">
                                 <i class="fab fa-facebook fa-2x" aria-hidden="true"></i>
                                 <span class="sr-only">Facebook</span>
                             </a>
                         </li>
-                        <li class="social-link">
+                        <li id="twitter-logo" class="social-link">
                             <a class="no-bg" target="_blank" rel="noreferrer" href="https://twitter.com/JD_Aramantos">
                                 <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
                                 <span class="sr-only">Twitter</span>
                             </a>
                         </li>
-                        <li class="social-link">
+                        <li id="linkedin-logo" class="social-link">
                             <a class="no-bg" target="_blank" rel="noreferrer"
                                 href="https://www.linkedin.com/in/john-doyle-ab717a95/">
                                 <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
                                 <span class="sr-only">LinkedIn</span>
                             </a>
                         </li>
-                        <li class="social-link">
+                        <li id="intsagram-logo" class="social-link">
                             <a class="no-bg" target="_blank" rel="noreferrer" href="https://www.instagram.com/jd_aramantos/">
                                 <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
                                 <span class="sr-only">Instagram</span>
                             </a>
                         </li>
-                        <li class="social-link">
+                        <li id="youtube-logo" class="social-link">
                             <a class="no-bg" target="_blank" rel="noreferrer"
                                 href="https://www.youtube.com/channel/UC_wOhkiRlmf1r1EILnQajcQ?view_as=subscriber">
                                 <i class="fab fa-youtube fa-2x" aria-hidden="true"></i>
                                 <span class="sr-only">Youtube</span>
                             </a>
                         </li>
-                        <li class="social-link">
+                        <li id="github-logo" class="social-link">
                             <a class="no-bg" target="_blank" rel="noreferrer" href="https://github.com/Aramantos">
                                 <i class="fab fa-github fa-2x" aria-hidden="true"></i>
                                 <span class="sr-only">Github</span>
@@ -69,6 +69,40 @@
                     </ul>
                 </div>
             </div>
+        </div>
+    </div>
+    
+    <div id="modal-faq" class="modal card">
+        <!--FAQ Modal-->
+        <div class="modal-content">
+            <span class="card-title">Frequently Asked Questions</span>
+             <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        <i class="fab fa-d-and-d color-1 prefix"></i>Question 1
+                    </div>
+                    <div class="collapsible-body answer-text">
+                        <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <i class="fab fa-d-and-d color-1 prefix"></i>Question 2
+                    </div>
+                    <div class="collapsible-body answer-text">
+                        <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <i class="fab fa-d-and-d color-1 prefix"></i>Question 3
+                    </div>
+                    <div class="collapsible-body answer-text">
+                        <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                </li>
+            </ul>
+            
         </div>
     </div>
 
@@ -89,7 +123,7 @@
                         </ul>
                     {% endif %}
                     <li><strong><a id="contact" class="modal-trigger" href="#modal-contact">Contact</a></strong></li>
-                    <li><strong><a href="#">FAQ</a></strong></li>
+                    <li><strong><a id="faq" class="modal-trigger" href="#modal-faq">FAQ</a></strong></li>
                     <li><strong><a class="btn" href="{{ url_for('logout') }}">Log Out</a></strong></li>
                 </ul>
             </div>
@@ -105,7 +139,7 @@
                 </ul>
             {% endif %}
             <li><strong><a id="contact" class="modal-trigger" href="#modal-contact">Contact</a></strong></li>
-            <li><strong><a href="#">FAQ</a></strong></li>
+            <li><strong><a id="faq" class="modal-trigger" href="#modal-faq">FAQ</a></strong></li>
             <li><strong><a class="btn" href="{{ url_for('logout') }}">Log Out</a></strong></li>
         </ul>
     </header>

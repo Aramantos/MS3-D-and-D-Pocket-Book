@@ -711,6 +711,17 @@ textarea #item-desc-edit{
 
 /* -------------------------FAQ */
 
+#modal-faq{
+    background-color: antiquewhite;
+    color: #945227!important;
+    text-align: center;
+    margin-top: 3vh;
+}
+
+.answer-text{
+    color: antiquewhite
+}
+
 /* -------------------------Errors */
 
 #error-message {
@@ -846,6 +857,10 @@ textarea #item-desc-edit{
     #flash-message {
         font-size: x-large;
     }
+
+    #email a {
+        font-size: large;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -942,6 +957,12 @@ textarea #item-desc-edit{
     #nav-title {
         font-size: 1.2em!important;
         margin-top: 13px;
+    }
+    #modal-contact{
+        text-align: left;
+    }
+    #youtube-logo{
+        display: none;
     }
 }
 
