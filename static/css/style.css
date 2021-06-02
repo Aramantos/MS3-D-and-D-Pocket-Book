@@ -123,7 +123,7 @@ a {
 
 #dropdown2 {
     width: 100% !important;
-    left: none !important;
+    left: 0 !important;
 }
 
 .dropdown-content {
@@ -827,7 +827,7 @@ textarea #item-desc-edit{
 
 @media screen and (max-width: 400px) {
     #nav-title {
-        font-size: 1.9em;
+        font-size: 1.7em!important;
         margin-top: 9px;
     }
 
@@ -862,7 +862,7 @@ textarea #item-desc-edit{
     }
 
     #nav-title {
-        font-size: 1.2em;
+        font-size: 1.2em!important;
         margin-top: 13px;
     }
 }
