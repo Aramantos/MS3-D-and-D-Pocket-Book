@@ -55,7 +55,12 @@
                 <div class="col s12 center-align">
                     <!--Cancel Button-->
                     <a href="{{ url_for('get_sessions') }}" class="btn-large">Cancel</a>
-                    <button type="submit" class="btn-large">Update Item</button>
+                    <button type="submit" class="btn-large">Update Session</button>
+                </div>
+            </div>
+            <div class="row">
+                <div id="delete-session-row" class="col 12">
+                    <a id="delete-session" href="{{ url_for('delete_session', session_id=sess._id) }}" class="btn-large">Press here to delete this session</a>
                 </div>
             </div>
         </form>

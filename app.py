@@ -464,6 +464,22 @@ def edit_session(session_id):
     return render_template("edit-session.html", sess=sess)
 
 
+@app.route("/delete_session/<session_id>")
+def delete_session(session_id):
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(session_id):
+        abort(404)
+
+    result = mongo.db.sessions.remove({"_id": ObjectId(session_id)})
+    if result['n'] > 0:
+        flash(" - Session Successfully Deleted - ")
+        sessions = list(mongo.db.sessions.find())
+        return render_template("sessions.html", sessions=sessions)
+
+
 def is_object_id_valid(id_value):
     """ Validate is the id_value is a valid ObjectId
     """

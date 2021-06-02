@@ -590,9 +590,12 @@ textarea.materialize-textarea:focus:not([readonly]) {
     padding: 0 15px;
 }
 
-#edit-item-panel,
-#edit-session-panel {
+#edit-item-panel {
     margin-top: 15vh;
+}
+
+#edit-session-panel{
+    margin-top: 10vh;
 }
 
 #item_name_edit,
@@ -635,6 +638,14 @@ textarea #item-desc-edit {
     border-radius: 15vh;
     border-color: #704326;
     margin: 3vh auto;
+}
+
+#delete-session-row{
+    float: none;
+}
+
+#delete-session{
+    overflow: hidden;
 }
 
 /* -------------------------Contact */
