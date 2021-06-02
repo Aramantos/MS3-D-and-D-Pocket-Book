@@ -135,7 +135,7 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
-                        <li><strong><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></strong></li>
+                        <li><strong><a href="{{ url_for('profile') }}">Profile</a></strong></li>
                         <li><strong><a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Search</a></strong></li>
                         <ul id='dropdown1' class='dropdown-content'>
                             <li><a href="{{ url_for('get_items') }}">Items</a></li>
@@ -151,7 +151,7 @@
         <!--Sidenav-->
         <ul class="sidenav right-aligned" id="mobile-demo">
             {% if session.user %}
-                <li><strong><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></strong></li>
+                <li><strong><a href="{{ url_for('profile') }}">Profile</a></strong></li>
                 <li><strong><a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Search</a></strong></li>
                 <ul id='dropdown2' class='dropdown-content'>
                     <li><a href="{{ url_for('get_items') }}">Items</a></li>

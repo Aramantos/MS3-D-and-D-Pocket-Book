@@ -45,25 +45,29 @@ def homepage():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if is_authenticated():
+        return redirect(url_for("profile"))
+
     if request.method == "POST":
+        username = request.form.get("reg-username").lower()
         # check if username already exists in DB
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("reg-username").lower()})
+            {"username": username})
         if existing_user:
             flash(" - Username already exists - ")
             return redirect(url_for("register"))
 
         register = {
-            "username": request.form.get("reg-username").lower(),
+            "username": username,
             "password": generate_password_hash(
                 request.form.get("reg-password"))
         }
         mongo.db.users.insert_one(register)
 
         # put new user into 'session cookie'
-        session["user"] = request.form.get("reg-username").lower()
+        session["user"] = username
         flash(" - Registration successful - ")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile"))
     return render_template("login-register.html")
 
 
@@ -71,7 +75,7 @@ def register():
 def login():
     if request.method == "POST":
         # checks if username exists in DB
-        existing_user = mongo.db.users.find_one_or_404(
+        existing_user = mongo.db.users.find_one(
             {"username": request.form.get("log-username").lower()})
 
         if existing_user:
@@ -96,11 +100,11 @@ def login():
     return render_template("login-register.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
     if not is_authenticated():
         flash(' - There is no user currently logged in - ')
-        return render_template("login-register.html")
+        return redirect(url_for("login"))
 
     # grab the session user's username from the DB
     username = mongo.db.users.find_one_or_404(
@@ -116,12 +120,9 @@ def profile(username):
                 classes[character["class"]] = []
             classes[character["class"]].append(character)
 
-    if session["user"]:
-        return render_template(
-            "profile.html", username=username, games=games, classes=classes
-        )
-
-    return redirect(url_for("login"))
+    return render_template(
+        "profile.html", username=username, games=games, classes=classes
+    )
 
 
 @app.route("/logout")
@@ -149,7 +150,7 @@ def game_add():
         }
         mongo.db.games.insert_one(game)
         flash(" - Game Successfully Added - ")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile"))
 
     return render_template("profile.html")
 
@@ -172,7 +173,7 @@ def char_add():
         }
         mongo.db.characters.insert_one(char)
         flash(" - Character Successfully Added - ")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile"))
 
     return render_template("profile.html")
 
@@ -189,7 +190,7 @@ def delete_game(game_id):
     result = mongo.db.games.remove({"_id": ObjectId(game_id)})
     if result['n'] > 0:
         flash(" - Game Successfully Deleted - ")
-    return redirect(url_for("profile", username=session["user"]))
+    return redirect(url_for("profile"))
 
 
 @app.route("/delete_character/<character_id>")
@@ -204,7 +205,7 @@ def delete_character(character_id):
     result = mongo.db.characters.remove({"_id": ObjectId(character_id)})
     if result['n'] > 0:
         flash(" - Character Successfully Deleted - ")
-    return redirect(url_for("profile", username=session["user"]))
+    return redirect(url_for("profile"))
 
 
 @app.route("/edit_game/<game_id>", methods=["GET", "POST"])
@@ -408,21 +409,21 @@ def update_character(character_id):
             character_name=character_name, character_class=character_class)
 
     return render_template(
-            "character.html", character=character,
-            character_name=character_name, character_class=character_class)
+        "character.html", character=character,
+        character_name=character_name, character_class=character_class)
 
 
 @app.route("/get_items")
 def get_items():
     if not is_authenticated():
         flash(' - There is no user currently logged in - ')
-        return render_template("login-register.html")
+        return redirect(url_for("login"))
 
     items = list(mongo.db.items.find())
     return render_template("items.html", items=items)
 
 
-@app.route("/search_items", methods=["GET", "POST"])
+@app.route("/search_items", methods=["POST"])
 def search_items():
     query = request.form.get("query")
     items = list(mongo.db.items.find({"$text": {"$search": query}}))
@@ -464,7 +465,7 @@ def get_sessions():
     return render_template("sessions.html", sessions=sessions)
 
 
-@app.route("/search_sessions", methods=["GET", "POST"])
+@app.route("/search_sessions", methods=["POST"])
 def search_sessions():
     query = request.form.get("query")
     sessions = list(mongo.db.sessions.find({"$text": {"$search": query}}))
@@ -531,6 +532,11 @@ def is_authenticated():
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
+
+
+@app.errorhandler(405)
+def method_not_allowed(error):
+    return redirect(url_for("profile"))
 
 
 # 500 Error Server Error
