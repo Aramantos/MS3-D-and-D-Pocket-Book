@@ -421,6 +421,23 @@ def edit_item(item_id):
     return render_template("edit-item.html", item=item)
 
 
+@app.route("/get_sessions")
+def get_sessions():
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    sessions = list(mongo.db.sessions.find())
+    return render_template("sessions.html", sessions=sessions)
+
+
+@app.route("/search_sessions", methods=["GET", "POST"])
+def search_sessions():
+    query = request.form.get("query")
+    sessions = list(mongo.db.sessions.find({"$text": {"$search": query}}))
+    return render_template("sessions.html", sessions=sessions)
+
+
 def is_object_id_valid(id_value):
     """ Validate is the id_value is a valid ObjectId
     """
