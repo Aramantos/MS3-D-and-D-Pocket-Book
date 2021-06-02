@@ -714,6 +714,10 @@ textarea #item-desc-edit {
     color: antiquewhite
 }
 
+#faq-list{
+    border-top: #41281C 1px solid;
+}
+
 /* -------------------------Errors */
 
 #error-message {
