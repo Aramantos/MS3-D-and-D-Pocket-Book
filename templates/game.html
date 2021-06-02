@@ -98,6 +98,7 @@
                 <div id="session-desc" class="card-panel">
                     <h3 id="session-desc-title">Session Overview</h3>
                     <textarea id="session-desc-text" name="session-desc-text" class="materialize-textarea"
+                        placeholder="Please select or create a session before adding text"
                         data-length="120" required>{% if game_session is not none %}{{ game_session.session_desc }}{% endif %}</textarea>
                     <label for="session-desc-text" id="session-desc-label"></label>
                 </div>
@@ -141,7 +142,8 @@
                 <form method="POST" action="{{ url_for('update_item', game_id=game_id) }}?item_id={{ item._id }}">
                     <div id="item-overview" class="card-panel">
                         <h3 id="item-overview-title">Item Overview</h3>
-                        <textarea id="item-overview-text" class="materialize-textarea" name="item-overview-text" 
+                        <textarea id="item-overview-text" class="materialize-textarea" name="item-overview-text"
+                            placeholder="Please select or create an item before adding text"
                             data-length="120" required>{% if item is not none %}{{ item.item_desc }}{% endif %}</textarea>
                         <label for="item-overview-text" id="item-overview-label"></label>
                         {% if request.args.get('item_id') %}
