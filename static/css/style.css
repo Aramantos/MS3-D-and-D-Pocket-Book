@@ -183,7 +183,9 @@ strong {
     letter-spacing: 1.5px;
 }
 
-
+#flashes{
+    margin: 0;
+}
 
 #flash-message {
     width: fit-content;
