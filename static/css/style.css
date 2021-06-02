@@ -44,7 +44,12 @@
     background-color: #934B22;
 }
 
-/* Overwrites */
+/*-------------------------Materialize Overwrite */
+
+.card-panel {
+    margin-top: 20vh;
+    background-color: #8c5736b3;
+}
 
 a {
     color: #FEBB6C !important;
@@ -57,10 +62,25 @@ a {
     background-color: #FEBB6C !important;
 }
 
+.btn-small {
+    color: #FEBB6C !important;
+    background-color: #C78048 !important;
+}
+
 .btn:hover,
 .btn-large:hover {
     color: #FEBB6C !important;
     background-color: #C78048 !important;
+}
+
+.btn-small:hover {
+    color: #FEBB6C !important;
+    background-color: #41281C !important;
+}
+
+.btn-large {
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
 .nav-wrapper {
@@ -69,6 +89,11 @@ a {
 
 .sidenav {
     background-color: #704326;
+    text-align: center;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .collapsible {
@@ -87,6 +112,43 @@ a {
     background-color: #C78048;
 }
 
+#dropdown1,
+#dropdown2,
+#dropdown3 {
+    width: auto !important;
+    height: auto !important;
+    max-height: 30vh !important;
+    overflow: auto;
+}
+
+#dropdown2 {
+    width: 100% !important;
+    left: none !important;
+}
+
+.dropdown-content {
+    color: #934B22;
+    background-color: #FEBB6C;
+}
+
+.dropdown-content:hover {
+    color: #934B22;
+    background-color: #FEBB6C;
+}
+
+.input,
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: #934B22 !important;
+    background-color: #FEBB6C;
+}
+
+.dropdown-content li>a:hover,
+.dropdown-content li>span:hover {
+    color: #FEBB6C !important;
+    background-color: #934B22 !important;
+}
+
 /*-------------------------Base Template */
 
 body {
@@ -101,7 +163,7 @@ body {
     font-family: Titillium, sans-serif;
 }
 
-main{
+main {
     overflow: auto;
 }
 
@@ -121,13 +183,7 @@ strong {
     letter-spacing: 1.5px;
 }
 
-.sidenav {
-    text-align: center;
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
+
 
 #flash-message {
     width: fit-content;
@@ -160,18 +216,6 @@ strong {
 }
 
 /*-------------------------Login/Register */
-
-.btn-large {
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.card-panel {
-    margin-top: 20vh;
-    background-color: #8c5736b3;
-    border: #41281C;
-    border-width: 10px;
-}
 
 #log-title,
 #reg-title {
@@ -319,11 +363,6 @@ input[type=password]:not(.browser-default) {
     background-color: antiquewhite;
 }
 
-.input,
-.dropdown-content li>a,
-.dropdown-content li>span {
-    color: #41281C;
-}
 
 #enter-delete-row-game,
 #enter-delete-row-char {
@@ -331,8 +370,7 @@ input[type=password]:not(.browser-default) {
 }
 
 #game-delete-btn,
-#char-delete-btn 
-#game-enter-btn,
+#char-delete-btn #game-enter-btn,
 #char-enter-btn {
     color: #C78048 !important;
     background-color: #FEBB6C !important;
@@ -355,20 +393,15 @@ input[type=password]:not(.browser-default) {
     margin-top: 2vh;
 }
 
-#session-btns{
+#session-btns {
     margin: 0;
 }
 
-#session-btn, #add-session-btn, #update-session{
+#session-btn,
+#add-session-btn,
+#update-session {
     margin-top: 0vh;
     overflow: hidden;
-}
-
-#dropdown1{
-    width: auto!important;
-    height: auto!important;
-    max-height: 30vh!important;
-    overflow: auto;
 }
 
 #session-desc {
@@ -380,11 +413,12 @@ input[type=password]:not(.browser-default) {
 #session-desc-title {
     font-size: x-large;
     color: antiquewhite;
-    margin: 0;
+    margin: 1vh 0;
+    padding-top: 1vh;
 }
 
 #session-desc-text {
-    height: 30vh;
+    height: 27vh;
     max-height: 30vh;
     color: antiquewhite;
     overflow: auto;
@@ -424,7 +458,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     background-color: #faebd794;
 }
 
-#enter-delete-row-item{
+#enter-delete-row-item {
     margin: 0;
 }
 
@@ -447,7 +481,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     overflow: auto;
 }
 
-#item-update-btn{
+#item-update-btn {
     overflow: hidden;
 }
 
@@ -512,9 +546,96 @@ textarea.materialize-textarea:focus:not([readonly]) {
     overflow: auto;
 }
 
+/* -------------------------Search */
+
+#item-search-title,
+#session-search-title,
+#edit-item-title,
+#edit-session-title{
+    color: antiquewhite;
+    background-color: #8c5736b3;
+    width: fit-content;
+    padding: 0 10vw;
+    margin: 3vh auto;
+}
+
+#search-bar {
+    margin-top: 3vh;
+}
+
+#search-btns{
+    margin-top: 1.8rem;
+}
+
+#session-search-list,
+#item-search-list {
+    margin-top: 4vh;
+}
+
+#item-name,
+#session-name {
+    line-height: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#session-name-contents,
+#item-name-contents {
+    display: contents;
+}
+
+#session-name-contents strong,
+#item-name-contents strong {
+    padding: 0 15px;
+}
+
+#edit-item-panel,
+#edit-session-panel{
+    margin-top: 15vh;
+}
+
+#item_name_edit,
+#session_name_edit,
+#item_overview_edit,
+#session_desc_edit,
+#session_date_edit {
+    color: antiquewhite;
+    font-weight: 600;
+    font-size: larger;
+}
+
+/* #item_name_edit label,
+#session_name_edit label,
+#item_overview_edit label,
+#session_desc_edit label,
+#session_date_edit label {
+    font-weight: 600;
+    font-size: larger;
+} */
+
+#item_overview_edit,
+#session_desc_edit{
+    height: 20vh;
+    max-height: 20vh;
+}
+
+#game-name-edit-row,
+#session-num-edit-row{
+    display: none;
+}
+
+textarea #item-desc-edit{
+    border: 2px solid #934B22;
+}
+
+#query{
+    color: antiquewhite;
+}
+
 /* -------------------------Errors */
 
-#error-message{
+#error-message {
     color: #febc6b;
     padding: 35px;
     border: 10px solid;
@@ -523,7 +644,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     background-color: #C78048;
 }
 
-#error-back-btn{
+#error-back-btn {
     margin-top: 40vh;
 }
 
@@ -533,51 +654,62 @@ textarea.materialize-textarea:focus:not([readonly]) {
     left: 0;
     right: 0;
 
-    animation-name            : dragon;
-    animation-duration        : 10s;
-    animation-iteration-count : infinite;
-    animation-direction       : alternate;
+    animation-name: dragon;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 @keyframes dragon {
     0% {
-        transform : scale(1);
+        transform: scale(1);
     }
+
     10% {
-        transform : translateY(12em);
+        transform: translateY(12em);
     }
+
     20% {
-        transform : scale(0.75);
+        transform: scale(0.75);
     }
+
     30% {
-        transform : translateX(-9em);
+        transform: translateX(-9em);
     }
+
     40% {
-        transform : translateY(16em);
+        transform: translateY(16em);
     }
+
     50% {
-        transform : translateY(-5em);
+        transform: translateY(-5em);
     }
+
     60% {
-        transform : scale(1.25);
+        transform: scale(1.25);
     }
+
     70% {
-        transform : translateX(12em);
+        transform: translateX(12em);
     }
+
     80% {
-        transform : translateY(-17em);
+        transform: translateY(-17em);
     }
+
     90% {
-        transform : translateX(10em);
+        transform: translateX(10em);
     }
+
     100% {
-        transform : scale(1);
+        transform: scale(1);
     }
 }
 
 /* -------------------------Media Queries */
 
 @media screen and (max-width: 1200px) {
+
     #log-title,
     #reg-title {
         font-size: 3rem;
@@ -585,26 +717,31 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 @media screen and (max-width: 1100px) {
+
     #char-box-1-title,
     #char-box-2-title,
     #char-box-3-title,
     #char-box-4-title {
         font-size: large;
     }
-    #error-message{
+
+    #error-message {
         font-size: xx-large;
     }
 }
 
 @media screen and (max-width: 992px) {
+
     #game-add-panel,
     #char-add-panel,
     #item-add-panel {
         width: 85%;
     }
+
     #char-add-panel {
         margin-top: 80vh;
     }
+
     #char-box-1-title,
     #char-box-2-title,
     #char-box-3-title,
@@ -618,6 +755,12 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #log-title,
     #reg-title {
         font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 706px) {
+    .btn{
+        padding: 0 6px;
     }
 }
 
@@ -637,19 +780,32 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #reg-title {
         font-size: 2rem;
     }
+
     #game-add-panel,
     #char-add-panel,
     #item-add-panel {
         width: 90%;
     }
+
     #item-add-panel {
         margin-top: 47vh;
     }
-    #error-message{
+
+    #error-message {
         font-size: x-large;
     }
-    #dragon{
+
+    #dragon {
         width: -webkit-fill-available;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #item-search-title,
+    #session-search-title,
+    #edit-item-title,
+    #edit-session-title{
+        font-size: xx-large;
     }
 }
 
@@ -657,11 +813,15 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #flash-message {
         font-size: large;
     }
+
     #char-box-1-title,
     #char-box-2-title,
     #char-box-3-title,
     #char-box-4-title {
         font-size: large;
+    }
+    .btn-large{
+        padding: 0px 12px;
     }
 }
 
@@ -673,27 +833,35 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
     #log-reg-btns {
         margin: 0;
-        margin-right: 48px;
     }
-    #profile-name{
+
+    #profile-name {
         font-size: xx-large;
     }
 }
 
 @media screen and (max-width: 350px) {
+
     #char-box-1-title,
     #char-box-2-title,
     #char-box-3-title,
     #char-box-4-title {
         font-size: medium;
     }
-    .btn{
+
+    .btn {
         padding: 0 10px;
     }
-    .row .col{
+
+    .btn-large {
+        letter-spacing: 0;
+    }
+
+    .row .col {
         padding: 0;
     }
-    #nav-title{
+
+    #nav-title {
         font-size: 1.2em;
         margin-top: 13px;
     }
@@ -701,10 +869,11 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 
 @media screen and (max-height: 1000px) {
-    #session-desc-text{
+    #session-desc-text {
         height: 25vh;
     }
-    #item-overview, #item-panel{
+    #item-overview,
+    #item-panel {
         height: 36.4vh;
     }
 }
@@ -719,10 +888,16 @@ textarea.materialize-textarea:focus:not([readonly]) {
     .card-panel {
         margin-top: 15vh;
     }
-    #item-overview, #item-panel{
+    #edit-item-panel,
+    #edit-session-panel{
+    margin-top: 10vh;
+    }
+    #item-overview,
+    #item-panel {
         height: 36.4vh;
     }
-    #item-overview-text, #item-list-panel{
+    #item-overview-text,
+    #item-list-panel {
         height: 20vh;
     }
 }
@@ -737,7 +912,11 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #flash-message {
         top: 9vh;
     }
-    #session-desc-text{
+    #edit-item-panel,
+    #edit-session-panel{
+    margin-top: 7vh;
+    }
+    #session-desc-text {
         height: 20vh;
     }
 }
@@ -746,14 +925,25 @@ textarea.materialize-textarea:focus:not([readonly]) {
     .card-panel {
         margin-top: 5vh;
     }
+
     #log-reg-btns {
         margin-top: 7vh;
     }
+
     #flash-message {
         top: 8vh;
     }
-    #item-overview, #item-panel{
+
+    #item-overview,
+    #item-panel {
         height: 38.4vh;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    #edit-item-panel,
+    #edit-session-panel{
+    margin-top: 4vh;
     }
 }
 
@@ -761,13 +951,17 @@ textarea.materialize-textarea:focus:not([readonly]) {
     .card-panel {
         margin-top: 3vh;
     }
+
     #log-reg-btns {
         margin-top: 5vh;
     }
-    #item-desc, #item-panel{
+
+    #item-desc,
+    #item-panel {
         height: 40.4vh;
     }
-    .collapsible-body{
+
+    .collapsible-body {
         padding: 1rem;
     }
 }
@@ -776,20 +970,26 @@ textarea.materialize-textarea:focus:not([readonly]) {
     #log-reg-btns {
         margin-top: 0;
     }
-    #item-overview, #item-panel{
+
+    #item-overview,
+    #item-panel {
         height: 41.4vh;
     }
 }
 
 
 @media screen and (max-height: 500px) {
-    #item-overview, #item-panel{
+
+    #item-overview,
+    #item-panel {
         height: 46.4vh;
     }
 }
 
 @media screen and (max-height: 400px) {
-    #item-overview, #item-panel{
+
+    #item-overview,
+    #item-panel {
         height: 52.4vh;
     }
 }
