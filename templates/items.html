@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 id="item-search-title" class="center-align">Items</h3>
+
+    <div id="search-bar" class="card-panel">
+        <form action="{{ url_for('search_items') }}" method="post">
+            <div class="row center-align">
+                <div class="input-field col s12 m7">
+                    <i class="fas fa-search prefix"></i>
+                    <input type="text" name="query" id="query" minlength="1" required>
+                    <label for="query">Search Items</label>
+                </div>
+                <div id="search-btns" class="col s12 m5">
+                    <a href="{{ url_for('get_items') }}" class="btn">Reset</a>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-search left"></i>Search
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% if items|length > 0 %}
+        <!-- Show all the items this user has created -->
+        <ul id="item-search-list" class="collapsible">
+            {% for item in items %}
+                {% if session.user|lower == item.created_by|lower %}
+                    <li>
+                        <div id="item-name" class="collapsible-header">
+                            <div class="col s3">
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                            <div id="item-name-contents" class="col s9">
+                                <strong>{{ item.item_name }} - {{ item.game_name }}</strong>
+                                <a href="" class="btn-small right">Edit</a>
+                            </div>
+                        </div>
+                        <div class="collapsible-body">
+                            <strong>{{ item.item_desc }}</strong>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endfor%}
+        </ul>
+
+    {% else %}
+        <h3 class="center-align">No Results Found</h3>
+    {% endif %}
+
+{% endblock %}

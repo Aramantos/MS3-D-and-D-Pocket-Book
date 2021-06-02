@@ -379,6 +379,23 @@ def update_character(character_id):
         character_name=character_name, character_class=character_class)
 
 
+@app.route("/get_items")
+def get_items():
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    items = list(mongo.db.items.find())
+    return render_template("items.html", items=items)
+
+
+@app.route("/search_items", methods=["GET", "POST"])
+def search_items():
+    query = request.form.get("query")
+    items = list(mongo.db.items.find({"$text": {"$search": query}}))
+    return render_template("items.html", items=items)
+
+
 def is_object_id_valid(id_value):
     """ Validate is the id_value is a valid ObjectId
     """
