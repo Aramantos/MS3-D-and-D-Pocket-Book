@@ -16,6 +16,63 @@
 </head>
 <body>
 
+    <div id="modal-contact" class="modal card">
+        <!--Contact Modal-->
+        <div class="modal-content">
+            <span class="card-title">Contact Information</span>
+            <div>
+                <div id="contact" class="row">
+                    <p id="email" class="col s12 m6">
+                        <a href="mailto:john.doyle.mail@icloud.com">john.doyle.mail@icloud.com</a></p>
+                    <p id="number" class="col s12 m6">085 203 9911</p>
+                </div>
+                <div id="social">
+                    <ul id="social-links">
+                        <li class="social-link">
+                            <a class="no-bg" target="_blank" rel="noreferrer" href="https://www.facebook.com/JDography">
+                                <i class="fab fa-facebook fa-2x" aria-hidden="true"></i>
+                                <span class="sr-only">Facebook</span>
+                            </a>
+                        </li>
+                        <li class="social-link">
+                            <a class="no-bg" target="_blank" rel="noreferrer" href="https://twitter.com/JD_Aramantos">
+                                <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+                                <span class="sr-only">Twitter</span>
+                            </a>
+                        </li>
+                        <li class="social-link">
+                            <a class="no-bg" target="_blank" rel="noreferrer"
+                                href="https://www.linkedin.com/in/john-doyle-ab717a95/">
+                                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                                <span class="sr-only">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li class="social-link">
+                            <a class="no-bg" target="_blank" rel="noreferrer" href="https://www.instagram.com/jd_aramantos/">
+                                <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                                <span class="sr-only">Instagram</span>
+                            </a>
+                        </li>
+                        <li class="social-link">
+                            <a class="no-bg" target="_blank" rel="noreferrer"
+                                href="https://www.youtube.com/channel/UC_wOhkiRlmf1r1EILnQajcQ?view_as=subscriber">
+                                <i class="fab fa-youtube fa-2x" aria-hidden="true"></i>
+                                <span class="sr-only">Youtube</span>
+                            </a>
+                        </li>
+                        <li class="social-link">
+                            <a class="no-bg" target="_blank" rel="noreferrer" href="https://github.com/Aramantos">
+                                <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                                <span class="sr-only">Github</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <header>
         <nav>
             <!--Navbar-->
@@ -31,7 +88,7 @@
                             <li><a href="{{ url_for('get_sessions') }}">Sessions</a></li>
                         </ul>
                     {% endif %}
-                    <li><strong><a href="#">Contact</a></strong></li>
+                    <li><strong><a id="contact" class="modal-trigger" href="#modal-contact">Contact</a></strong></li>
                     <li><strong><a href="#">FAQ</a></strong></li>
                     <li><strong><a class="btn" href="{{ url_for('logout') }}">Log Out</a></strong></li>
                 </ul>
@@ -47,7 +104,7 @@
                     <li><a href="{{ url_for('get_sessions') }}">Sessions</a></li>
                 </ul>
             {% endif %}
-            <li><strong><a href="#">Contact</a></strong></li>
+            <li><strong><a id="contact" class="modal-trigger" href="#modal-contact">Contact</a></strong></li>
             <li><strong><a href="#">FAQ</a></strong></li>
             <li><strong><a class="btn" href="{{ url_for('logout') }}">Log Out</a></strong></li>
         </ul>
