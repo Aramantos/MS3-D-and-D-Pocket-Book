@@ -551,7 +551,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 #item-search-title,
 #session-search-title,
 #edit-item-title,
-#edit-session-title{
+#edit-session-title {
     color: antiquewhite;
     background-color: #8c5736b3;
     width: fit-content;
@@ -563,7 +563,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     margin-top: 3vh;
 }
 
-#search-btns{
+#search-btns {
     margin-top: 1.8rem;
 }
 
@@ -591,7 +591,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 #edit-item-panel,
-#edit-session-panel{
+#edit-session-panel {
     margin-top: 15vh;
 }
 
@@ -605,120 +605,112 @@ textarea.materialize-textarea:focus:not([readonly]) {
     font-size: larger;
 }
 
-/* #item_name_edit label,
-#session_name_edit label,
-#item_overview_edit label,
-#session_desc_edit label,
-#session_date_edit label {
-    font-weight: 600;
-    font-size: larger;
-} */
-
 #item_overview_edit,
-#session_desc_edit{
+#session_desc_edit {
     height: 20vh;
     max-height: 20vh;
 }
 
 #game-name-edit-row,
-#session-num-edit-row{
+#session-num-edit-row {
     display: none;
 }
 
-textarea #item-desc-edit{
+textarea #item-desc-edit {
     border: 2px solid #934B22;
 }
 
-#query{
+#query {
     color: antiquewhite;
 }
 
 /* -------------------------Contact */
 
-#modal-contact{
+#modal-contact {
     background-color: antiquewhite;
-    color: #945227!important;
+    color: #945227 !important;
     text-align: center;
     margin-top: 3vh;
 }
 
 #email,
-#number{
+#number {
     font-size: x-large;
-    color: #945227!important;
+    color: #945227 !important;
     margin: 32px 0;
 }
 
-#email a{
+#email a {
     font-size: x-large;
-    color: #945227!important;
+    color: #945227 !important;
     background-color: transparent;
 }
 
-#email:hover{
+#email:hover {
     text-decoration: underline;
 }
 
 #social {
-  text-align: center;
+    text-align: center;
 }
 
 #social-links {
-  list-style: none;
-  display: flex;
-  margin: auto;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    margin: auto;
+    padding: 0;
 }
 
 .social-link {
-  margin: auto;
+    margin: auto;
 }
 
 /* Social Links styles & color change animation */
 
 #social-links li a i {
-  margin-top: 5px;
-  margin-bottom: 0;
-  padding: 5px;
-  border-radius: 50%;
-  text-align: center;
-  color: #C78048;
-  background: #704326;
-  transition: all 0.35s ease-in-out;
-  -moz-transition: all 0.35s ease-in-out;
-  -webkit-transition: all 0.35s ease-in-out;
-  -o-transition: all 0.35s ease-in-out;
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding: 5px;
+    border-radius: 50%;
+    text-align: center;
+    color: #C78048;
+    background: #704326;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
 }
 
 #social-links li a i:hover {
-  animation-name: social-links-zoom;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
+    animation-name: social-links-zoom;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes social-links-zoom {
-  from {
-    transform: scale(1) rotate(0deg);
-  }
-  to {
-    transform: scale(1.3) rotate(360deg);
-  }
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+
+    to {
+        transform: scale(1.3) rotate(360deg);
+    }
 }
 
-.no-bg{
+.no-bg {
     background-color: unset;
 }
 
 /* -------------------------FAQ */
 
-#modal-faq{
+#modal-faq {
     background-color: antiquewhite;
-    color: #945227!important;
+    color: #945227 !important;
     text-align: center;
     margin-top: 3vh;
 }
 
-.answer-text{
+.answer-text {
     color: antiquewhite
 }
 
@@ -848,7 +840,7 @@ textarea #item-desc-edit{
 }
 
 @media screen and (max-width: 706px) {
-    .btn{
+    .btn {
         padding: 0 6px;
     }
 }
@@ -894,10 +886,11 @@ textarea #item-desc-edit{
 }
 
 @media screen and (max-width: 500px) {
+
     #item-search-title,
     #session-search-title,
     #edit-item-title,
-    #edit-session-title{
+    #edit-session-title {
         font-size: xx-large;
     }
 }
@@ -913,14 +906,15 @@ textarea #item-desc-edit{
     #char-box-4-title {
         font-size: large;
     }
-    .btn-large{
+
+    .btn-large {
         padding: 0px 12px;
     }
 }
 
 @media screen and (max-width: 400px) {
     #nav-title {
-        font-size: 1.7em!important;
+        font-size: 1.7em !important;
         margin-top: 9px;
     }
 
@@ -955,13 +949,15 @@ textarea #item-desc-edit{
     }
 
     #nav-title {
-        font-size: 1.2em!important;
+        font-size: 1.2em !important;
         margin-top: 13px;
     }
-    #modal-contact{
+
+    #modal-contact {
         text-align: left;
     }
-    #youtube-logo{
+
+    #youtube-logo {
         display: none;
     }
 }
@@ -971,6 +967,7 @@ textarea #item-desc-edit{
     #session-desc-text {
         height: 25vh;
     }
+
     #item-overview,
     #item-panel {
         height: 36.4vh;
@@ -987,14 +984,17 @@ textarea #item-desc-edit{
     .card-panel {
         margin-top: 15vh;
     }
+
     #edit-item-panel,
-    #edit-session-panel{
-    margin-top: 10vh;
+    #edit-session-panel {
+        margin-top: 10vh;
     }
+
     #item-overview,
     #item-panel {
         height: 36.4vh;
     }
+
     #item-overview-text,
     #item-list-panel {
         height: 20vh;
@@ -1011,10 +1011,12 @@ textarea #item-desc-edit{
     #flash-message {
         top: 9vh;
     }
+
     #edit-item-panel,
-    #edit-session-panel{
-    margin-top: 7vh;
+    #edit-session-panel {
+        margin-top: 7vh;
     }
+
     #session-desc-text {
         height: 20vh;
     }
@@ -1040,9 +1042,10 @@ textarea #item-desc-edit{
 }
 
 @media screen and (max-height: 700px) {
+
     #edit-item-panel,
-    #edit-session-panel{
-    margin-top: 4vh;
+    #edit-session-panel {
+        margin-top: 4vh;
     }
 }
 

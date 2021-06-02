@@ -21,7 +21,7 @@
         <div class="modal-content">
             <span class="card-title">Contact Information</span>
             <div>
-                <div id="contact" class="row">
+                <div id="contact-info" class="row">
                     <p id="email" class="col s12 m6">
                         <a href="mailto:john.doyle.mail@icloud.com">john.doyle.mail@icloud.com</a></p>
                     <p id="number" class="col s12 m6">085 203 9911</p>
@@ -79,26 +79,43 @@
              <ul class="collapsible">
                 <li>
                     <div class="collapsible-header">
-                        <i class="fab fa-d-and-d color-1 prefix"></i>Question 1
+                        <i class="fab fa-d-and-d color-1 prefix"></i>How can I delete a session?
                     </div>
                     <div class="collapsible-body answer-text">
-                        <span>Lorem ipsum dolor sit amet.</span>
+                        <span>You need to look up the session first.<br>Press the search button in the navbar and press sessions.<br>Then find the session you wish to delete and press delete.
+                        </span>
                     </div>
                 </li>
                 <li>
                     <div class="collapsible-header">
-                        <i class="fab fa-d-and-d color-1 prefix"></i>Question 2
+                        <i class="fab fa-d-and-d color-1 prefix"></i>I cant find the session or item I am looking for, why?
                     </div>
                     <div class="collapsible-body answer-text">
-                        <span>Lorem ipsum dolor sit amet.</span>
+                        <span>Spelling needs to be exact, try and limit the search to a single word you know is in the item or session you are looking for.</span>
                     </div>
                 </li>
                 <li>
                     <div class="collapsible-header">
-                        <i class="fab fa-d-and-d color-1 prefix"></i>Question 3
+                        <i class="fab fa-d-and-d color-1 prefix"></i>Can I undo a delete?
                     </div>
                     <div class="collapsible-body answer-text">
-                        <span>Lorem ipsum dolor sit amet.</span>
+                        <span>No.... You made a mistake, live with it.</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <i class="fab fa-d-and-d color-1 prefix"></i>I can't remember my password, how do I rest it?
+                    </div>
+                    <div class="collapsible-body answer-text">
+                        <span>That sounds like a you problem</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <i class="fab fa-d-and-d color-1 prefix"></i>I can't remember my password, how do I rest it?
+                    </div>
+                    <div class="collapsible-body answer-text">
+                        <span>That sounds like a you problem</span>
                     </div>
                 </li>
             </ul>
@@ -122,8 +139,8 @@
                             <li><a href="{{ url_for('get_sessions') }}">Sessions</a></li>
                         </ul>
                     {% endif %}
-                    <li><strong><a id="contact" class="modal-trigger" href="#modal-contact">Contact</a></strong></li>
-                    <li><strong><a id="faq" class="modal-trigger" href="#modal-faq">FAQ</a></strong></li>
+                    <li><strong><a id="contact-nav" class="modal-trigger" href="#modal-contact">Contact</a></strong></li>
+                    <li><strong><a id="faq-nav" class="modal-trigger" href="#modal-faq">FAQ</a></strong></li>
                     <li><strong><a class="btn" href="{{ url_for('logout') }}">Log Out</a></strong></li>
                 </ul>
             </div>
@@ -138,8 +155,8 @@
                     <li><a href="{{ url_for('get_sessions') }}">Sessions</a></li>
                 </ul>
             {% endif %}
-            <li><strong><a id="contact" class="modal-trigger" href="#modal-contact">Contact</a></strong></li>
-            <li><strong><a id="faq" class="modal-trigger" href="#modal-faq">FAQ</a></strong></li>
+            <li><strong><a id="contact-sidenav" class="modal-trigger" href="#modal-contact">Contact</a></strong></li>
+            <li><strong><a id="faq-sidenav" class="modal-trigger" href="#modal-faq">FAQ</a></strong></li>
             <li><strong><a class="btn" href="{{ url_for('logout') }}">Log Out</a></strong></li>
         </ul>
     </header>
