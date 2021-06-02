@@ -22,7 +22,6 @@ mongo = PyMongo(app)
 @app.route("/homepage", methods=["GET", "POST"])
 def homepage():
     if is_authenticated():
-
         # grab the session user's username from the DB
         username = mongo.db.users.find_one_or_404(
             {"username": session["user"]})["username"]
@@ -243,6 +242,13 @@ def edit_game(game_id):
 
 @app.route("/add_session/<game_id>", methods=["GET", "POST"])
 def add_session(game_id):
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(game_id):
+        abort(404)
+
     today = date.today()
     sess_date = today.strftime("%d/%m/%Y")
     if request.method == "POST":
@@ -263,6 +269,13 @@ def add_session(game_id):
 
 @app.route("/update_session/<game_id>", methods=["GET", "POST"])
 def update_session(game_id):
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(game_id):
+        abort(404)
+
     if request.method == "POST":
         session_id = request.form.get("session-id-hidden")
         sess = mongo.db.sessions.find_one({"_id": ObjectId(session_id)})
@@ -310,7 +323,13 @@ def item_add(game_id):
 
 @app.route("/update_item/<game_id>", methods=["GET", "POST"])
 def update_item(game_id):
-    print("test")
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(game_id):
+        abort(404)
+
     if request.method == "POST":
         item_id = request.form.get("item-id-hidden")
         item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
@@ -329,6 +348,10 @@ def update_item(game_id):
 
 @app.route("/delete_item/<item_id>/<game_id>")
 def delete_item(item_id, game_id):
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
     result = mongo.db.items.remove({"_id": ObjectId(item_id)})
     if result['n'] > 0:
         flash(" - Item Successfully Deleted - ")
@@ -356,6 +379,13 @@ def edit_character(character_id):
 
 @app.route("/update_character/<character_id>", methods=["GET", "POST"])
 def update_character(character_id):
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(character_id):
+        abort(404)
+
     character = mongo.db.characters.find_one_or_404(
         {"_id": ObjectId(character_id)})
     character_name = character["character_name"]
@@ -374,6 +404,10 @@ def update_character(character_id):
         mongo.db.characters.update({"_id": ObjectId(character_id)}, submit)
         flash(" - Character Successfully Updated - ")
         return render_template(
+            "character.html", character=character,
+            character_name=character_name, character_class=character_class)
+
+    return render_template(
             "character.html", character=character,
             character_name=character_name, character_class=character_class)
 
