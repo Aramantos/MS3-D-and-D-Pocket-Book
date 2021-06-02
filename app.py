@@ -438,6 +438,33 @@ def search_sessions():
     return render_template("sessions.html", sessions=sessions)
 
 
+@app.route("/edit_session/<session_id>", methods=["GET", "POST"])
+def edit_session(session_id):
+    if not is_authenticated():
+        flash(' - There is no user currently logged in - ')
+        return render_template("login-register.html")
+
+    if not is_object_id_valid(session_id):
+        abort(404)
+
+    if request.method == "POST":
+        submit = {
+            "session_num": request.form.get("session_num_edit"),
+            "session_name": request.form.get("session_name_edit"),
+            "session_date": request.form.get("session_date_edit"),
+            "session_desc": request.form.get("session_desc_edit"),
+            "game_name": request.form.get("game_name_edit"),
+            "created_by": session["user"]
+        }
+        mongo.db.sessions.update({"_id": ObjectId(session_id)}, submit)
+        flash(" - Session Successfully Updated - ")
+        sessions = list(mongo.db.sessions.find())
+        return render_template("sessions.html", sessions=sessions)
+
+    sess = mongo.db.sessions.find_one({"_id": ObjectId(session_id)})
+    return render_template("edit-session.html", sess=sess)
+
+
 def is_object_id_valid(id_value):
     """ Validate is the id_value is a valid ObjectId
     """

@@ -33,7 +33,7 @@
                             </div>
                             <div id="session-name-contents" class="col s9">
                                 <strong>{{ sess.session_num }} - {{ sess.session_name }} - {{ sess.session_date }} - {{ sess.game_name }}</strong> 
-                                <a href="" class="btn-small right">Edit</a>
+                                <a href="{{ url_for('edit_session', session_id=sess._id) }}" class="btn-small right">Edit</a>
                             </div>
                         </div>
                         <div class="collapsible-body">

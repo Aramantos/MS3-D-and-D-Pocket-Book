@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 id="edit-session-title" class="center-align">Edit Session</h3>
+
+    <div id="edit-session-panel" class="row card-panel">
+        <form class="col s12" method="POST" action="{{ url_for('edit_session', session_id=sess._id) }}">
+            <!--Session Number-->
+            <div id="session-num-edit-row" class="row">
+                <div class="input-field col s12">
+                    <i class="fab fa-d-and-d prefix"></i>
+                    <input id="session_num_edit" name="session_num_edit" minlength="5" maxlength="50" 
+                        value="{{ sess.session_num }}" type="text" class="validate" required>
+                    <label for="session_num_edit">Session Number</label>
+                </div>
+            </div>
+            <!--Session Name-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fab fa-d-and-d prefix"></i>
+                    <input id="session_name_edit" name="session_name_edit" minlength="5" maxlength="50" 
+                        value="{{ sess.session_name }}" type="text" required>
+                    <label for="session_name_edit">Session Name</label>
+                </div>
+            </div>
+            <!--Session Date-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fab fa-d-and-d prefix"></i>
+                    <input id="session_date_edit" name="session_date_edit" minlength="5" maxlength="50" 
+                        value="{{ sess.session_date }}" type="text" required>
+                    <label for="session_date_edit">Session Date</label>
+                </div>
+            </div>
+            <!--Session Overview-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fab fa-d-and-d prefix"></i>
+                    <textarea id="session_desc_edit" name="session_desc_edit"
+                        class="materialize-textarea" required>{{ sess.session_desc }}</textarea>
+                    <label for="session_desc_edit">Session Overview</label>
+                </div>
+            </div>
+            <!--Session Game Name-->
+            <div id="game-name-edit-row" class="row">
+                <div class="input-field col s12">
+                    <i class="fab fa-d-and-d prefix "></i>
+                    <input id="game_name_edit" name="game_name_edit" minlength="1" maxlength="50" 
+                        value="{{ sess.game_name }}" type="text" required>
+                    <label for="game_name_edit">Game Name</label>
+                </div>
+            </div>
+            <!--Submit Button-->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <!--Cancel Button-->
+                    <a href="{{ url_for('get_sessions') }}" class="btn-large">Cancel</a>
+                    <button type="submit" class="btn-large">Update Item</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
