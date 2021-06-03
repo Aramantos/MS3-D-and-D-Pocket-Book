@@ -227,6 +227,13 @@ strong {
 .are-you-sure{
     font-size: large;
 }
+
+.delete-modals{
+    background-color: antiquewhite;
+    color: #945227 !important;
+    text-align: center;
+    margin-top: 20vh;
+}
 /*-------------------------Login/Register */
 
 #log-title,
@@ -396,14 +403,6 @@ input[type=password]:not(.browser-default) {
     background-color: antiquewhite !important;
 }
 
-#game-delete-modal,
-#char-delete-modal{
-    background-color: antiquewhite;
-    color: #945227 !important;
-    text-align: center;
-    margin-top: 20vh;
-}
-
 /* -------------------------Game Page */
 
 #session-title-num {
@@ -521,13 +520,6 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 #item-add-card-content {
     background-color: antiquewhite;
-}
-
-#item-delete-modal{
-    background-color: antiquewhite;
-    color: #945227 !important;
-    text-align: center;
-    margin-top: 20vh;
 }
 
 /* -------------------------Character Page */
