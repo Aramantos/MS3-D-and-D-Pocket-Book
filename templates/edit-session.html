@@ -5,7 +5,7 @@
 
     <div id="edit-session-panel" class="row card-panel">
         <form class="col s12" method="POST" action="{{ url_for('edit_session', session_id=sess._id) }}">
-            <!--Session Number-->
+            <!-- Session Number -->
             <div id="session-num-edit-row" class="row">
                 <div class="input-field col s12">
                     <i class="fab fa-d-and-d prefix"></i>
@@ -14,7 +14,7 @@
                     <label for="session_num_edit">Session Number</label>
                 </div>
             </div>
-            <!--Session Name-->
+            <!-- Session Name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fab fa-d-and-d prefix"></i>
@@ -23,7 +23,7 @@
                     <label for="session_name_edit">Session Name</label>
                 </div>
             </div>
-            <!--Session Date-->
+            <!-- Session Date -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fab fa-d-and-d prefix"></i>
@@ -32,7 +32,7 @@
                     <label for="session_date_edit">Session Date</label>
                 </div>
             </div>
-            <!--Session Overview-->
+            <!-- Session Overview -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fab fa-d-and-d prefix"></i>
@@ -41,7 +41,7 @@
                     <label for="session_desc_edit">Session Overview</label>
                 </div>
             </div>
-            <!--Session Game Name-->
+            <!-- Session Game Name -->
             <div id="game-name-edit-row" class="row">
                 <div class="input-field col s12">
                     <i class="fab fa-d-and-d prefix "></i>
@@ -50,16 +50,17 @@
                     <label for="game_name_edit">Game Name</label>
                 </div>
             </div>
-            <!--Submit Button-->
             <div class="row">
                 <div class="col s12 center-align">
                     <!--Cancel Button-->
                     <a href="{{ url_for('get_sessions') }}" class="btn-large">Cancel</a>
+                    <!-- Update Button -->
                     <button type="submit" class="btn-large">Update Session</button>
                 </div>
             </div>
             <div class="row">
                 <div id="delete-session-row" class="col 12">
+                    <!-- Delete Session Button -->
                     <a id="delete-session" href="{{ url_for('delete_session', session_id=sess._id) }}" class="btn-large">Press here to delete this session</a>
                 </div>
             </div>

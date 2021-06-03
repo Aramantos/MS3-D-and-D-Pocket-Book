@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}" />
-    <!--CREDIT: favicon: https://favicon.io/-->
+    <!-- CREDIT: favicon: https://favicon.io/ -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
         integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
@@ -17,7 +17,7 @@
 <body>
 
     <div id="modal-contact" class="modal card">
-        <!--Contact Modal-->
+        <!-- Contact Modal -->
         <div class="modal-content">
             <span class="card-title">Contact Information</span>
             <div>
@@ -73,7 +73,7 @@
     </div>
     
     <div id="modal-faq" class="modal card">
-        <!--FAQ Modal-->
+        <!-- FAQ Modal -->
         <div class="modal-content">
             <span class="card-title">Frequently Asked Questions</span>
              <ul id="faq-list" class="collapsible">
@@ -139,7 +139,7 @@
 
     <header>
         <nav>
-            <!--Navbar-->
+            <!-- Navbar -->
             <div class="nav-wrapper">
                 <a href="{{ url_for('homepage') }}" id="nav-title" class="fas fa-dragon"> D&D Pocket Book</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -158,7 +158,7 @@
                 </ul>
             </div>
         </nav>
-        <!--Sidenav-->
+        <!-- Sidenav -->
         <ul class="sidenav right-aligned" id="mobile-demo">
             {% if session.user %}
                 <li><strong><a href="{{ url_for('profile') }}">Profile</a></strong></li>
@@ -175,7 +175,7 @@
     </header>
 
     <section>
-        <!--Flash Messages-->
+        <!-- Flash Messages -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}

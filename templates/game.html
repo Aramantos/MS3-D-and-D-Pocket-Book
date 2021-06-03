@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="row no-bottom">
-        <!--item add panel-->
+        <!-- Item Add Panel -->
         <div id="item-add-panel" class="card-panel col s12 m6">
             <div class="card">
                 <div id="item-add-card-content" class="card-content">
@@ -23,9 +23,11 @@
                                 </div>
                             </div>
                             <div>
+                                <!-- Submit Button -->
                                 <button id="item-add-submit" type="submit" class="col s6 btn-large">
                                     Submit
                                 </button>
+                                <!-- Cancel Button -->
                                 <a id="item-add-cancel" class="col s6 btn-large">
                                     Cancel
                                 </a>
@@ -38,11 +40,11 @@
     </div>
 
     <div id="modal-add-session" class="modal card">
-        <!--add session mondal-->
+        <!-- Add Session Modal -->
         <div class="modal-content">
             <span class="card-title">Add a Session</span>
             <form method="POST" action="{{ url_for('add_session', game_id=game_id) }}">
-                <!-- calculate the total number of session for this user -->
+                <!-- Calculate the Total Number of Sessions for this Game -->
                 {% set session_count = namespace(sessions=0) %}
                 {% for sess in sessions %}
                     {% if session.user|lower == sess.created_by|lower %}
@@ -72,7 +74,7 @@
             <div class="col s4">
                 <a id="session-btn" class='dropdown-trigger btn' data-target='dropdown3'>Session Number</a>
                 <ul id='dropdown3' class='dropdown-content'>
-                    <!-- calculate the total number of sessions this user has for this game -->
+                    <!-- Shows the Total Number of Sessions this User has for this Game -->
                     {% for sess in sessions %}
                         {% if session.user|lower == sess.created_by|lower %}
                             {% if sess.game_name == current_name %}
@@ -113,7 +115,7 @@
                     <div id="item-list-panel" class="card-panel">
                         {% for item in items %}
                             <ul id="item-list" class="collapsible">
-                                <!-- calculate the total number of items this user has for this game -->
+                                <!-- Shows the Items this User has for this Game -->
                                 {% if session.user|lower == item.created_by|lower %}
                                     {% if item.game_name == current_name %}
                                         <li>
@@ -124,6 +126,7 @@
                                                 <div id="enter-delete-row-item" class="row">
                                                     <a href="{{ url_for('edit_game', game_id=game_id) }}?item_id={{ item._id }}" id="enter-btn" class="btn">ENTER</a>
                                                     <a class="btn modal-trigger" href="#item-delete-modal">DELETE</a>
+                                                    <!-- Item Delete Modal -->
                                                     <div id="item-delete-modal" class="modal">
                                                         <div class="modal-content">
                                                             <p class="are-you-sure">Are you sure you want to delete this item?</p>
@@ -149,6 +152,7 @@
             </div>
             <div class="col s12 m6 l7 right">
                 <form method="POST" action="{{ url_for('update_item', game_id=game_id) }}?item_id={{ item._id }}">
+                    <!-- Item Overview Panel -->
                     <div id="item-overview" class="card-panel">
                         <h3 id="item-overview-title">Item Overview</h3>
                         <textarea id="item-overview-text" class="materialize-textarea" name="item-overview-text"

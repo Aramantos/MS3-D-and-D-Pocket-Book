@@ -4,6 +4,7 @@
     <h3 id="session-search-title" class="center-align">Sessions</h3>
 
     <div id="search-bar" class="card-panel">
+        <!-- Searches through all the Sessions this User has created -->
         <form action="{{ url_for('search_sessions') }}" method="post">
             <div class="row center-align">
                 <div class="input-field col s12 m7">
@@ -22,7 +23,7 @@
     </div>
 
     {% if sessions|length > 0 %}
-        <!-- Show all the sessions this user has created -->
+        <!-- Show all the Sessions this User has created -->
         <ul id="session-search-list" class="collapsible">
             {% for sess in sessions %}
                 {% if session.user|lower == sess.created_by|lower %}

@@ -4,6 +4,7 @@
     <h3 id="item-search-title" class="center-align">Items</h3>
 
     <div id="search-bar" class="card-panel">
+        <!-- Searches through all the Items this User has created -->
         <form action="{{ url_for('search_items') }}" method="post">
             <div class="row center-align">
                 <div class="input-field col s12 m7">
@@ -22,7 +23,7 @@
     </div>
 
     {% if items|length > 0 %}
-        <!-- Show all the items this user has created -->
+        <!-- Show all the Items this User has created -->
         <ul id="item-search-list" class="collapsible">
             {% for item in items %}
                 {% if session.user|lower == item.created_by|lower %}

@@ -102,6 +102,7 @@
             <div id="games" class="col s12 l6">
                 <div id="games-panel" class="card-panel">
                     <h4 id="games-header">Games</h4>
+                    <!-- Shows all the Games created by this User -->
                     {% for game in games %}
                         <ul class="collapsible">
                             {% if session.user|lower == game.created_by|lower %}
@@ -140,6 +141,7 @@
                 <div id="char-panel" class="card-panel">
                     <h4 id="chars-header">Characters</h4>
                     {% for key,value in classes.items() %}
+                        <!-- Shows all the Characters seperated by Class that were created by this User -->
                         <ul class="collapsible">
                             <li>
                                 <div class="collapsible-header"><i class="fab fa-d-and-d color-1 prefix"></i>{{ key }}</div>

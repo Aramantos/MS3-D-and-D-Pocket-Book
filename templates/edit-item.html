@@ -5,7 +5,7 @@
 
     <div id="edit-item-panel" class="row card-panel">
         <form class="col s12" method="POST" action="{{ url_for('edit_item', item_id=item._id) }}">
-            <!--Item Name-->
+            <!-- Item Name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fab fa-d-and-d prefix "></i>
@@ -14,7 +14,7 @@
                     <label for="item_name_edit">Item Name</label>
                 </div>
             </div>
-            <!--Item Description-->
+            <!-- Item Description -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fab fa-d-and-d prefix"></i>
@@ -23,7 +23,7 @@
                     <label for="item_overview_edit">Item Overview</label>
                 </div>
             </div>
-            <!--Item Game Name-->
+            <!-- Item Game Name -->
             <div id="game-name-edit-row" class="row">
                 <div class="input-field col s12">
                     <i class="fab fa-d-and-d prefix "></i>
@@ -32,11 +32,11 @@
                     <label for="game_name_edit">Game Name</label>
                 </div>
             </div>
-            <!--Submit Button-->
             <div class="row">
                 <div class="col s12 center-align">
-                    <!--Cancel Button-->
+                    <!-- Cancel Button -->
                     <a href="{{ url_for('get_items') }}" class="btn-large">Cancel</a>
+                    <!-- Submit Button -->
                     <button type="submit" class="btn-large">Update Item</button>
                 </div>
             </div>

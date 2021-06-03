@@ -6,6 +6,7 @@
     <form method="POST" action="{{ url_for('update_character', character_id=character._id) }}">
         <div class="row">
             <div class="col s12 m12 l6">
+                <!-- Backstory Box -->
                 <div id="char-box-1" class="card-panel">
                     <h3 id="char-box-1-title">Character Profile/Backstory</h3>
                     <textarea id="char-box-1-text" name="char-box-1-text"
@@ -14,6 +15,7 @@
                 </div>
             </div>
             <div class="col s12 m12 l6">
+                <!-- Player Notes Box -->
                 <div id="char-box-2" class="card-panel">
                     <h3 id="char-box-2-title">Player Notes</h3>
                     <textarea id="char-box-2-text" name="char-box-2-text"
@@ -25,6 +27,7 @@
 
         <div class="row">
             <div class="col s12 m12 l6">
+                <!-- Combat/Spell Notes -->
                 <div id="char-box-3" class="card-panel">
                     <h3 id="char-box-3-title">Combat Style/Spell Preferences</h3>
                     <textarea id="char-box-3-text" name="char-box-3-text"
@@ -33,6 +36,7 @@
                 </div>
             </div>
             <div class="col s12 m12 l6">
+                <!-- Character Development -->
                 <div id="char-box-4" class="card-panel">
                     <h3 id="char-box-4-title">Character Development</h3>
                     <textarea id="char-box-4-text" name="char-box-4-text"
@@ -43,11 +47,12 @@
         </div>
 
         <div id="game-btns" class="row">
+            <!-- Back Button -->
             <div class="col s6">
                 <a href="{{ url_for('profile') }}" id="game-back-btn"
                     class="btn-large">Back</a>
             </div>
-            <!--submit-->
+            <!-- Submit Button -->
             <div class="col s6">
                 <button type="submit" id="char-update-btn" class="btn-large">Update</button>
             </div>
