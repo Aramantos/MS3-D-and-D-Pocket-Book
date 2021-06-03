@@ -70,7 +70,7 @@ a {
 .btn:hover,
 .btn-large:hover {
     color: #FEBB6C !important;
-    background-color: #C78048 !important;
+    background-color: #41281C !important;
 }
 
 .btn-small:hover {
@@ -149,6 +149,13 @@ a {
     background-color: #934B22 !important;
 }
 
+.modal-footer{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4vh;
+    background-color: antiquewhite!important;
+}
+
 /*-------------------------Base Template */
 
 body {
@@ -217,6 +224,9 @@ strong {
     }
 }
 
+.are-you-sure{
+    font-size: large;
+}
 /*-------------------------Login/Register */
 
 #log-title,
@@ -337,7 +347,7 @@ input[type=password]:not(.browser-default) {
 
 #games-panel,
 #char-panel {
-    margin-top: 3vh;
+    margin: 3vh 0!important;
     height: 50vh;
     overflow: auto;
     margin-bottom: 4vh;
@@ -384,6 +394,14 @@ input[type=password]:not(.browser-default) {
 #char-enter-btn:hover {
     color: #41281C !important;
     background-color: antiquewhite !important;
+}
+
+#game-delete-modal,
+#char-delete-modal{
+    background-color: antiquewhite;
+    color: #945227 !important;
+    text-align: center;
+    margin-top: 20vh;
 }
 
 /* -------------------------Game Page */
@@ -503,6 +521,13 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 #item-add-card-content {
     background-color: antiquewhite;
+}
+
+#item-delete-modal{
+    background-color: antiquewhite;
+    color: #945227 !important;
+    text-align: center;
+    margin-top: 20vh;
 }
 
 /* -------------------------Character Page */
@@ -858,6 +883,9 @@ textarea #item-desc-edit {
     #char-box-3-title,
     #char-box-4-title {
         font-size: x-large;
+    }
+    .profile-add-btns{
+        margin-top: 0;
     }
 }
 
