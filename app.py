@@ -146,6 +146,7 @@ def game_add():
     if request.method == "POST":
         # import pdb;pdb.set_trace()
         game_name = request.form.get("game_name")
+        dm = request.form.get("dm")
         existing_game = mongo.db.games.find_one(
             {"game_name": game_name})
         if existing_game:
@@ -153,6 +154,7 @@ def game_add():
             return redirect(url_for("profile"))
         game = {
             "game_name": game_name,
+            "dm": dm,
             "created_by": session["user"]
         }
         mongo.db.games.insert_one(game)
