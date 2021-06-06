@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/homepage", methods=["GET", "POST"])
 def homepage():
     if is_authenticated():
-        # grab the session user's username from the DB
+        # grab the session users username from the DB
         username = mongo.db.users.find_one_or_404(
             {"username": session["user"]})["username"]
 
@@ -54,7 +54,7 @@ def register():
         existing_user = mongo.db.users.find_one(
             {"username": username})
         if existing_user:
-            flash(" - Username already exists - ")
+            flash(" - Username Already Exists - ")
             return redirect(url_for("register"))
 
         register = {
@@ -66,7 +66,7 @@ def register():
 
         # put new user into 'session cookie'
         session["user"] = username
-        flash(" - Registration successful - ")
+        flash(" - Registration Successful - ")
         return redirect(url_for("profile"))
     return render_template("login-register.html")
 
@@ -103,10 +103,10 @@ def login():
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return redirect(url_for("login"))
 
-    # grab the session user's username from the DB
+    # grab the session users username from the DB
     username = mongo.db.users.find_one_or_404(
         {"username": session["user"]})["username"]
 
@@ -128,7 +128,7 @@ def profile():
 @app.route("/logout")
 def logout():
     if "user" not in session:
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
     # remove user from session cookie
     flash(" - You have been logged out - ")
@@ -140,7 +140,7 @@ def logout():
 @app.route("/game_add", methods=["GET", "POST"])
 def game_add():
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if request.method == "POST":
@@ -162,7 +162,7 @@ def game_add():
 @app.route("/char_add", methods=["GET", "POST"])
 def char_add():
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if request.method == "POST":
@@ -185,7 +185,7 @@ def char_add():
 @app.route("/delete_game/<game_id>")
 def delete_game(game_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(game_id):
@@ -200,7 +200,7 @@ def delete_game(game_id):
 @app.route("/delete_character/<character_id>")
 def delete_character(character_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(character_id):
@@ -215,7 +215,7 @@ def delete_character(character_id):
 @app.route("/edit_game/<game_id>", methods=["GET", "POST"])
 def edit_game(game_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(game_id):
@@ -226,7 +226,7 @@ def edit_game(game_id):
     current_name = game["game_name"]
 
     sessions = list(mongo.db.sessions.find())
-    session_id = request.args.get('session_id')
+    session_id = request.args.get("session_id")
     game_session = None
     if is_object_id_valid(session_id):
         game_session = mongo.db.sessions.find_one_or_404(
@@ -234,7 +234,7 @@ def edit_game(game_id):
         )
 
     items = list(mongo.db.items.find())
-    item_id = request.args.get('item_id')
+    item_id = request.args.get("item_id")
     item = None
     if is_object_id_valid(item_id):
         item = mongo.db.items.find_one_or_404({"_id": ObjectId(item_id)})
@@ -248,7 +248,7 @@ def edit_game(game_id):
 @app.route("/add_session/<game_id>", methods=["GET", "POST"])
 def add_session(game_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(game_id):
@@ -275,7 +275,7 @@ def add_session(game_id):
 @app.route("/update_session/<game_id>", methods=["GET", "POST"])
 def update_session(game_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(game_id):
@@ -302,7 +302,7 @@ def update_session(game_id):
 @app.route("/item_add/<game_id>", methods=["GET", "POST"])
 def item_add(game_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(game_id):
@@ -329,7 +329,7 @@ def item_add(game_id):
 @app.route("/update_item/<game_id>", methods=["GET", "POST"])
 def update_item(game_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(game_id):
@@ -354,7 +354,7 @@ def update_item(game_id):
 @app.route("/delete_item/<item_id>/<game_id>")
 def delete_item(item_id, game_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     result = mongo.db.items.remove({"_id": ObjectId(item_id)})
@@ -366,7 +366,7 @@ def delete_item(item_id, game_id):
 @app.route("/edit_character/<character_id>", methods=["GET", "POST"])
 def edit_character(character_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(character_id):
@@ -385,7 +385,7 @@ def edit_character(character_id):
 @app.route("/update_character/<character_id>", methods=["GET", "POST"])
 def update_character(character_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(character_id):
@@ -420,7 +420,7 @@ def update_character(character_id):
 @app.route("/get_items")
 def get_items():
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return redirect(url_for("login"))
 
     items = list(mongo.db.items.find())
@@ -437,7 +437,7 @@ def search_items():
 @app.route("/edit_item/<item_id>", methods=["GET", "POST"])
 def edit_item(item_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(item_id):
@@ -451,7 +451,7 @@ def edit_item(item_id):
             "created_by": session["user"]
         }
         mongo.db.items.update({"_id": ObjectId(item_id)}, submit)
-        flash(" - Item Successfully Updated - ")
+        flash(" - Item Successfully Edited - ")
         items = list(mongo.db.items.find())
         return render_template("items.html", items=items)
 
@@ -462,7 +462,7 @@ def edit_item(item_id):
 @app.route("/get_sessions")
 def get_sessions():
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     sessions = list(mongo.db.sessions.find())
@@ -479,7 +479,7 @@ def search_sessions():
 @app.route("/edit_session/<session_id>", methods=["GET", "POST"])
 def edit_session(session_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(session_id):
@@ -495,7 +495,7 @@ def edit_session(session_id):
             "created_by": session["user"]
         }
         mongo.db.sessions.update({"_id": ObjectId(session_id)}, submit)
-        flash(" - Session Successfully Updated - ")
+        flash(" - Session Successfully Edited - ")
         sessions = list(mongo.db.sessions.find())
         return render_template("sessions.html", sessions=sessions)
 
@@ -506,7 +506,7 @@ def edit_session(session_id):
 @app.route("/delete_session/<session_id>")
 def delete_session(session_id):
     if not is_authenticated():
-        flash(' - There is no user currently logged in - ')
+        flash(" - There is no user currently logged in - ")
         return render_template("login-register.html")
 
     if not is_object_id_valid(session_id):
@@ -528,26 +528,26 @@ def is_object_id_valid(id_value):
 def is_authenticated():
     """ Ensure that user is authenticated
     """
-    return 'user' in session
+    return "user" in session
 
 
 # Custom Error Handling
 # 404 Error Page not found
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('404.html'), 404
+    return render_template("404.html"), 404
 
 
 # 405 Error Method
 @app.errorhandler(405)
 def method_not_allowed(error):
-    return render_template('405.html'), 405
+    return render_template("405.html"), 405
 
 
 # 500 Error Server Error
 @app.errorhandler(500)
 def internal_server(error):
-    return render_template('500.html'), 500
+    return render_template("500.html"), 500
 
 
 if __name__ == "__main__":
