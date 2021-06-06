@@ -55,6 +55,7 @@
                 {% endfor %}
                 <input type="hidden" name="session_num" value="{{ session_count.sessions + 1 }}">
                 <input type="hidden" name="game_name" value="{{ current_name }}">
+                <p class="are-you-sure">After you press submit, re-select the session before you update the overview.</p>
                 <textarea id="new-session-name" name="new-session-name" class="materialize-textarea" data-length="120"
                     placeholder="Please enter session name" required></textarea>
                 <label for="new-session-name" id="new-session-desc-label"></label>
@@ -100,7 +101,7 @@
                 <div id="session-desc" class="card-panel">
                     <h3 id="session-desc-title">Session Overview</h3>
                     <textarea id="session-desc-text" name="session-desc-text" class="materialize-textarea"
-                        placeholder="Please select or create a session before adding text"
+                        placeholder="Please create and/or select a session before adding text"
                         data-length="120" required>{% if game_session is not none %}{{ game_session.session_desc }}{% endif %}</textarea>
                     <label for="session-desc-text" id="session-desc-label"></label>
                 </div>
@@ -156,7 +157,7 @@
                     <div id="item-overview" class="card-panel">
                         <h3 id="item-overview-title">Item Overview</h3>
                         <textarea id="item-overview-text" class="materialize-textarea" name="item-overview-text"
-                            placeholder="Please select or create an item before adding text"
+                            placeholder="Please create and/or select an item before adding text"
                             data-length="120" required>{% if item is not none %}{{ item.item_desc }}{% endif %}</textarea>
                         <label for="item-overview-text" id="item-overview-label"></label>
                         {% if request.args.get('item_id') %}
