@@ -637,6 +637,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 #session_desc_edit {
     height: 20vh;
     max-height: 20vh;
+    overflow: auto;
 }
 
 #game-name-edit-row,
@@ -867,6 +868,10 @@ textarea #item-desc-edit {
 
 @media screen and (max-width: 992px) {
 
+    #flash-message {
+        font-size: x-large;
+    }
+
     #game-add-panel,
     #char-add-panel,
     #item-add-panel {
@@ -904,8 +909,9 @@ textarea #item-desc-edit {
 }
 
 @media screen and (max-width: 700px) {
+
     #flash-message {
-        font-size: x-large;
+        font-size: large;
     }
 
     #email a {
@@ -945,6 +951,10 @@ textarea #item-desc-edit {
 
 @media screen and (max-width: 500px) {
 
+    #flash-message {
+        font-size: medium;
+    }
+
     #item-search-title,
     #session-search-title,
     #edit-item-title,
@@ -954,9 +964,6 @@ textarea #item-desc-edit {
 }
 
 @media screen and (max-width: 450px) {
-    #flash-message {
-        font-size: large;
-    }
 
     #char-box-1-title,
     #char-box-2-title,
@@ -1090,7 +1097,7 @@ textarea #item-desc-edit {
     }
 
     #flash-message {
-        top: 8vh;
+        top: 10vh;
     }
 
     #item-overview,
@@ -1127,6 +1134,11 @@ textarea #item-desc-edit {
 }
 
 @media screen and (max-height: 600px) {
+
+    #flash-message {
+        top: 11vh;
+    }
+
     #log-reg-btns {
         margin-top: 0;
     }
@@ -1140,6 +1152,10 @@ textarea #item-desc-edit {
 
 @media screen and (max-height: 500px) {
 
+    #flash-message {
+        top: 12vh;
+    }
+
     #item-overview,
     #item-panel {
         height: 46.4vh;
@@ -1147,6 +1163,10 @@ textarea #item-desc-edit {
 }
 
 @media screen and (max-height: 400px) {
+
+    #flash-message {
+        top: 13vh;
+    }
 
     #item-overview,
     #item-panel {
