@@ -172,6 +172,7 @@ body {
     background-color: #704326;
 
     font-family: Titillium, sans-serif;
+    color: #41281C;
 }
 
 main {
@@ -365,6 +366,10 @@ input[type=password]:not(.browser-default) {
     margin-bottom: 4vh;
 }
 
+#char-collapsible-body{
+    background-color: antiquewhite;
+}
+
 .profile-add-btns {
     margin-top: 4vh;
 }
@@ -404,8 +409,8 @@ input[type=password]:not(.browser-default) {
 #char-delete-btn:hover,
 #game-enter-btn:hover,
 #char-enter-btn:hover {
-    color: #41281C !important;
-    background-color: antiquewhite !important;
+    color: antiquewhite !important;
+    background-color: #41281C !important;
 }
 
 /* -------------------------Game Page */

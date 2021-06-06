@@ -153,7 +153,7 @@
                                                 <div class="collapsible-header">
                                                     <i class="fab fa-d-and-d color-1 prefix"></i>{{ character.character_name }}
                                                 </div>
-                                                <div class="collapsible-body">
+                                                <div id="char-collapsible-body" class="collapsible-body">
                                                     <span>{{ character.profile_backstory }}</span> 
                                                     <div id="enter-delete-row-char" class="row">
                                                         <a href="{{ url_for('edit_character', character_id=character._id) }}"
