@@ -127,20 +127,20 @@ a {
 }
 
 .dropdown-content {
-    color: #934B22!important;
-    background-color: #FEBB6C!important;
+    color: #934B22 !important;
+    background-color: #FEBB6C !important;
 }
 
 .dropdown-content:hover {
-    color: #934B22!important;
-    background-color: #FEBB6C!important;
+    color: #934B22 !important;
+    background-color: #FEBB6C !important;
 }
 
 .input,
 .dropdown-content li>a,
 .dropdown-content li>span {
     color: #934B22 !important;
-    background-color: #FEBB6C!important;
+    background-color: #FEBB6C !important;
 }
 
 .dropdown-content li>a:hover,
@@ -149,15 +149,15 @@ a {
     background-color: #934B22 !important;
 }
 
-#dropdown2 li:hover{
+#dropdown2 li:hover {
     background-color: #934B22;
 }
 
-.modal-footer{
+.modal-footer {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 4vh;
-    background-color: antiquewhite!important;
+    background-color: antiquewhite !important;
 }
 
 /*-------------------------Base Template */
@@ -194,7 +194,7 @@ strong {
     letter-spacing: 1.5px;
 }
 
-#flashes{
+#flashes {
     margin: 0;
 }
 
@@ -228,16 +228,17 @@ strong {
     }
 }
 
-.are-you-sure{
+.are-you-sure {
     font-size: large;
 }
 
-.delete-modals{
+.delete-modals {
     background-color: antiquewhite;
     color: #945227 !important;
     text-align: center;
     margin-top: 20vh;
 }
+
 /*-------------------------Login/Register */
 
 #log-title,
@@ -358,7 +359,7 @@ input[type=password]:not(.browser-default) {
 
 #games-panel,
 #char-panel {
-    margin: 3vh 0!important;
+    margin: 3vh 0 !important;
     height: 50vh;
     overflow: auto;
     margin-bottom: 4vh;
@@ -618,7 +619,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     margin-top: 15vh;
 }
 
-#edit-session-panel{
+#edit-session-panel {
     margin-top: 10vh;
 }
 
@@ -651,7 +652,7 @@ textarea #item-desc-edit {
     color: antiquewhite;
 }
 
-#no-results{
+#no-results {
     font-size: xx-large;
     width: fit-content;
     padding: 10px;
@@ -664,11 +665,11 @@ textarea #item-desc-edit {
     margin: 3vh auto;
 }
 
-#delete-session-row{
+#delete-session-row {
     float: none;
 }
 
-#delete-session{
+#delete-session {
     overflow: hidden;
 }
 
@@ -685,7 +686,7 @@ textarea #item-desc-edit {
 #number {
     font-size: x-large;
     color: #945227 !important;
-    background-color: antiquewhite!important;
+    background-color: antiquewhite !important;
     margin: 32px 0;
 }
 
@@ -763,7 +764,7 @@ textarea #item-desc-edit {
     color: antiquewhite
 }
 
-#faq-list{
+#faq-list {
     border-top: #41281C 1px solid;
 }
 
@@ -882,7 +883,8 @@ textarea #item-desc-edit {
     #char-box-4-title {
         font-size: x-large;
     }
-    .profile-add-btns{
+
+    .profile-add-btns {
         margin-top: 0;
     }
 }
