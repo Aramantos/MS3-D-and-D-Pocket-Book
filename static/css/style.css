@@ -509,6 +509,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 #game-btns {
+    display: flex;
     margin-top: 0;
 }
 
