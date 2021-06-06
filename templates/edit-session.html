@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 id="edit-session-title" class="center-align">Edit Session</h3>
+    <h3 id="edit-session-title" class="center-align">Edit - {{ sess.session_name }}</h3>
 
     <div id="edit-session-panel" class="row card-panel">
         <form class="col s12" method="POST" action="{{ url_for('edit_session', session_id=sess._id) }}">
