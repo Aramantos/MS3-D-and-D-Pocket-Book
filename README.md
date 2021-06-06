@@ -603,6 +603,7 @@ Edit Session Page on medium/small devices
 - When the user updates a session or an item overview, the page reloads with the item/session you just updated rather than the base blank page.
 - Sharing games, characters, sessions and items between different users.
 - Opportunity for users to upload character art to their profiles.
+- Place for users to upload a pdf of the characters "character sheet" from any games they may be using the character in.
 - A Board/Chatroom space for users to discuss games and possibly network to create new games/groups. 
 
 ---
