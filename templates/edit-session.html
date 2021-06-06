@@ -61,7 +61,18 @@
             <div class="row">
                 <div id="delete-session-row" class="col 12">
                     <!-- Delete Session Button -->
-                    <a id="delete-session" href="{{ url_for('delete_session', session_id=sess._id) }}" class="btn-large">Press here to delete this session</a>
+                    <a id="delete-session" class="btn-large modal-trigger" href="#sess-delete-modal-{{ sess._id }}">Press here to delete this session</a>
+                    <!-- Game Delete Modal -->
+                    <div id="sess-delete-modal-{{ sess._id }}" class="modal delete-modals">
+                        <div class="modal-content">
+                            <p class="are-you-sure">Are you sure you want to delete this session?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{ url_for('delete_session', session_id=sess._id) }}"
+                                id="modal-sess-delete-btn" class="btn">Yes</a>
+                            <a class="btn modal-close">No</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>
