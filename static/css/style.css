@@ -127,26 +127,30 @@ a {
 }
 
 .dropdown-content {
-    color: #934B22;
-    background-color: #FEBB6C;
+    color: #934B22!important;
+    background-color: #FEBB6C!important;
 }
 
 .dropdown-content:hover {
-    color: #934B22;
-    background-color: #FEBB6C;
+    color: #934B22!important;
+    background-color: #FEBB6C!important;
 }
 
 .input,
 .dropdown-content li>a,
 .dropdown-content li>span {
     color: #934B22 !important;
-    background-color: #FEBB6C;
+    background-color: #FEBB6C!important;
 }
 
 .dropdown-content li>a:hover,
 .dropdown-content li>span:hover {
     color: #FEBB6C !important;
     background-color: #934B22 !important;
+}
+
+#dropdown2 li:hover{
+    background-color: #934B22;
 }
 
 .modal-footer{
@@ -405,7 +409,7 @@ input[type=password]:not(.browser-default) {
 
 /* -------------------------Game Page */
 
-#session-title-num {
+#game-title {
     font-size: xx-large;
     margin: 0;
     color: antiquewhite;
@@ -680,6 +684,7 @@ textarea #item-desc-edit {
 #number {
     font-size: x-large;
     color: #945227 !important;
+    background-color: antiquewhite!important;
     margin: 32px 0;
 }
 
