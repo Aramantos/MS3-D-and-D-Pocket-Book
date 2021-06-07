@@ -2,6 +2,8 @@
 
 Live Link - [https://d-and-d-pocket-book.herokuapp.com/](https://d-and-d-pocket-book.herokuapp.com/)
 
+![responsiveness](static/images/responsiveness.png "image_tooltip")
+
 ---
 
 ## **Table of Contents**
