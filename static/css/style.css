@@ -448,6 +448,7 @@ input[type=password]:not(.browser-default) {
 
 #session-desc-text {
     height: 27vh;
+    max-height: 27vh!important;
     max-height: 30vh;
     color: antiquewhite;
     overflow: auto;
@@ -505,7 +506,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 #item-overview-text {
     height: 23vh;
-    max-height: 30vh;
+    max-height: 23vh!important;
     color: antiquewhite;
     overflow: auto;
 }
